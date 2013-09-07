@@ -10,6 +10,9 @@ class DistrictCollection extends Base
 
     public $items = array();
 
+    /**
+     * @param array $items
+     */
     public function setItems(array $items)
     {
         foreach ($items as $item) {

@@ -16,7 +16,12 @@ class Reference extends Base implements CanRefer
         $this->_referedType = $referTo;
     }
 
-
+    /**
+     * call method, allows references to be called
+     * @param $args
+     * @return mixed
+     * @throws \Exception
+     */
     public function call($args)
     {
         $version = substr($this->_referedType, -2);
