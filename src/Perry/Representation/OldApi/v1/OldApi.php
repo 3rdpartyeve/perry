@@ -108,5 +108,4 @@ class OldApi extends Base
     {
         return new OldApi(self::doGetRequest(Setup::THORA_URL .'/', self::$_type));
     }
-
 }

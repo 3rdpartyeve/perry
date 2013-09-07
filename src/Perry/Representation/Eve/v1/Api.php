@@ -32,5 +32,4 @@ class Api extends Base
     {
         $this->character = new Reference($ref, "vnd.ccp.eve.Character-v1");
     }
-
 }

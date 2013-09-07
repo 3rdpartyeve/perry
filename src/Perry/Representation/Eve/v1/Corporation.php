@@ -7,4 +7,3 @@ class Corporation extends Base
 {
     protected static $_type = "vnd.ccp.eve.Corporation-v1";
 }
-

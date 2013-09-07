@@ -20,8 +20,7 @@ class Base
             // if there is a setter method for this call the setter
             if (method_exists($this, $method)) {
                 $this->{$method}($value);
-            } else // otherwise we assume its primitive data
-            {
+            } else {
                 $this->_members[$key] = $value;
             }
         }
@@ -76,7 +75,7 @@ class Base
 
             // this will make a secondary request!
             $headers = @get_headers($url, 1);
-            if(false === $headers) {
+            if (false === $headers) {
                 throw new \Exception("could not connect to api");
             }
             throw new \Exception("an error occured with the http request: " . $headers[0]);

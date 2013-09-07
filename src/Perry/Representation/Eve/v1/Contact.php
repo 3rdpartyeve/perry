@@ -7,4 +7,3 @@ class Contact extends Base
 {
     protected static $_type = "vnd.ccp.eve.Contact-v1";
 }
-

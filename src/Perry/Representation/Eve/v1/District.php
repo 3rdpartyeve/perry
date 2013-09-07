@@ -12,7 +12,8 @@ use Perry\Representation\Base;
  *
  * @package Perry\Representation\Eve\v1
  */
-class District extends Base {
+class District extends Base
+{
     protected static $_type = "vnd.ccp.eve.District-v1";
 
     /**

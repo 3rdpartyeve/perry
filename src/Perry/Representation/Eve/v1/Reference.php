@@ -49,4 +49,3 @@ class Reference extends Base implements CanRefer
         return new $classname($this->doGetRequest($this->href, $this->_referedType));
     }
 }
-
