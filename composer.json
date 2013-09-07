@@ -11,5 +11,11 @@
     "minimum-stability": "dev",
     "require": {
 
+    },
+    "support": {
+        "issues": "https://github.com/3rdpartyeve/phealng/issues"
+    },
+    "autoload": {
+        "psr-0": { "Pheal": "lib/" }
     }
 }
