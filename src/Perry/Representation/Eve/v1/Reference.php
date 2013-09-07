@@ -58,7 +58,7 @@ class Reference extends Base implements CanRefer
      * @param array $args
      * @return mixed
      */
-    public function __invoke($args=array())
+    public function __invoke($args = array())
     {
         return $this->call($args);
     }

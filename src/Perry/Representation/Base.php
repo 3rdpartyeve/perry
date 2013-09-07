@@ -10,16 +10,15 @@ class Base
      */
     public function __construct($data)
     {
-        if(is_null($data)) {
-            print_r(debug_backtrace());
-            die();
+        if (is_null($data)) {
+            throw new \Exception("got NULL in Base Construtor");
         }
         if (!is_array($data) && !is_object($data)) {
             $data = json_decode($data, false);
         }
         //var_dump($data);
         if (is_object($data)) {
-           $data = get_object_vars($data);
+            $data = get_object_vars($data);
         }
 
         foreach ($data as $key => $value) {

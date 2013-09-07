@@ -49,14 +49,14 @@ class TournamentMatch extends Base
         $bans->self = new Reference($bans->self, "vnd.ccp.eve.TournamentTypeBanCollection-v1");
 
         $redTeam = array();
-        foreach($bans->redTeam as $ban) {
+        foreach ($bans->redTeam as $ban) {
             $ban->bannedBy = new Reference($ban->bannedBy, "vnd.ccp.eve.TournamentTeam-v1");
             $redTeam[] = $ban;
         }
         $bans->redTeam = $redTeam;
 
         $blueTeam = array();
-        foreach($bans->blueTeam as $ban) {
+        foreach ($bans->blueTeam as $ban) {
             $ban->bannedBy = new Reference($ban->bannedBy, "vnd.ccp.eve.TournamentTeam-v1");
             $blueTeam[] = $ban;
         }

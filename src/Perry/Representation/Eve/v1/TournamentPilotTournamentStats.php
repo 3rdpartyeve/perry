@@ -39,5 +39,4 @@ class TournamentPilotTournamentStats extends Base
             $this->recentShips[] = new Reference($recentShip, "Dear CCP please document this representation");
         }
     }
-
 }

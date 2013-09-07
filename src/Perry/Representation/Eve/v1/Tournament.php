@@ -35,5 +35,4 @@ class Tournament extends Base
     {
         $this->series = new Reference($series, "vnd.ccp.eve.TournamentSeriesCollection-v1");
     }
-
 }
