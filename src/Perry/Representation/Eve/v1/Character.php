@@ -69,8 +69,6 @@ class Character extends Base
      */
     public function setRace(array $race)
     {
-        $this->race = new Reference($race, "Dear CCP please document this representation");;
+        $this->race = new Reference($race, "Dear CCP please document this representation");
     }
-
-
 }

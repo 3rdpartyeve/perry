@@ -22,5 +22,4 @@ class Server extends Base
      * @var Reference
      */
     protected $ServerStatus;
-
 }

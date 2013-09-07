@@ -27,5 +27,4 @@ class DistrictCollection extends Base
     {
         return new DistrictCollection(self::doGetRequest(Setup::CREST_URL .'/districts/', self::$_type));
     }
-
 }
