@@ -5,8 +5,6 @@ use Perry\Representation\Base;
 
 class ContactCollection extends Base
 {
-    protected static $_type = "vnd.ccp.eve.ContactCollection-v1";
-
     /**
      * @var Reference
      */
@@ -25,7 +23,7 @@ class ContactCollection extends Base
     /**
      * @param array $items
      */
-    public function setItems(array $items)
+    public function setItems($items)
     {
         foreach ($items as $item) {
             $this->items[] = new Contact($item);
@@ -35,7 +33,7 @@ class ContactCollection extends Base
     /**
      * @param array $next
      */
-    public function setNext(array $next)
+    public function setNext($next)
     {
         $this->next = new Reference($next, "vnd.ccp.eve.ContactCollection-v1");
     }

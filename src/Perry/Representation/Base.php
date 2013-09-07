@@ -3,7 +3,6 @@ namespace Perry\Representation;
 
 class Base
 {
-    protected static $_type = null;
     protected $_members = array();
 
     /**
@@ -11,8 +10,16 @@ class Base
      */
     public function __construct($data)
     {
-        if (!is_array($data)) {
-            $data = json_decode($data, true);
+        if(is_null($data)) {
+            print_r(debug_backtrace());
+            die();
+        }
+        if (!is_array($data) && !is_object($data)) {
+            $data = json_decode($data, false);
+        }
+        //var_dump($data);
+        if (is_object($data)) {
+           $data = get_object_vars($data);
         }
 
         foreach ($data as $key => $value) {
@@ -33,15 +40,6 @@ class Base
         }
         // return null (could do exception here, but that wouldn't cover for optionals
         return null;
-    }
-
-
-    public function getType()
-    {
-        if (is_null(self::$_type)) {
-            throw new \Exception("Representation with unknown Name used");
-        }
-        return self::$_type;
     }
 
     public function __call($method, $args)

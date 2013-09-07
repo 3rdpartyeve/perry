@@ -12,7 +12,7 @@ class Server extends Base
     /**
      * @param array $ref
      */
-    protected function setServerStatus(array $ref)
+    protected function setServerStatus($ref)
     {
         $this->ServerStatus = new Reference($ref, "net.3rdpartyeve.thora.server.ServerStatus-v1");
     }
@@ -21,5 +21,5 @@ class Server extends Base
     /**
      * @var Reference
      */
-    protected $ServerStatus;
+    public $ServerStatus;
 }

@@ -5,8 +5,6 @@ use Perry\Representation\Base;
 
 class Character extends Base
 {
-    protected static $_type = "vnd.ccp.eve.Character-v1";
-
     /**
      * @var Reference
      */
@@ -35,7 +33,7 @@ class Character extends Base
     /**
      * @param array $bloodLine
      */
-    public function setBloodLine(array $bloodLine)
+    public function setBloodLine($bloodLine)
     {
         $this->bloodLine = new Reference($bloodLine, "Dear CCP please document this representation");
     }
@@ -43,7 +41,7 @@ class Character extends Base
     /**
      * @param array $capsuleer
      */
-    public function setCapsuleer(array $capsuleer)
+    public function setCapsuleer($capsuleer)
     {
         $this->capsuleer = new Reference($capsuleer, "vnd.ccp.eve.Capsuleer-v1");
     }
@@ -51,7 +49,7 @@ class Character extends Base
     /**
      * @param array $contacts
      */
-    public function setContacts(array $contacts)
+    public function setContacts($contacts)
     {
         $this->contacts = new Reference($contacts, "vnd.ccp.eve.ContactCollection-v1");
     }
@@ -59,7 +57,7 @@ class Character extends Base
     /**
      * @param array $corporation
      */
-    public function setCorporation(array $corporation)
+    public function setCorporation($corporation)
     {
         $this->corporation = new Reference($corporation, "vnd.ccp.eve.Corporation-v1");
     }
@@ -67,7 +65,7 @@ class Character extends Base
     /**
      * @param array $race
      */
-    public function setRace(array $race)
+    public function setRace($race)
     {
         $this->race = new Reference($race, "Dear CCP please document this representation");
     }

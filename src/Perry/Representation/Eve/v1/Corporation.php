@@ -5,8 +5,6 @@ use Perry\Representation\Base;
 
 class Corporation extends Base
 {
-    protected static $_type = "vnd.ccp.eve.Corporation-v1";
-
     /**
      * @var Reference
      */
@@ -30,7 +28,7 @@ class Corporation extends Base
     /**
      * @param array $alliance
      */
-    public function setAlliance(array $alliance)
+    public function setAlliance($alliance)
     {
         $this->alliance = new Reference($alliance, "Dear CCP please document this representation");
     }
@@ -38,7 +36,7 @@ class Corporation extends Base
     /**
      * @param array $ceo
      */
-    public function setCeo(array $ceo)
+    public function setCeo($ceo)
     {
         $this->ceo = new Reference($ceo, "vnd.ccp.eve.Character-v1");
     }
@@ -46,7 +44,7 @@ class Corporation extends Base
     /**
      * @param array $contacts
      */
-    public function setContacts(array $contacts)
+    public function setContacts($contacts)
     {
         $this->contacts = new Reference($contacts, 'vnd.ccp.eve.ContactCollection-v1');
     }
@@ -54,7 +52,7 @@ class Corporation extends Base
     /**
      * @param array $creator
      */
-    public function setCreator(array $creator)
+    public function setCreator($creator)
     {
         $this->creator = new Reference($creator, "vnd.ccp.eve.Character-v1");
     }

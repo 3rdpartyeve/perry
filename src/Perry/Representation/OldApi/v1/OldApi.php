@@ -10,7 +10,7 @@ class OldApi extends Base
     /**
      * @param array $ref
      */
-    protected function setCharacter(array $ref)
+    protected function setCharacter($ref)
     {
         $this->character = new Reference($ref, "net.3rdpartyeve.thora.Character-v1");
     }
@@ -18,7 +18,7 @@ class OldApi extends Base
     /**
      * @param array
      */
-    public function setAccount(array $account)
+    public function setAccount($account)
     {
         $this->account = new Reference($account, "net.3rdpartyeve.thora.Account-v1");
     }
@@ -26,7 +26,7 @@ class OldApi extends Base
     /**
      * @param array $api
      */
-    public function setApi(array $api)
+    public function setApi($api)
     {
         $this->api = new Reference($api, "net.3rdpartyeve.thora.Api-v1");
     }
@@ -34,7 +34,7 @@ class OldApi extends Base
     /**
      * @param array
      */
-    public function setCorporation(array $corporation)
+    public function setCorporation($corporation)
     {
         $this->corporation = new Reference($corporation, "net.3rdpartyeve.thora.Corporation-v1");
     }
@@ -42,7 +42,7 @@ class OldApi extends Base
     /**
      * @param array $eve
      */
-    public function setEve(array $eve)
+    public function setEve($eve)
     {
         $this->eve = new Reference($eve, "net.3rdpartyeve.thora.Eve-v1");
     }
@@ -50,7 +50,7 @@ class OldApi extends Base
     /**
      * @param array $map
      */
-    public function setMap(array $map)
+    public function setMap($map)
     {
         $this->map = new Reference($map, "net.3rdpartyeve.thora.Map-v1");
     }
@@ -58,7 +58,7 @@ class OldApi extends Base
     /**
      * @param array $server
      */
-    public function setServer(array $server)
+    public function setServer($server)
     {
         $this->server = new Reference($server, "net.3rdpartyeve.thora.Server-v1");
     }

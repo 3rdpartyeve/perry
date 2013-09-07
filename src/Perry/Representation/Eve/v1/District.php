@@ -14,8 +14,6 @@ use Perry\Representation\Base;
  */
 class District extends Base
 {
-    protected static $_type = "vnd.ccp.eve.District-v1";
-
     /**
      * @var Reference
      */

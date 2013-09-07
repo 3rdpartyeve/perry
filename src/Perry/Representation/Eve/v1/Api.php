@@ -5,8 +5,6 @@ use Perry\Representation\Base;
 
 class Api extends Base
 {
-    protected static $_type = "vnd.ccp.eve.Api-v1";
-
     /**
      * @var Reference
      */
@@ -20,7 +18,7 @@ class Api extends Base
     /**
      * @param array $ref
      */
-    protected function setSearch(array $ref)
+    protected function setSearch($ref)
     {
         $this->search = new Reference($ref, "vnd.ccp.eve.Collection-v1");
     }
@@ -28,7 +26,7 @@ class Api extends Base
     /**
      * @param array $ref
      */
-    protected function setCharacter(array $ref)
+    protected function setCharacter($ref)
     {
         $this->character = new Reference($ref, "vnd.ccp.eve.Character-v1");
     }

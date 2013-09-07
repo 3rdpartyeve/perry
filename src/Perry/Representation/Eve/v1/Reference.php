@@ -6,8 +6,6 @@ use Perry\Representation\Interfaces\CanRefer;
 
 class Reference extends Base implements CanRefer
 {
-    protected static $_type = "vnd.ccp.eve.Reference-v1";
-
     protected $_referedType;
 
     public function __construct($data, $referTo)

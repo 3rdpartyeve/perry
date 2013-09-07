@@ -5,8 +5,6 @@ use Perry\Representation\Base;
 
 class Capsuleer extends Base
 {
-    protected static $_type = "vnd.ccp.eve.Capsuleer-v1";
-
     /**
      * @var Reference
      */
@@ -20,7 +18,7 @@ class Capsuleer extends Base
     /**
      * @param array $ref
      */
-    protected function setSkills(array $ref)
+    protected function setSkills($ref)
     {
         $this->skills = new Reference($ref, "Dear CCP please document this representation");
     }
@@ -28,7 +26,7 @@ class Capsuleer extends Base
     /**
      * @param array $ref
      */
-    protected function trainingQueue(array $ref)
+    protected function trainingQueue($ref)
     {
         $this->skills = new Reference($ref, "Dear CCP please document this representation");
     }
