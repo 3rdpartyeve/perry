@@ -1,0 +1,15 @@
+{
+    "name": "3rdpartyeve/perry",
+    "description": "A PHP Library to access EVE Online's CREST API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Peter Petermann",
+            "email": "ppetermann80@googlemail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+
+    }
+}
