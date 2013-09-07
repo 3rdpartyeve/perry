@@ -9,6 +9,13 @@ also this library is not to be considered complete or stable, most likely
 backward compatibility will break during further development.
 Do not use this if you don't know what you are doing.
 
+
+## Status on the Completeness:
+Implemented
+- https://wiki.eveonline.com/en/wiki/CREST_Documentation (all thats documented here is in, but not tested, since not public yet - this will most likely need some additional work when public, to play well with oauth2)
+- https://forums.dust514.com/default.aspx?g=posts&t=103783 (districts have alot of references which dont resolve yet, also for some of those references i made guessing on what exactly they might refer to, so even when those are published there might be some extra work needed)
+Not Implemented:
+
 ## LICENSE
 This library is released unter the MIT style license.
 See LICENSE.txt for details.
