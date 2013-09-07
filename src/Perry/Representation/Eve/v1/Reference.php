@@ -18,11 +18,11 @@ class Reference extends Base implements CanRefer
 
     /**
      * call method, allows references to be called
-     * @param $args
+     * @param array $args
      * @return mixed
      * @throws \Exception
      */
-    public function call($args)
+    public function call($args = array())
     {
         $version = substr($this->_referedType, -2);
         $representation = substr($this->_referedType, 0, -3);
@@ -52,5 +52,16 @@ class Reference extends Base implements CanRefer
                 throw new \Exception("wtf, what representation is this?".$this->_referedType);
         }
         return new $classname($this->doGetRequest($this->href, $this->_referedType));
+    }
+
+    /**
+     * magic method to allow calling the object as if it was a function
+     *
+     * @param array $args
+     * @return mixed
+     */
+    public function __invoke($args=array())
+    {
+        return $this->call($args);
     }
 }
