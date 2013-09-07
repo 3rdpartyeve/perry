@@ -8,7 +8,7 @@ class DistrictCollection extends Base
 {
     protected static $_type = "vnd.ccp.eve.DistrictCollection-v1";
 
-    protected $items = array();
+    public $items = array();
 
     public function setItems(array $items)
     {

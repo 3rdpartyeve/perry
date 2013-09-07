@@ -18,27 +18,27 @@ class District extends Base {
     /**
      * @var Reference
      */
-    protected $owner;
+    public $owner;
 
     /**
      * @var Reference
      */
-    protected $system;
+    public $system;
 
     /**
      * @var Reference
      */
-    protected $infrastructure;
+    public $infrastructure;
 
     /**
      * @var Reference
      */
-    protected $region;
+    public $region;
 
     /**
      * @var Reference
      */
-    protected $planet;
+    public $planet;
 
     /**
      * @param array $infrastructure

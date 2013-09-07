@@ -10,12 +10,12 @@ class Api extends Base
     /**
      * @var Reference
      */
-    protected $search;
+    public $search;
 
     /**
      * @var Reference
      */
-    protected $character;
+    public $character;
 
     /**
      * @param array $ref

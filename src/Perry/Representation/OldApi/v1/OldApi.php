@@ -68,37 +68,37 @@ class OldApi extends Base
     /**
      * @var Reference
      */
-    protected $account;
+    public $account;
 
     /**
      * @var Reference
      */
-    protected $character;
+    public $character;
 
     /**
      * @var Reference
      */
-    protected $corporation;
+    public $corporation;
 
     /**
      * @var Reference
      */
-    protected $eve;
+    public $eve;
 
     /**
      * @var Reference
      */
-    protected $map;
+    public $map;
 
     /**
      * @var Reference
      */
-    protected $server;
+    public $server;
 
     /**
      * @var Reference
      */
-    protected $api;
+    public $api;
 
 
     /**

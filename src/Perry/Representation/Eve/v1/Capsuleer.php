@@ -7,8 +7,8 @@ class Capsuleer extends Base
 {
     protected static $_type = "vnd.ccp.eve.Capsuleer-v1";
 
-    protected $skills;
-    protected $trainingQueue;
+    public $skills;
+    public $trainingQueue;
 
     protected function setSkills(array $ref)
     {
