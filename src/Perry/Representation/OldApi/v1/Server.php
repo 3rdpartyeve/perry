@@ -6,9 +6,6 @@ use Perry\Representation\Eve\v1\Reference;
 
 class Server extends Base
 {
-
-    protected static $_type = "net.3rdpartyeve.thora.Server-v1";
-
     /**
      * @param array $ref
      */

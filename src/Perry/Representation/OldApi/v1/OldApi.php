@@ -63,8 +63,6 @@ class OldApi extends Base
         $this->server = new Reference($server, "net.3rdpartyeve.thora.Server-v1");
     }
 
-    protected static $_type = "net.3rdpartyeve.thora.OldApi-v1";
-
     /**
      * @var Reference
      */
@@ -106,6 +104,6 @@ class OldApi extends Base
      */
     public static function getInstance()
     {
-        return new OldApi(self::doGetRequest(Setup::THORA_URL .'/', self::$_type));
+        return new OldApi(self::doGetRequest(Setup::THORA_URL .'/', "net.3rdpartyeve.thora.OldApi-v1"));
     }
 }
