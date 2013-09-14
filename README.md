@@ -15,8 +15,6 @@ Implemented:
 - https://wiki.eveonline.com/en/wiki/CREST_Documentation (all thats documented here is in, but not tested, since not public yet - this will most likely need some additional work when public, to play well with oauth2)
 - https://forums.dust514.com/default.aspx?g=posts&t=103783 (districts have alot of references which dont resolve yet, also for some of those references i made guessing on what exactly they might refer to, so even when those are published there might be some extra work needed)
 - https://forums.eveonline.com/default.aspx?g=posts&t=257854
-
-Not Implemented:
 - https://forums.eveonline.com/default.aspx?g=posts&m=3393341#post3393341 (Realtime Tournament Stuff)
 
 Also you might find some files to access Thora, a Proxy for the old API,
