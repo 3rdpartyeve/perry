@@ -12,6 +12,10 @@ class TournamentMatch extends Base
     public $series;
     public $tournament;
     public $bans;
+    public $staticSceneData;
+    public $firstReplayFrame;
+    public $lastReplayFrame;
+
 
     public function setWinner($winner)
     {
@@ -63,6 +67,20 @@ class TournamentMatch extends Base
         $bans->blueTeam = $blueTeam;
 
         $this->bans = $bans;
+    }
 
+    public function setStaticSceneData($staticSceneData)
+    {
+        $this->staticSceneData = new Reference($staticSceneData, "vnd.ccp.eve.TournamentStaticSceneData-v1");
+    }
+
+    public function setFirstReplayFrame($replayFrame)
+    {
+        $this->firstReplayFrame = new Reference($replayFrame, "vnd.ccp.eve.TournamentRealtimeMatchFrame-v2");
+    }
+
+    public function setLastReplayFrame($replayFrame)
+    {
+        $this->lastReplayFrame = new Reference($replayFrame, "vnd.ccp.eve.TournamentRealtimeMatchFrame-v2");
     }
 }

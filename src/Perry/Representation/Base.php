@@ -7,6 +7,7 @@ class Base
 
     /**
      * @param $data
+     * @throws \Exception
      */
     public function __construct($data)
     {
