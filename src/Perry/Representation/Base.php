@@ -17,7 +17,7 @@ class Base
         if (!is_array($data) && !is_object($data)) {
             $data = json_decode($data, false);
         }
-        //var_dump($data);
+
         if (is_object($data)) {
             $data = get_object_vars($data);
         }
