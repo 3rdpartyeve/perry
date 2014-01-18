@@ -19,7 +19,7 @@ Implemented:
 - https://forums.dust514.com/default.aspx?g=posts&t=103783 (districts have alot of references which dont resolve yet, also for some of those references i made guessing on what exactly they might refer to, so even when those are published there might be some extra work needed)
 - https://forums.eveonline.com/default.aspx?g=posts&t=257854
 - https://forums.eveonline.com/default.aspx?g=posts&m=3393341#post3393341 (Realtime Tournament Stuff)
-
+- Killmail API (soon to be published, no link yet)
 Also you might find some files to access Thora, a Proxy for the old API,
 which is mostly not working yet, so don't use it.
 
