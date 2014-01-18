@@ -1,0 +1,236 @@
+{
+    "solarSystem": {
+        "id_str": "30005305",
+        "href": "http://regner1-ws:26004/solarsystems/30005305/",
+        "id": 30005305,
+        "name": "Cistuvaert"
+    },
+    "killID": 2,
+    "killTime": "2013.12.23 16:21:00",
+    "attackers": [
+        {
+            "shipType": {
+                "id_str": "11125",
+                "href": "http://regner1-ws:26004/types/11125/",
+                "id": 11125,
+                "name": "CONCORD Police Commander",
+                "icon": {
+                    "href": "http://image.eveonline.com/Type/11125_64.png"
+                }
+            },
+            "corporation": {
+                "id_str": "1000125",
+                "href": "http://regner1-ws:26004/corporations/1000125/",
+                "id": 1000125,
+                "name": "CONCORD",
+                "icon": {
+                    "href": "http://image.eveonline.com/Corporation/1000125_128.jpg"
+                }
+            },
+            "damageDone_str": "67030",
+            "finalBlow": false,
+            "securityStatus": 0,
+            "damageDone": 67030
+        },
+        {
+            "shipType": {
+                "id_str": "3742",
+                "href": "http://regner1-ws:26004/types/3742/",
+                "id": 3742,
+                "name": "Gallente Sentry Gun",
+                "icon": {
+                    "href": "http://image.eveonline.com/Type/3742_64.png"
+                }
+            },
+            "corporation": {
+                "id_str": "1000169",
+                "href": "http://regner1-ws:26004/corporations/1000169/",
+                "id": 1000169,
+                "name": "Center for Advanced Studies",
+                "icon": {
+                    "href": "http://image.eveonline.com/Corporation/1000169_128.jpg"
+                }
+            },
+            "damageDone_str": "12675",
+            "finalBlow": true,
+            "securityStatus": 0,
+            "damageDone": 12675
+        }
+    ],
+    "attackerCount": 2,
+    "victim": {
+        "damageTaken": 79705,
+        "corporation": {
+            "id_str": "1000169",
+            "href": "http://regner1-ws:26004/corporations/1000169/",
+            "id": 1000169,
+            "name": "Center for Advanced Studies",
+            "icon": {
+                "href": "http://image.eveonline.com/Corporation/1000169_128.jpg"
+            }
+        },
+        "damageTaken_str": "79705",
+        "character": {
+            "id_str": "90000003",
+            "href": "http://regner1-ws:26004/characters/90000003/",
+            "id": 90000003,
+            "name": "esp",
+            "icon": {
+                "href": "http://image.eveonline.com/Character/90000003_128.jpg"
+            }
+        },
+        "shipType": {
+            "id_str": "28606",
+            "href": "http://regner1-ws:26004/types/28606/",
+            "id": 28606,
+            "name": "Orca",
+            "icon": {
+                "href": "http://image.eveonline.com/Type/28606_64.png"
+            }
+        },
+        "items": [
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "3995",
+                    "href": "http://regner1-ws:26004/types/3995/",
+                    "id": 3995,
+                    "name": "Large EMP Smartbomb II",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/3995_64.png"
+                    }
+                },
+                "quantityDropped_str": "1",
+                "flag": 27,
+                "singleton_str": "0",
+                "quantityDropped": 1,
+                "flag_str": "27"
+            },
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "3899",
+                    "href": "http://regner1-ws:26004/types/3899/",
+                    "id": 3899,
+                    "name": "Micro Proton Smartbomb II",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/3899_64.png"
+                    }
+                },
+                "quantityDestroyed_str": "1",
+                "flag": 28,
+                "flag_str": "28",
+                "singleton_str": "0",
+                "quantityDestroyed": 1
+            },
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "2454",
+                    "href": "http://regner1-ws:26004/types/2454/",
+                    "id": 2454,
+                    "name": "Hobgoblin I",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/2454_64.png"
+                    }
+                },
+                "quantityDropped_str": "1",
+                "flag": 87,
+                "singleton_str": "0",
+                "quantityDropped": 1,
+                "flag_str": "87"
+            },
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "23715",
+                    "href": "http://regner1-ws:26004/types/23715/",
+                    "id": 23715,
+                    "name": "Hobgoblin SD-300",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/23715_64.png"
+                    }
+                },
+                "quantityDestroyed_str": "1",
+                "flag": 5,
+                "flag_str": "5",
+                "singleton_str": "0",
+                "quantityDestroyed": 1
+            },
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "3293",
+                    "href": "http://regner1-ws:26004/types/3293/",
+                    "id": 3293,
+                    "name": "Medium Standard Container",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/3293_64.png"
+                    }
+                },
+                "quantityDropped_str": "1",
+                "items": [
+                    {
+                        "singleton": 0,
+                        "itemType": {
+                            "id_str": "34",
+                            "href": "http://regner1-ws:26004/types/34/",
+                            "id": 34,
+                            "name": "Tritanium",
+                            "icon": {
+                                "href": "http://image.eveonline.com/Type/34_64.png"
+                            }
+                        },
+                        "quantityDropped_str": "1",
+                        "singleton_str": "0",
+                        "flag": 0,
+                        "quantityDropped": 1,
+                        "flag_str": "0"
+                    }
+                ],
+                "singleton_str": "0",
+                "flag": 155,
+                "quantityDropped": 1,
+                "flag_str": "155"
+            },
+            {
+                "singleton": 0,
+                "itemType": {
+                    "id_str": "22544",
+                    "href": "http://regner1-ws:26004/types/22544/",
+                    "id": 22544,
+                    "name": "Hulk",
+                    "icon": {
+                        "href": "http://image.eveonline.com/Type/22544_64.png"
+                    }
+                },
+                "flag_str": "90",
+                "items": [
+                    {
+                        "singleton": 0,
+                        "quantityDestroyed": 1,
+                        "quantityDestroyed_str": "1",
+                        "flag": 27,
+                        "flag_str": "27",
+                        "singleton_str": "0",
+                        "itemType": {
+                            "id_str": "17482",
+                            "href": "http://regner1-ws:26004/types/17482/",
+                            "id": 17482,
+                            "name": "Strip Miner I",
+                            "icon": {
+                                "href": "http://image.eveonline.com/Type/17482_64.png"
+                            }
+                        }
+                    }
+                ],
+                "flag": 90,
+                "singleton_str": "0",
+                "quantityDestroyed_str": "1",
+                "quantityDestroyed": 1
+            }
+        ]
+    },
+    "killID_str": "2",
+    "attackerCount_str": "2"
+}

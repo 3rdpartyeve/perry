@@ -24,7 +24,7 @@ class DistrictCollection extends Base
     public static function getInstance()
     {
         return new DistrictCollection(
-            self::doGetRequest(Setup::CREST_URL .'/districts/', "vnd.ccp.eve.DistrictCollection-v1")
+            self::doGetRequest(Setup::$CREST_URL .'/districts/', "vnd.ccp.eve.DistrictCollection-v1")
         );
     }
 }

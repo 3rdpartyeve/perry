@@ -6,4 +6,6 @@ build/api/
 build/code-browser/
 build/coverage/
 build/phpdox/
+build/logs/
+build/pdepend/
 cache.properties

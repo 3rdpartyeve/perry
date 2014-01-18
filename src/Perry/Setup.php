@@ -3,6 +3,6 @@ namespace Perry;
 
 class Setup
 {
-    const CREST_URL = "http://public-crest.eveonline.com";
-    const THORA_URL = "http://thora.3rdpartyeve.net";
+    static public $CREST_URL = "http://public-crest.eveonline.com";
+    static public $THORA_URL = "http://thora.3rdpartyeve.net";
 }

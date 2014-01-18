@@ -1,0 +1,77 @@
+{
+    "solarSystem": {
+        "id_str": "30003343",
+        "href": "http://regner1-ws:26004/solarsystems/30003343/",
+        "id": 30003343,
+        "name": "KFR-ZE"
+    },
+    "killID": 3,
+    "killTime": "2014.01.16 08:13:00",
+    "moon": {
+        "id_str": "40211968",
+        "href": "http://regner1-ws:26004/moons/40211968/",
+        "id": 40211968,
+        "name": "KFR-ZE V - Moon 4"
+    },
+    "attackers": [
+        {
+            "damageDone": 38255359,
+            "corporation": {
+                "id_str": "98000003",
+                "href": "http://regner1-ws:26004/corporations/98000003/",
+                "id": 98000003,
+                "name": "derpity fucking derp Corporation",
+                "icon": {
+                    "href": "http://image.eveonline.com/Corporation/98000003_128.jpg"
+                }
+            },
+            "character": {
+                "id_str": "90000003",
+                "href": "http://regner1-ws:26004/characters/90000003/",
+                "id": 90000003,
+                "name": "herp derp",
+                "icon": {
+                    "href": "http://image.eveonline.com/Character/90000003_128.jpg"
+                }
+            },
+            "damageDone_str": "38255359",
+            "shipType": {
+                "id_str": "3559",
+                "href": "http://regner1-ws:26004/types/3559/",
+                "id": 3559,
+                "name": "Dual Modal Giga Pulse Laser I",
+                "icon": {
+                    "href": "http://image.eveonline.com/Type/3559_64.png"
+                }
+            },
+            "finalBlow": true,
+            "securityStatus": "-0.5"
+        }
+    ],
+    "attackerCount": 1,
+    "victim": {
+        "corporation": {
+            "id_str": "98000003",
+            "href": "http://regner1-ws:26004/corporations/98000003/",
+            "id": 98000003,
+            "name": "derpity fucking derp Corporation",
+            "icon": {
+                "href": "http://image.eveonline.com/Corporation/98000003_128.jpg"
+            }
+        },
+        "damageTaken_str": "38255359",
+        "items": [],
+        "shipType": {
+            "id_str": "12235",
+            "href": "http://regner1-ws:26004/types/12235/",
+            "id": 12235,
+            "name": "Amarr Control Tower",
+            "icon": {
+                "href": "http://image.eveonline.com/Type/12235_64.png"
+            }
+        },
+        "damageTaken": 38255359
+    },
+    "killID_str": "3",
+    "attackerCount_str": "1"
+}

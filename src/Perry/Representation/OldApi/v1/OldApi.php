@@ -104,6 +104,6 @@ class OldApi extends Base
      */
     public static function getInstance()
     {
-        return new OldApi(self::doGetRequest(Setup::THORA_URL .'/', "net.3rdpartyeve.thora.OldApi-v1"));
+        return new OldApi(self::doGetRequest(Setup::$THORA_URL .'/', "net.3rdpartyeve.thora.OldApi-v1"));
     }
 }

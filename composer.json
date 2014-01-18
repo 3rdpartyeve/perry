@@ -12,6 +12,9 @@
     "require": {
 
     },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
+    },
     "support": {
         "issues": "https://github.com/3rdpartyeve/phealng/issues"
     },
