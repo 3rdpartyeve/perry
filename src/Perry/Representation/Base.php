@@ -65,6 +65,9 @@ class Base
                 'header' => "Accept-language: en\r\n".
                     "Accept: application/$representation+json\r\n",
             ),
+            'socket' => array(
+                'bindto' => \Perry\Setup::$BIND_TO_IP
+            )
         );
 
         $context = stream_context_create($opts);
