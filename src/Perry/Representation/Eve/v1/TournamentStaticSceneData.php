@@ -53,7 +53,7 @@ class TournamentStaticSceneData extends Base
             $ship->character = new Reference($ship->character, "vnd.ccp.eve.Character-v1");
 
             foreach ($ship->turrets as $tkey => $turret) {
-                $ship->turrets[$tkey]= new Reference($turret, "Dear CCP please document this representation");
+                $ship->turrets[$tkey] = new Reference($turret, "Dear CCP please document this representation");
             }
             $this->ships[] = $ship;
         }

@@ -16,7 +16,6 @@ class TournamentMatch extends Base
     public $firstReplayFrame;
     public $lastReplayFrame;
 
-
     public function setWinner($winner)
     {
         $this->winner = new Reference($winner, "vnd.ccp.eve.TournamentTeam-v1");

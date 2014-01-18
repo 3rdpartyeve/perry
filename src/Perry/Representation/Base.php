@@ -38,6 +38,7 @@ class Base
         if (isset($this->_members[$key])) {
             return $this->_members[$key];
         }
+
         // return null (could do exception here, but that wouldn't cover for optionals
         return null;
     }
@@ -49,6 +50,7 @@ class Base
              * @var Interfaces\CanRefer $reference
              */
             $reference = $this->{$method};
+
             return $reference->call($args);
         } else {
             throw new \Exception("$method does not exist with this object");
@@ -61,7 +63,7 @@ class Base
             'http' => array(
                 'method' => "GET",
                 'header' => "Accept-language: en\r\n".
-                "Accept: application/$representation+json\r\n",
+                    "Accept: application/$representation+json\r\n",
             ),
         );
 
@@ -76,8 +78,9 @@ class Base
             if (false === $headers) {
                 throw new \Exception("could not connect to api");
             }
-            throw new \Exception("an error occured with the http request: " . $headers[0]);
+            throw new \Exception("an error occured with the http request: ".$headers[0]);
         }
+
         return $data;
     }
 }

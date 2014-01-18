@@ -16,6 +16,7 @@ class Reference extends Base implements CanRefer
 
     /**
      * call method, allows references to be called
+     *
      * @param array $args
      * @return mixed
      * @throws \Exception
@@ -49,6 +50,7 @@ class Reference extends Base implements CanRefer
             default:
                 throw new \Exception("wtf, what representation is this?".$this->_referedType);
         }
+
         return new $classname($this->doGetRequest($this->href, $this->_referedType));
     }
 

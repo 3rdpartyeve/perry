@@ -14,7 +14,6 @@ class Server extends Base
         $this->ServerStatus = new Reference($ref, "net.3rdpartyeve.thora.server.ServerStatus-v1");
     }
 
-
     /**
      * @var Reference
      */
