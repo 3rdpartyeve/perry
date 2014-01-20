@@ -14,8 +14,8 @@ class Killmail extends Base
     /**
      * get an instance for a specific killmail id+hash combination
      *
-     * @param  int      $killid
-     * @param  string   $hash
+     * @param  int $killid
+     * @param  string $hash
      * @return Killmail
      */
     public static function getInstanceByKillAndHash($killid, $hash)
@@ -28,11 +28,17 @@ class Killmail extends Base
         );
     }
 
+    /**
+     * @param array|object $solarSystem
+     */
     public function setSolarSystem($solarSystem)
     {
         $this->solarSystem = new Reference($solarSystem, "Dear CCP please document this representation");
     }
 
+    /**
+     * @param array|object $attackers
+     */
     public function setAttackers($attackers)
     {
         foreach ($attackers as $attacker) {
@@ -40,6 +46,9 @@ class Killmail extends Base
         }
     }
 
+    /**
+     * @param array|object $victim
+     */
     public function setVictim($victim)
     {
         if (isset($victim->character)) {
@@ -63,11 +72,18 @@ class Killmail extends Base
         $this->victim = $victim;
     }
 
+    /**
+     * @param array|object $moon
+     */
     public function setMoon($moon)
     {
         $this->moon = new Reference($moon, "Dear CCP please document this representation");
     }
 
+    /**
+     * @param array|object $items
+     * @return array
+     */
     private function parseItems($items)
     {
         $returnItems = array();

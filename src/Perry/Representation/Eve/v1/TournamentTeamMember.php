@@ -9,11 +9,17 @@ class TournamentTeamMember extends Base
 
     public $alliance;
 
+    /**
+     * @param array|object $self
+     */
     public function setSelf($self)
     {
         $this->self = new Reference($self, "vnd.ccp.eve.TournamentTeamMember-v1");
     }
 
+    /**
+     * @param array|object $alliance
+     */
     public function setAlliance($alliance)
     {
         $this->alliance = new Reference($alliance, "Dear CCP please document this representation");

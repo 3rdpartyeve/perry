@@ -11,21 +11,33 @@ class TournamentPilotTournamentStats extends Base
     public $matchesParticipatedIn = array();
     public $recentShips = array();
 
+    /**
+     * @param array|object $alliance
+     */
     public function setAlliance($alliance)
     {
         $this->alliance = new Reference($alliance, "Dear CCP please document this representation");
     }
 
+    /**
+     * @param array|object $corporation
+     */
     public function setCorporation($corporation)
     {
         $this->corporation = new Reference($corporation, "vnd.ccp.eve.Corporation-v1");
     }
 
+    /**
+     * @param array|object $character
+     */
     public function setCharacter($character)
     {
         $this->character = new Reference($character, "vnd.ccp.eve.Character-v1");
     }
 
+    /**
+     * @param array|object $matchesParticipatedIn
+     */
     public function setMatchesParticipatedIn($matchesParticipatedIn)
     {
         foreach ($matchesParticipatedIn as $matchParticipatedIn) {
@@ -33,6 +45,9 @@ class TournamentPilotTournamentStats extends Base
         }
     }
 
+    /**
+     * @param array|object $recentShips
+     */
     public function setRecentShips($recentShips)
     {
         foreach ($recentShips as $recentShip) {
