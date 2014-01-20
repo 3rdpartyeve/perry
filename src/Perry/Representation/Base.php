@@ -57,6 +57,9 @@ class Base
         }
     }
 
+    /**
+     * @param string $representation
+     */
     protected static function doGetRequest($url, $representation)
     {
         $opts = array(
