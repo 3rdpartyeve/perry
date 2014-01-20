@@ -22,7 +22,7 @@ class Killmail extends Base
     {
         return new Killmail(
             self::doGetRequest(
-                Setup::$CREST_URL.'/killmail/'.$killid.'/'.$hash.'/',
+                Setup::$crestUrl.'/killmail/'.$killid.'/'.$hash.'/',
                 "vnd.ccp.eve.TournamentCollection-v1"
             )
         );

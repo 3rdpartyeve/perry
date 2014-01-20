@@ -82,7 +82,7 @@ class Base
                     "Accept: application/$representation+json\r\n",
             ),
             'socket' => array(
-                'bindto' => \Perry\Setup::$BIND_TO_IP
+                'bindto' => \Perry\Setup::$bindToIp
             )
         );
 

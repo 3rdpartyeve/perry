@@ -4,17 +4,26 @@ namespace Perry\Representation\Eve\v1;
 use Perry\Representation\Base;
 use Perry\Representation\Interfaces\CanRefer;
 
+/**
+ * Class Reference
+ * @property string href
+ * @package Perry\Representation\Eve\v1
+ */
 class Reference extends Base implements CanRefer
 {
-    protected $_referedType;
+    /**
+     * @var string
+     */
+    protected $perryReferredType;
 
     /**
+     * @param array|null|object|string $inputData
      * @param string $referTo
      */
     public function __construct($inputData, $referTo)
     {
         parent::__construct($inputData);
-        $this->_referedType = $referTo;
+        $this->perryReferredType = $referTo;
     }
 
     /**
@@ -26,8 +35,8 @@ class Reference extends Base implements CanRefer
      */
     public function call($args = array())
     {
-        $version = substr($this->_referedType, -2);
-        $representation = substr($this->_referedType, 0, -3);
+        $version = substr($this->perryReferredType, -2);
+        $representation = substr($this->perryReferredType, 0, -3);
 
         $apiType = substr($representation, 0, 7) == "vnd.ccp" ? "Eve" : "OldApi";
 
@@ -51,10 +60,10 @@ class Reference extends Base implements CanRefer
                 }
                 break;
             default:
-                throw new \Exception("wtf, what representation is this?".$this->_referedType);
+                throw new \Exception("wtf, what representation is this?".$this->perryReferredType);
         }
 
-        return new $classname($this->doGetRequest($this->href, $this->_referedType));
+        return new $classname($this->doGetRequest($this->href, $this->perryReferredType));
     }
 
     /**

@@ -29,7 +29,7 @@ class TournamentCollection extends Base
     public static function getInstance()
     {
         return new TournamentCollection(
-            self::doGetRequest(Setup::$CREST_URL.'/tournaments/', "vnd.ccp.eve.TournamentCollection-v1")
+            self::doGetRequest(Setup::$crestUrl.'/tournaments/', "vnd.ccp.eve.TournamentCollection-v1")
         );
     }
 }
