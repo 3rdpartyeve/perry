@@ -3,46 +3,56 @@ namespace Perry\Representation;
 
 class Base
 {
-    protected $_members = array();
+    protected $genericMembers = array();
 
     /**
-     * @param $data
+     * @param null|array $inputData
      * @throws \Exception
      */
-    public function __construct($data)
+    public function __construct($inputData)
     {
-        if (is_null($data)) {
+        if (is_null($inputData)) {
             throw new \Exception("got NULL in Base Construtor");
         }
-        if (!is_array($data) && !is_object($data)) {
-            $data = json_decode($data, false);
+        if (!is_array($inputData) && !is_object($inputData)) {
+            $inputData = json_decode($inputData, false);
         }
 
-        if (is_object($data)) {
-            $data = get_object_vars($data);
+        if (is_object($inputData)) {
+            $inputData = get_object_vars($inputData);
         }
 
-        foreach ($data as $key => $value) {
+        foreach ($inputData as $key => $value) {
             $method = 'set'.ucfirst($key);
             // if there is a setter method for this call the setter
             if (method_exists($this, $method)) {
                 $this->{$method}($value);
             } else {
-                $this->_members[$key] = $value;
+                $this->genericMembers[$key] = $value;
             }
         }
     }
 
+    /**
+     * @param string $key
+     * @return mixed
+     */
     public function __get($key)
     {
-        if (isset($this->_members[$key])) {
-            return $this->_members[$key];
+        if (isset($this->genericMembers[$key])) {
+            return $this->genericMembers[$key];
         }
 
         // return null (could do exception here, but that wouldn't cover for optionals
         return null;
     }
 
+    /**
+     * @param string $method
+     * @param array $args
+     * @return mixed
+     * @throws \Exception
+     */
     public function __call($method, $args)
     {
         if (isset($this->{$method}) && $this->{$method} instanceof Interfaces\CanRefer) {
@@ -58,7 +68,10 @@ class Base
     }
 
     /**
+     * @param string $url
      * @param string $representation
+     * @throws \Exception
+     * @return string
      */
     protected static function doGetRequest($url, $representation)
     {

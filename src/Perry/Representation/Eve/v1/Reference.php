@@ -11,9 +11,9 @@ class Reference extends Base implements CanRefer
     /**
      * @param string $referTo
      */
-    public function __construct($data, $referTo)
+    public function __construct($inputData, $referTo)
     {
-        parent::__construct($data);
+        parent::__construct($inputData);
         $this->_referedType = $referTo;
     }
 
