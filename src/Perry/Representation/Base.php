@@ -35,7 +35,7 @@ class Base
 
     /**
      * @param string $key
-     * @return mixed
+     * @return \Perry\Representation\Base|string|integer|float
      */
     public function __get($key)
     {
@@ -50,7 +50,7 @@ class Base
     /**
      * @param string $method
      * @param array $args
-     * @return mixed
+     * @return \Perry\Representation\Base
      * @throws \Exception
      */
     public function __call($method, $args)
