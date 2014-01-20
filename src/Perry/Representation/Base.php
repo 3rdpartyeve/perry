@@ -6,7 +6,7 @@ class Base
     protected $genericMembers = array();
 
     /**
-     * @param null|mixed[] $inputData
+     * @param null|array|object|string $inputData
      * @throws \Exception
      */
     public function __construct($inputData)
