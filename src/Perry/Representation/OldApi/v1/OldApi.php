@@ -16,7 +16,7 @@ class OldApi extends Base
     }
 
     /**
-     * @param array
+     * @param array $account
      */
     public function setAccount($account)
     {
@@ -32,7 +32,7 @@ class OldApi extends Base
     }
 
     /**
-     * @param array
+     * @param array $corporation
      */
     public function setCorporation($corporation)
     {
