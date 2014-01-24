@@ -36,7 +36,7 @@ class Base
         switch (true) {
             case is_null($inputData):
                 throw new \Exception("got NULL in Base Construtor");
-            case !is_array($inputData) && !is_object(($inputData)):
+            case is_string($inputData):
                 $inputData = json_decode($inputData);
                 break;
             case is_object($inputData):
