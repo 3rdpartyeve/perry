@@ -31,8 +31,8 @@ class Base
      * @throws \Exception
      * @returns array
      */
-    private function cleanInputData($inputData) {
-
+    private function cleanInputData($inputData)
+    {
         switch (true) {
             case is_null($inputData):
                 throw new \Exception("got NULL in Base Construtor");
