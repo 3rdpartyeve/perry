@@ -22,6 +22,10 @@ class Base
             $inputData = get_object_vars($inputData);
         }
 
+        if (!is_array($inputData)) {
+            throw new \Exception("$inputData is not an array, and therefor can't be traversed");
+        }
+
         foreach ($inputData as $key => $value) {
             $method = 'set'.ucfirst($key);
             // if there is a setter method for this call the setter
