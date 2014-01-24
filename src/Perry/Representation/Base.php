@@ -1,6 +1,8 @@
 <?php
 namespace Perry\Representation;
 
+use Perry\Setup;
+
 class Base
 {
     protected $genericMembers = array();
@@ -93,28 +95,7 @@ class Base
      */
     protected static function doGetRequest($url, $representation)
     {
-        $opts = array(
-            'http' => array(
-                'method' => "GET",
-                'header' => "Accept-language: en\r\n".
-                    "Accept: application/$representation+json\r\n",
-            ),
-            'socket' => array(
-                'bindto' => \Perry\Setup::$bindToIp
-            )
-        );
-
-        $context = stream_context_create($opts);
-
-        if (false === ($data = @file_get_contents($url, false, $context))) {
-
-            if (false === $headers = (@get_headers($url, 1))) {
-                throw new \Exception("could not connect to api");
-            }
-
-            throw new \Exception("an error occured with the http request: ".$headers[0]);
-        }
-
-        return $data;
+        // use configured fetcher`
+        return Setup::getInstance()->fetcher->doGetRequest($url, $representation);
     }
 }
