@@ -9,3 +9,4 @@ build/phpdox/
 build/logs/
 build/pdepend/
 cache.properties
+atlassian-ide-plugin.xml

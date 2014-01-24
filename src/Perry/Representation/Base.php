@@ -27,7 +27,7 @@ class Base
     /**
      * clean input data
      *
-     * @param array|object|null $inputData
+     * @param array|object|null|string` $inputData
      * @throws \Exception
      * @returns array
      */
@@ -36,8 +36,7 @@ class Base
         switch (true) {
             case is_null($inputData):
                 throw new \Exception("got NULL in Base Construtor");
-                break;
-            case !is_array($inputData) && !is_object(($inputData));
+            case !is_array($inputData) && !is_object(($inputData)):
                 $inputData = json_decode($inputData);
                 break;
             case is_object($inputData):
@@ -46,8 +45,8 @@ class Base
             default:
         }
 
-        if (!is_array($inputData)) {
-            throw new \Exception("$inputData is not an array, and therefor can't be traversed");
+        if (!is_array($inputData) && !is_object($inputData)) {
+            throw new \Exception("inputData is not an array, and therefor can't be traversed");
         }
 
         return $inputData;
