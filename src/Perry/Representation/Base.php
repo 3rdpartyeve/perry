@@ -106,15 +106,12 @@ class Base
 
         $context = stream_context_create($opts);
 
-        // error suppresion since warnings / errors can not be prevented (stupid php)
-        $data = @file_get_contents($url, false, $context);
-        if (false === $data) {
+        if (false === ($data = @file_get_contents($url, false, $context))) {
 
-            // this will make a secondary request!
-            $headers = @get_headers($url, 1);
-            if (false === $headers) {
+            if (false === $headers = (@get_headers($url, 1))) {
                 throw new \Exception("could not connect to api");
             }
+
             throw new \Exception("an error occured with the http request: ".$headers[0]);
         }
 
