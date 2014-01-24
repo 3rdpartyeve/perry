@@ -54,7 +54,7 @@ class Base
 
     /**
      * @param string $key
-     * @return \Perry\Representation\Base|string|integer|float
+     * @return \Perry\Representation\Base|string|integer|float|null
      */
     public function __get($key)
     {
@@ -62,7 +62,6 @@ class Base
             return $this->genericMembers[$key];
         }
 
-        // return null (could do exception here, but that wouldn't cover for optionals
         return null;
     }
 
