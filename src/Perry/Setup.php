@@ -28,7 +28,8 @@ class Setup
     /**
      * private constructor (singleton, creates defaults)
      */
-    private function __construct() {
+    private function __construct()
+    {
         $this->fetcher = new Fetcher\FileFetcher();
     }
 
