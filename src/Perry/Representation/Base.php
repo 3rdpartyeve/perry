@@ -27,7 +27,7 @@ class Base
     /**
      * clean input data
      *
-     * @param array|object|null|string` $inputData
+     * @param array|object|null|string $inputData
      * @throws \Exception
      * @returns array
      */
