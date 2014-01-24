@@ -11,20 +11,7 @@ class Base
      */
     public function __construct($inputData)
     {
-        if (is_null($inputData)) {
-            throw new \Exception("got NULL in Base Construtor");
-        }
-        if (!is_array($inputData) && !is_object($inputData)) {
-            $inputData = json_decode($inputData, false);
-        }
-
-        if (is_object($inputData)) {
-            $inputData = get_object_vars($inputData);
-        }
-
-        if (!is_array($inputData)) {
-            throw new \Exception("$inputData is not an array, and therefor can't be traversed");
-        }
+        $inputData = $this->cleanInputData($inputData);
 
         foreach ($inputData as $key => $value) {
             $method = 'set'.ucfirst($key);
@@ -35,6 +22,35 @@ class Base
                 $this->genericMembers[$key] = $value;
             }
         }
+    }
+
+    /**
+     * clean input data
+     *
+     * @param array|object|null $inputData
+     * @throws \Exception
+     * @returns array
+     */
+    private function cleanInputData($inputData) {
+
+        switch (true) {
+            case is_null($inputData):
+                throw new \Exception("got NULL in Base Construtor");
+                break;
+            case !is_array($inputData) && !is_object(($inputData));
+                $inputData = json_decode($inputData);
+                break;
+            case is_object($inputData):
+                $inputData = get_object_vars($inputData);
+                break;
+            default:
+        }
+
+        if (!is_array($inputData)) {
+            throw new \Exception("$inputData is not an array, and therefor can't be traversed");
+        }
+
+        return $inputData;
     }
 
     /**
