@@ -1,6 +1,6 @@
 # Perry
-[![Latest Stable Version](https://poser.pugx.org/3rdpartyeve/perry/v/stable.png)](https://packagist.org/packages/3rdpartyeve/phealng)
-[![Total Downloads](https://poser.pugx.org/3rdpartyeve/perry/downloads.png)](https://packagist.org/packages/3rdpartyeve/phealng)
+[![Latest Stable Version](https://poser.pugx.org/3rdpartyeve/perry/v/stable.png)](https://packagist.org/packages/3rdpartyeve/perry)
+[![Total Downloads](https://poser.pugx.org/3rdpartyeve/perry/downloads.png)](https://packagist.org/packages/3rdpartyeve/perry)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/3rdpartyeve/perry/badges/quality-score.png?s=aba3d207e2697ef3c25f3617f0741c69cfa29386)](https://scrutinizer-ci.com/g/3rdpartyeve/perry/)
 a PHP Library for accessing EVE Online's CREST API
 
