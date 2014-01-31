@@ -96,7 +96,7 @@ class Base
      * @param string $url
      * @param string $representation
      * @throws \Exception
-     * @return string
+     * @return \Perry\Response
      */
     protected static function doGetRequest($url, $representation)
     {

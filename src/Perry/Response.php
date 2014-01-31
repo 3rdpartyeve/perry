@@ -13,6 +13,10 @@ class Response
      */
     public $representation;
 
+    /**
+     * @param string $data
+     * @param string $representation
+     */
     public function __construct($data, $representation)
     {
         $this->data = $data;

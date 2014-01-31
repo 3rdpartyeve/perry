@@ -4,7 +4,7 @@ namespace Perry;
 class Perry
 {
     /**
-     * @param $url
+     * @param string $url
      * @param null $representation
      * @return \Perry\Representation\Base
      */

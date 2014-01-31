@@ -7,7 +7,7 @@ class Tool
     /**
      * Parse a content-type header to a representation name
      *
-     * @param $contentType
+     * @param string $contentType
      * @return bool
      */
     public static function parseContentTypeToRepresentation($contentType)
