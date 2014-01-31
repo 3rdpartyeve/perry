@@ -49,7 +49,7 @@ please go to http://getcomposer.org/ and read up on it. Composer is a great syst
 are serious about PHP development you should know it.
 
 add either (releases)
-- "3rdpartyeve/perry": "0.1.*"
+- "3rdpartyeve/perry": "0.2.*"
 or (dev-master, changing source)
 - "3rdpartyeve/perry": "dev-master"
 to your composer.json
