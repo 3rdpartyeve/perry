@@ -6,7 +6,7 @@ interface CanFetch
     /**
      * @param string $url
      * @param string $representation
-     * @return string
+     * @return \Perry\Response
      */
     public function doGetRequest($url, $representation);
 }

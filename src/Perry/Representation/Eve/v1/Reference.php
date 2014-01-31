@@ -3,6 +3,7 @@ namespace Perry\Representation\Eve\v1;
 
 use Perry\Representation\Base;
 use Perry\Representation\Interfaces\CanRefer;
+use Perry\Tool;
 
 /**
  * Class Reference
@@ -35,34 +36,7 @@ class Reference extends Base implements CanRefer
      */
     public function call($args = array())
     {
-        $version = substr($this->perryReferredType, -2);
-        $representation = substr($this->perryReferredType, 0, -3);
-
-        $apiType = substr($representation, 0, 7) == "vnd.ccp" ? "Eve" : "OldApi";
-
-        switch ($apiType) {
-            case "Eve":
-                $data = explode(".", $representation);
-                array_shift($data);
-                array_shift($data);
-                array_shift($data);
-                $classname = '\Perry\Representation\Eve\\'.$version.'\\'.$data[0];
-                break;
-            case "OldApi":
-                $data = explode(".", $representation);
-                array_shift($data);
-                array_shift($data);
-                array_shift($data);
-
-                $classname = '\Perry\Representation\OldApi\\'.$version.'\\'.$data[0];
-                if (count($data) > 1) {
-                    $classname .= '\\'.$data[1];
-                }
-                break;
-            default:
-                throw new \Exception("wtf, what representation is this?".$this->perryReferredType);
-        }
-
+        $classname = Tool::parseRepresentationToClass($this->perryReferredType);
         return new $classname($this->doGetRequest($this->href, $this->perryReferredType));
     }
 

@@ -35,7 +35,11 @@ class Base
      */
     private function cleanInputData($inputData)
     {
+
         switch (true) {
+            case $inputData instanceof \Perry\Response:
+                $inputData = json_decode((string) $inputData);
+                break;
             case is_null($inputData):
                 throw new \Exception("got NULL in Base Construtor");
             case is_string($inputData):
@@ -83,6 +87,7 @@ class Base
 
             return $reference->call($args);
         } else {
+            var_dump($this);
             throw new \Exception("$method does not exist with this object");
         }
     }
@@ -95,7 +100,7 @@ class Base
      */
     protected static function doGetRequest($url, $representation)
     {
-        // use configured fetcher`
+        // use configured fetcher
         return Setup::getInstance()->fetcher->doGetRequest($url, $representation);
     }
 }
