@@ -93,6 +93,16 @@ class Base
     }
 
     /**
+     * Magic isset method, to ensure keys are found
+     * @param string $key
+     * @return bool
+     */
+    public function __isset($key)
+    {
+        return isset($this->genericMembers[$key]);
+    }
+
+    /**
      * @param string $url
      * @param string $representation
      * @throws \Exception
