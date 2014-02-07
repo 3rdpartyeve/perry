@@ -19,6 +19,6 @@
         "issues": "https://github.com/3rdpartyeve/perry/issues"
     },
     "autoload": {
-        "psr-4": { "Perry": "src/Perry/" }
+        "psr-4": { "Perry\\": "src/Perry/" }
     }
 }
