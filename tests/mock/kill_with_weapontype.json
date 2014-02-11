@@ -1,0 +1,98 @@
+{"solarSystem": {
+    "id_str": "30002659",
+    "href": "http://public-crest.eveonline.com/solarsystems/30002659/",
+    "id": 30002659,
+    "name": "Dodixie"
+}, "killID": 34940735, "killTime": "2013.12.02 18:40:00", "attackers": [
+    {
+        "alliance": {
+            "id_str": "1680888152",
+            "href": "http://public-crest.eveonline.com/alliances/1680888152/",
+            "id": 1680888152,
+            "name": "The Marmite Collective",
+            "icon": {
+                "href": "http://images.cdn1.eveonline.com/Alliance/1680888152_128.jpg"
+            }
+        },
+        "shipType": {
+            "id_str": "626",
+            "href": "http://public-crest.eveonline.com/types/626/",
+            "id": 626,
+            "name": "Vexor",
+            "icon": {
+                "href": "http://images.cdn1.eveonline.com/Type/626_64.png"
+            }
+        },
+        "corporation": {
+            "id_str": "98123507",
+            "href": "http://public-crest.eveonline.com/corporations/98123507/",
+            "id": 98123507,
+            "name": "EVE Corporation 987654321-POP",
+            "icon": {
+                "href": "http://images.cdn1.eveonline.com/Corporation/98123507_128.jpg"
+            }
+        },
+        "character": {
+            "id_str": "895203114",
+            "href": "http://public-crest.eveonline.com/characters/895203114/",
+            "id": 895203114,
+            "name": "Psyk",
+            "icon": {
+                "href": "http://images.cdn1.eveonline.com/Character/895203114_128.jpg"
+            }
+        },
+        "damageDone_str": "47704",
+        "weaponType": {
+            "id_str": "2185",
+            "href": "http://public-crest.eveonline.com/types/2185/",
+            "id": 2185,
+            "name": "Hammerhead II",
+            "icon": {
+                "href": "http://images.cdn1.eveonline.com/Type/2185_64.png"
+            }
+        },
+        "finalBlow": true,
+        "securityStatus": 3.7,
+        "damageDone": 47704
+    }
+], "attackerCount": 1, "victim": {
+    "alliance": {
+        "id_str": "99002164",
+        "href": "http://public-crest.eveonline.com/alliances/99002164/",
+        "id": 99002164,
+        "name": "Free 2 Play",
+        "icon": {
+            "href": "http://images.cdn1.eveonline.com/Alliance/99002164_128.jpg"
+        }
+    },
+    "damageTaken": 47704,
+    "items": [],
+    "damageTaken_str": "47704",
+    "character": {
+        "id_str": "179004085",
+        "href": "http://public-crest.eveonline.com/characters/179004085/",
+        "id": 179004085,
+        "name": "Peter Powers",
+        "icon": {
+            "href": "http://images.cdn1.eveonline.com/Character/179004085_128.jpg"
+        }
+    },
+    "shipType": {
+        "id_str": "33475",
+        "href": "http://public-crest.eveonline.com/types/33475/",
+        "id": 33475,
+        "name": "Mobile Tractor Unit",
+        "icon": {
+            "href": "http://images.cdn1.eveonline.com/Type/33475_64.png"
+        }
+    },
+    "corporation": {
+        "id_str": "1664427021",
+        "href": "http://public-crest.eveonline.com/corporations/1664427021/",
+        "id": 1664427021,
+        "name": "Terrorists of Dimensions",
+        "icon": {
+            "href": "http://images.cdn1.eveonline.com/Corporation/1664427021_128.jpg"
+        }
+    }
+}, "killID_str": "34940735", "attackerCount_str": "1"}

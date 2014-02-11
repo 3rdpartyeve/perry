@@ -6,6 +6,7 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
 
     private $killmail;
     private $killmail_with_moon;
+    private $killmail_with_weapontype;
 
     protected function setUp()
     {
@@ -15,6 +16,10 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
 
         $this->killmail_with_moon = new Killmail(
             file_get_contents(__DIR__ . '/../../../../mock/kill_with_moon.json')
+        );
+
+        $this->killmail_with_weapontype = new Killmail(
+            file_get_contents(__DIR__ . '/../../../../mock/kill_with_weapontype.json')
         );
     }
 
@@ -130,6 +135,12 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(40211968, $moon->id);
         $this->assertEquals('40211968', $moon->id_str);
         $this->assertEquals('KFR-ZE V - Moon 4', $moon->name);
+    }
+
+    public function testWeaponType()
+    {
+        $this->assertEquals(2185, $this->killmail_with_weapontype->attackers[0]->weaponType->id);
+        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail_with_weapontype->attackers[0]->weaponType);
     }
 
 }

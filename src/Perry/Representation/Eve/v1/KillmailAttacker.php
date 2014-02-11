@@ -10,6 +10,7 @@ class KillmailAttacker extends Base
     public $corporation;
     public $alliance;
     public $faction;
+    public $weaponType;
 
     /**
      * @param array|object $character
@@ -33,6 +34,14 @@ class KillmailAttacker extends Base
     public function setShipType($shipType)
     {
         $this->shipType = new Reference($shipType, "Dear CCP please document this representation");
+    }
+
+    /**
+     * @param array|object $weaponType
+     */
+    public function setWeaponType($weaponType)
+    {
+        $this->weaponType = new Reference($weaponType, "Dear CCP please document this representation");
     }
 
     /**
