@@ -57,8 +57,66 @@ or (dev-master, changing source)
 to your composer.json
 
 
-### Usage
-This is an example which assumes composer has been used to install the package:
+### Usage Examples
+here are a few examples, based on composer having been used to install perry
+
+#### Killmail
+```php
+<?php
+// lets set an url here for this example
+$url = "http://public-crest.eveonline.com/killmails/34940735/32a1ed47430a4bf247d0544b399014067a734994/";
+
+// require composers autoload.php
+require_once 'vendor/autoload.php';
+
+// import the Perry class, alternatively you can allways use the full qualified name)
+use Perry\Perry;
+
+
+// since we have a use import on Perry\Perry, we can just use the classname here, otherwise
+// it would be $killmail = \Perry\Perry::fromUrl($url);
+$killmail = Perry::fromUrl($url);
+
+// now there should be either an exception throw (in RL you want to catch those) or
+// $killmail will contain a killmail. You can now access the values of the document
+// quite easy.
+
+// check if the victim has a character (not the cases for poses for example)
+if (isset($killmail->victim->character)) {
+    $killstring = sprintf(
+        '%s of %s lost a %s to ',
+        $killmail->victim->character->name,     // since we do have a character we can use its name
+        $killmail->victim->corporation->name,   // victims allways have a corporation
+        $killmail->victim->shipType->name       // the shiptype is what was actually lost
+    );
+} else {
+    $killstring = sprintf(
+        '%s lost by %s to ',
+        $killmail->victim->shipType->name,
+        $killmail->victim->corporation->name
+    );
+}
+
+// attackers is a list of KillmailAttacker Objects.
+$attackers = array();
+foreach ($killmail->attackers as $attacker) {
+    // like the victim there might not be a character with the attacker (sentry guns?)
+    $attackers[] = isset($attacker->character) ? $attacker->character->name : $attacker->corporation->name;
+}
+
+$killstring .= join(',', $attackers);
+
+echo $killstring;
+
+
+// for more examples on what data is available in killmails, look at a killmail json string. If in doubt, there are some
+// in tests/mock/kill*.json
+// the references (character for example) which would be called like $killmail->victim->character(), do not work,
+// since CCP has not opened those endpoints yet. :(
+```
+
+
+#### District
 ```php
 <?php
 // declare namespace of your script (optional, but recommended)
