@@ -21,7 +21,9 @@ Implemented:
 - https://forums.dust514.com/default.aspx?g=posts&t=103783 (districts have alot of references which dont resolve yet, also for some of those references i made guessing on what exactly they might refer to, so even when those are published there might be some extra work needed)
 - https://forums.eveonline.com/default.aspx?g=posts&t=257854
 - https://forums.eveonline.com/default.aspx?g=posts&m=3393341#post3393341 (Realtime Tournament Stuff)
-- Killmail API (soon to be published, no link yet)
+- Killmail API
+- https://forums.eveonline.com/default.aspx?g=posts&m=4303155 (Alliances, Incursions)
+
 Also you might find some files to access Thora, a Proxy for the old API,
 which is mostly not working yet, so don't use it.
 
@@ -51,7 +53,7 @@ please go to http://getcomposer.org/ and read up on it. Composer is a great syst
 are serious about PHP development you should know it.
 
 add either (releases)
-- "3rdpartyeve/perry": "0.2.*"
+- "3rdpartyeve/perry": "0.3.*"
 or (dev-master, changing source)
 - "3rdpartyeve/perry": "dev-master"
 to your composer.json
@@ -113,6 +115,7 @@ echo $killstring;
 // in tests/mock/kill*.json
 // the references (character for example) which would be called like $killmail->victim->character(), do not work,
 // since CCP has not opened those endpoints yet. :(
+// except: the alliance endpoint work (at the moment on SISI only, but they will go live soon)
 ```
 
 
