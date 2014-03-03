@@ -1,0 +1,461 @@
+{
+    "totalCount_str": "2931",
+    "pageCount": 12,
+    "items": [
+        {
+            "href": {
+                "id_str": "99000006",
+                "shortName": "666",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000006/",
+                "id": 99000006,
+                "name": "Everto Rex Regis"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000008",
+                "shortName": "PILS.",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000008/",
+                "id": 99000008,
+                "name": "People in Lousy Ships"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000020",
+                "shortName": "COTP",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000020/",
+                "id": 99000020,
+                "name": "Covenant of the Phoenix Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000025",
+                "shortName": "LE",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000025/",
+                "id": 99000025,
+                "name": "League of Entities"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000026",
+                "shortName": "HEL",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000026/",
+                "id": 99000026,
+                "name": "Hell's Echo"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000028",
+                "shortName": "WHO",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000028/",
+                "id": 99000028,
+                "name": "Irrelevant."
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000029",
+                "shortName": "PAN1C",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000029/",
+                "id": 99000029,
+                "name": "Pandorum Invictus"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000031",
+                "shortName": "MOFO",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000031/",
+                "id": 99000031,
+                "name": "Masters of Flying Objects"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000036",
+                "shortName": "HHE",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000036/",
+                "id": 99000036,
+                "name": "Hellhound Empire"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000038",
+                "shortName": "A.M.F",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000038/",
+                "id": 99000038,
+                "name": "A.M.F. Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000043",
+                "shortName": "ISPA",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000043/",
+                "id": 99000043,
+                "name": "Infinite Space Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000047",
+                "shortName": "S1.",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000047/",
+                "id": 99000047,
+                "name": "Split Infinity."
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000048",
+                "shortName": "NOWR",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000048/",
+                "id": 99000048,
+                "name": "Nap or War"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000050",
+                "shortName": "C0CA",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000050/",
+                "id": 99000050,
+                "name": "Conquerors of Coffee"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000051",
+                "shortName": "TOOTH",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000051/",
+                "id": 99000051,
+                "name": "Toothpic Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000052",
+                "shortName": "THD",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000052/",
+                "id": 99000052,
+                "name": "The Heaven's Devils"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000053",
+                "shortName": "ORDO",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000053/",
+                "id": 99000053,
+                "name": "Ordo Oculus"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000054",
+                "shortName": "PRMTR",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000054/",
+                "id": 99000054,
+                "name": "Permanent Transience"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000063",
+                "shortName": "BEST",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000063/",
+                "id": 99000063,
+                "name": "Best Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000064",
+                "shortName": "FGE",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000064/",
+                "id": 99000064,
+                "name": "FIRST GALACTIC EMPIRE"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000065",
+                "shortName": "TARU",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000065/",
+                "id": 99000065,
+                "name": "Tarukai Imperium"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000068",
+                "shortName": "LUXUS",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000068/",
+                "id": 99000068,
+                "name": "LUX aRe us"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000069",
+                "shortName": "FF.A",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000069/",
+                "id": 99000069,
+                "name": "Feindflug Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000073",
+                "shortName": "U C",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000073/",
+                "id": 99000073,
+                "name": "Universal Cosmonautics"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000075",
+                "shortName": "-DME-",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000075/",
+                "id": 99000075,
+                "name": "Deus Malus"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000076",
+                "shortName": "YUM",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000076/",
+                "id": 99000076,
+                "name": "Team America World Police"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000078",
+                "shortName": "S-A-F",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000078/",
+                "id": 99000078,
+                "name": "Solar Assault Fleet"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000083",
+                "shortName": "I-SEN",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000083/",
+                "id": 99000083,
+                "name": "The Imperial Senate"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000090",
+                "shortName": "SCTRY",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000090/",
+                "id": 99000090,
+                "name": "Sanctuary Pact"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000093",
+                "shortName": "TOC",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000093/",
+                "id": 99000093,
+                "name": "The Evolution of Chaos"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000097",
+                "shortName": "KSK",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000097/",
+                "id": 99000097,
+                "name": "KasKade."
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000100",
+                "shortName": "DIE",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000100/",
+                "id": 99000100,
+                "name": "Detrimental Imperative"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000101",
+                "shortName": "-SRN-",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000101/",
+                "id": 99000101,
+                "name": "Serenity."
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000102",
+                "shortName": "YF",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000102/",
+                "id": 99000102,
+                "name": "Yulai Federation"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000103",
+                "shortName": "SPEED",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000103/",
+                "id": 99000103,
+                "name": "Terminal Ferocity"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000104",
+                "shortName": "-ASA-",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000104/",
+                "id": 99000104,
+                "name": "Achilles Syndicate Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000106",
+                "shortName": "HORN",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000106/",
+                "id": 99000106,
+                "name": "Ninja Unicorns with Huge Horns"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000107",
+                "shortName": "M1NNY",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000107/",
+                "id": 99000107,
+                "name": "The Midget Mafia"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000110",
+                "shortName": "ACME",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000110/",
+                "id": 99000110,
+                "name": "Advanced Combine of Miners and Explorers"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000111",
+                "shortName": "HFA",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000111/",
+                "id": 99000111,
+                "name": "Hephaestus Forge Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000112",
+                "shortName": "FC0RD",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000112/",
+                "id": 99000112,
+                "name": "Fleet Coordination Coalition"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000116",
+                "shortName": "FERG",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000116/",
+                "id": 99000116,
+                "name": "Ferguson Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000118",
+                "shortName": "TFD.",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000118/",
+                "id": 99000118,
+                "name": "Tactical Operation Fleet Delta"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000120",
+                "shortName": "ARSON",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000120/",
+                "id": 99000120,
+                "name": "Arson Industries"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000122",
+                "shortName": "CAMEL",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000122/",
+                "id": 99000122,
+                "name": "Combat Mining and Logistics"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000127",
+                "shortName": "NO-GO",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000127/",
+                "id": 99000127,
+                "name": "NE CEDE MALIS."
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000129",
+                "shortName": "KAWA",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000129/",
+                "id": 99000129,
+                "name": "Allianz Kaltes Wasser"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000130",
+                "shortName": "CYNO",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000130/",
+                "id": 99000130,
+                "name": "Drop the Hammer"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000133",
+                "shortName": "NHUSA",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000133/",
+                "id": 99000133,
+                "name": "BLack OPs Alliance"
+            }
+        },
+        {
+            "href": {
+                "id_str": "99000136",
+                "shortName": "INS",
+                "href": "http://public-crest-sisi.testeveonline.com/alliances/99000136/",
+                "id": 99000136,
+                "name": "Innectis Syndicate"
+            }
+        }
+    ],
+    "next": {
+        "href": "http://public-crest-sisi.testeveonline.com/alliances/?page=2"
+    },
+    "totalCount": 2931,
+    "pageCount_str": "12"
+}

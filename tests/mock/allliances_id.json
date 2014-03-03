@@ -1,0 +1,74 @@
+{
+    "startDate": "2010-11-26T16:40:00",
+    "corporationsCount": 7,
+    "description": "<font size=\"12\" color=\"#bfffffff\">Русско-англо-язычный альянс, имеющий большую историю и дружелюбный коллектив. Средний возраст мемберов 27 лет. Проводим обучение новых игроков EVE-online.<br>--------------------------<br>Russian-English-language aliance, which has a long history and friendly team. The average age of the members of 27 years. Educate new players EVE-online.<br>--------------------------<br>Приветствуем всех русских англоязычных пилотов, желающих вступить в нашу дружную команду.<br>--------------------------<br>Welcome all English-language pilots wishing to join our friendly team.<br>--------------------------<br><br>Diplomats  ---   </font><font size=\"12\" color=\"#ffffa600\"><loc><a href=\"showinfo:1380//92008267\">Yorik Skor</a></loc></font><font size=\"12\" color=\"#bfffffff\"> , </font><font size=\"12\" color=\"#ffffa600\"><loc><a href=\"showinfo:1380//754741297\">Allsee</a></loc></font><font size=\"12\" color=\"#bfffffff\">, <br><br>Наш публичный рекрут-канал - R-RUS</font>",
+    "executorCorporation": {
+        "id_str": "1401289874",
+        "href": "http://public-crest-sisi.testeveonline.com/corporations/1401289874/",
+        "id": 1401289874,
+        "name": "Russian Cosmonautics"
+    },
+    "corporationsCount_str": "7",
+    "deleted": false,
+    "creatorCorporation": {
+        "id_str": "1401289874",
+        "href": "http://public-crest-sisi.testeveonline.com/corporations/1401289874/",
+        "id": 1401289874,
+        "name": "Russian Cosmonautics"
+    },
+    "url": "http://forum.darkspawn.net/",
+    "id_str": "99000073",
+    "creatorCharacter": {
+        "id_str": "1401289874",
+        "href": "http://public-crest-sisi.testeveonline.com/characters/857292405/",
+        "id": 1401289874,
+        "name": "Rousen"
+    },
+    "corporations": [
+        {
+            "id_str": "98002679",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98002679/",
+            "id": 98002679,
+            "name": "Russian Cosmonautics I"
+        },
+        {
+            "id_str": "98022266",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98022266/",
+            "id": 98022266,
+            "name": "Desperate Academy"
+        },
+        {
+            "id_str": "98130322",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98130322/",
+            "id": 98130322,
+            "name": "S.P.A.R.T.A Akadem"
+        },
+        {
+            "id_str": "98154315",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98154315/",
+            "id": 98154315,
+            "name": "Life kernel"
+        },
+        {
+            "id_str": "98264545",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98264545/",
+            "id": 98264545,
+            "name": "Dreamcasters Way"
+        },
+        {
+            "id_str": "98268363",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/98268363/",
+            "id": 98268363,
+            "name": "RUS Prime Academy"
+        },
+        {
+            "id_str": "1401289874",
+            "href": "http://public-crest-sisi.testeveonline.com/corporations/1401289874/",
+            "id": 1401289874,
+            "name": "Russian Cosmonautics"
+        }
+    ],
+    "shortName": "U C",
+    "id": 99000073,
+    "name": "Universal Cosmonautics"
+}

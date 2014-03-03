@@ -1,0 +1,110 @@
+{
+    "totalCount_str": "6",
+    "items": [
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Withdrawing",
+            "stagingSolarSystem": {
+                "id_str": "30003037",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30003037/",
+                "id": 30003037,
+                "name": "Quier"
+            },
+            "constellation": {
+                "id_str": "20000444",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000444/",
+                "id": 20000444,
+                "name": "Odilis"
+            }
+        },
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Withdrawing",
+            "stagingSolarSystem": {
+                "id_str": "30003384",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30003384/",
+                "id": 30003384,
+                "name": "Asgeir"
+            },
+            "constellation": {
+                "id_str": "20000493",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000493/",
+                "id": 20000493,
+                "name": "Lorundio"
+            }
+        },
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Mobilizing",
+            "stagingSolarSystem": {
+                "id_str": "30003823",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30003823/",
+                "id": 30003823,
+                "name": "Kenninck"
+            },
+            "constellation": {
+                "id_str": "20000558",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000558/",
+                "id": 20000558,
+                "name": "Ganoure"
+            }
+        },
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Mobilizing",
+            "stagingSolarSystem": {
+                "id_str": "30003881",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30003881/",
+                "id": 30003881,
+                "name": "Moniyyuku"
+            },
+            "constellation": {
+                "id_str": "20000566",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000566/",
+                "id": 20000566,
+                "name": "Amdimmah"
+            }
+        },
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Established",
+            "stagingSolarSystem": {
+                "id_str": "30004813",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30004813/",
+                "id": 30004813,
+                "name": "D-9UEV"
+            },
+            "constellation": {
+                "id_str": "20000704",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000704/",
+                "id": 20000704,
+                "name": "AU-S0B"
+            }
+        },
+        {
+            "influence": 0,
+            "hasBoss": false,
+            "state": "Established",
+            "stagingSolarSystem": {
+                "id_str": "30004925",
+                "href": "http://public-crest-sisi.testeveonline.com/solarsystems/30004925/",
+                "id": 30004925,
+                "name": "7-8EOE"
+            },
+            "constellation": {
+                "id_str": "20000720",
+                "href": "http://public-crest-sisi.testeveonline.com/constellations/20000720/",
+                "id": 20000720,
+                "name": "RL36-K"
+            }
+        }
+    ],
+    "pageCount": 1,
+    "pageCount_str": "1",
+    "totalCount": 6
+}
