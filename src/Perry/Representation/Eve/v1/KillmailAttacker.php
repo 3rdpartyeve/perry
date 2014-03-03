@@ -49,7 +49,7 @@ class KillmailAttacker extends Base
      */
     public function setAlliance($alliance)
     {
-        $this->alliance = new Reference($alliance, "Dear CCP please document this representation");
+        $this->alliance = new Reference($alliance,  "vnd.ccp.eve.Alliance-v1");
     }
 
     /**
@@ -57,6 +57,6 @@ class KillmailAttacker extends Base
      */
     public function setFaction($faction)
     {
-        $this->faction = new Reference($faction, "Dear CCP please document this representation");
+        $this->faction = new Reference($faction,  "vnd.ccp.eve.Alliance-v1");
     }
 }

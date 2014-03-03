@@ -22,6 +22,6 @@ class TournamentTeamMember extends Base
      */
     public function setAlliance($alliance)
     {
-        $this->alliance = new Reference($alliance, "Dear CCP please document this representation");
+        $this->alliance = new Reference($alliance,  "vnd.ccp.eve.Alliance-v1");
     }
 }

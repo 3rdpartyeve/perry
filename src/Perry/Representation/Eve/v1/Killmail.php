@@ -58,7 +58,7 @@ class Killmail extends Base
         $victim->corporation = new Reference($victim->corporation, "vnd.ccp.eve.Corporation-v1");
 
         if (isset($victim->alliance)) {
-            $victim->alliance = new Reference($victim->alliance, "Dear CCP please document this representation");
+            $victim->alliance = new Reference($victim->alliance,  "vnd.ccp.eve.Alliance-v1");
         }
 
         if (isset($victim->faction)) {
