@@ -34,7 +34,7 @@ class Alliances extends Base
     public function setItems($items)
     {
         foreach ($items as $item) {
-
+            $item =  new Base($item);
             $item->href = new Reference($item->href, "vnd.ccp.eve.Alliance-v1");
             $this->items[] = $item;
         }

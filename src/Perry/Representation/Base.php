@@ -87,7 +87,6 @@ class Base
 
             return $reference->call($args);
         } else {
-            var_dump($this);
             throw new \Exception("$method does not exist with this object");
         }
     }
