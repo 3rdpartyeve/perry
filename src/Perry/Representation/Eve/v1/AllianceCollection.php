@@ -12,6 +12,16 @@ class AllianceCollection extends Base
     public $items = array();
 
     /**
+     * @var Reference
+     */
+    public $next;
+
+    /**
+     * @var Reference
+     */
+    public $previous;
+
+    /**
      * @param array $items
      */
     public function setItems($items)
@@ -31,5 +41,19 @@ class AllianceCollection extends Base
         return new AllianceCollection(
             self::doGetRequest(Setup::$crestUrl.'/alliances/', "vnd.ccp.eve.AllianceCollection-v1")
         );
+    }
+
+    /**
+     * @param object|array
+     */
+    public function setNext($next) {
+        $this->next = new Reference($next, "vnd.ccp.eve.AllianceCollection-v1");
+    }
+
+    /**
+     * @param object|array
+     */
+    public function setPrevious($previous) {
+        $this->previous = new Reference($previous, "vnd.ccp.eve.AllianceCollection-v1");
     }
 }
