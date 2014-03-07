@@ -1,6 +1,7 @@
 <?php
 namespace Perry\Fetcher;
 
+use Perry\Cache\CacheManager;
 use Perry\Response;
 use Perry\Setup;
 use Perry\Tool;
@@ -43,6 +44,11 @@ class FileFetcher implements CanFetch
      */
     public function doGetRequest($url, $representation)
     {
+
+        if ($data = CacheManager::getInstance()->load($url)) {
+            return new Response($data['value'], $data['representation']);
+        }
+
         $context = stream_context_create($this->getOpts($representation));
 
         if (false === ($data = @file_get_contents($url, false, $context))) {
@@ -61,6 +67,8 @@ class FileFetcher implements CanFetch
             }
 
         }
+
+        CacheManager::getInstance()->save($url, ["representation" => $representation, "value" => $data]);
 
         return new Response($data, $representation);
     }
