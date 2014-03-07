@@ -53,13 +53,38 @@ please go to http://getcomposer.org/ and read up on it. Composer is a great syst
 are serious about PHP development you should know it.
 
 add either (releases)
-- "3rdpartyeve/perry": "0.3.*"
+- "3rdpartyeve/perry": "0.4.*"
 or (dev-master, changing source)
 - "3rdpartyeve/perry": "dev-master"
 to your composer.json
 
+## USAGE
+### Cache
+Perry comes with build in caching of the requested CREST Pages. Perry is compliant with PSR-6 (at the currents draft
+state). Since PSR-6 has not been finalized / released yet, at the moment it also contains the Interfaces PSR-6 is
+defining. Once PSR-6 is available, those will be removed from the Lib.
 
-### Usage Examples
+By default Perry has the Cache DISABLED, meaning if you want any sort of caching, you have to enable it.
+To enable Caching in Perry you simply give the Setup Singleton an instance of a PSR-6 Compliant Cache.
+
+With Perry you get an extremly simple file cache, which takes a path in the constructor, that it then will
+fill with cache files. If you use it keep in mind that those are not deleted automatically.
+
+```php
+<?php
+// require composers autoload.php
+require_once 'vendor/autoload.php';
+
+// import the Setup class, alternatively you can always use the full qualified name)
+use Perry\Setup;
+
+// get the Instance of Setup and hand an instance of the PoolInterface implementation
+// of the file cache
+Setup::getInstance()->cacheImplementation = new FilePool("/path/to/cache/folder");
+
+
+```
+### Examples
 here are a few examples, based on composer having been used to install perry
 
 #### Killmail
@@ -71,7 +96,7 @@ $url = "http://public-crest.eveonline.com/killmails/34940735/32a1ed47430a4bf247d
 // require composers autoload.php
 require_once 'vendor/autoload.php';
 
-// import the Perry class, alternatively you can allways use the full qualified name)
+// import the Perry class, alternatively you can always use the full qualified name)
 use Perry\Perry;
 
 

@@ -188,7 +188,6 @@ class FileItem implements ItemInterface
                 $instance->ttl = $data['ttl'];
                 $instance->updated = $data['updated'];
                 $instance->hit = true;
-
             }
         }
         return $instance;
