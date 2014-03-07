@@ -70,6 +70,8 @@ To enable Caching in Perry you simply give the Setup Singleton an instance of a 
 With Perry you get an extremly simple file cache, which takes a path in the constructor, that it then will
 fill with cache files. If you use it keep in mind that those are not deleted automatically.
 
+The TTL for the cache is by default 5 minutes, see the example below for how to change it.
+
 ```php
 <?php
 // require composers autoload.php
@@ -82,8 +84,12 @@ use Perry\Setup;
 // of the file cache
 Setup::getInstance()->cacheImplementation = new FilePool("/path/to/cache/folder");
 
+// change ttl to 10 minutes
+Setup::$cacheTTL = 600;
+
 
 ```
+
 ### Examples
 here are a few examples, based on composer having been used to install perry
 
