@@ -49,6 +49,7 @@ class FilePoolTest extends \PHPUnit_Framework_TestCase
         $this->assertFalse($item->isHit());
         $this->assertNull($item->get());
         $this->assertEquals($key, $item->getKey());
+        $item->delete();
 
     }
 }
