@@ -68,7 +68,7 @@ class Alliance extends Base
     public static function getInstanceByAllianceID($id)
     {
         return new Alliance(
-            self::doGetRequest(Setup::$crestUrl.'/alliance/'.$id .'/', "vnd.ccp.eve.TournamentCollection-v1")
+            self::doGetRequest(Setup::$crestUrl.'/alliance/'.$id .'/', "vnd.ccp.eve.Alliance-v1")
         );
     }
 }
