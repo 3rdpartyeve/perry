@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use Perry\Representation\Base;
+use Perry\Setup;
 
 class Alliance extends Base
 {
@@ -58,5 +59,16 @@ class Alliance extends Base
     public function setCreatorCharacter($char)
     {
         $this->creatorCharacter = new Reference($char, "Dear CCP please document this representation");
+    }
+
+    /**
+     * @param int $id
+     * @return Alliance
+     */
+    public static function getInstanceByAllianceID($id)
+    {
+        return new Alliance(
+            self::doGetRequest(Setup::$crestUrl.'/alliance/'.$id .'/', "vnd.ccp.eve.TournamentCollection-v1")
+        );
     }
 }
