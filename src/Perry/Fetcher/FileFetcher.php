@@ -21,9 +21,9 @@ class FileFetcher implements CanFetch
             'http' => array(
                 'method' => "GET",
             ),
-            'socket' => [
-                'bindto' => Setup::$bindToIp
-            ]
+            'socket' => array(
+                'bindto' => Setup::$bindToIp,
+            ),
         );
 
         if (is_null($representation)) {
