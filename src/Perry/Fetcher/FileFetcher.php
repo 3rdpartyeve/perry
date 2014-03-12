@@ -68,7 +68,7 @@ class FileFetcher implements CanFetch
 
         }
 
-        CacheManager::getInstance()->save($url, ["representation" => $representation, "value" => $data]);
+        CacheManager::getInstance()->save($url, array("representation" => $representation, "value" => $data));
 
         return new Response($data, $representation);
     }
