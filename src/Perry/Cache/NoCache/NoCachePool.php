@@ -18,7 +18,7 @@ class NoCachePool implements PoolInterface
 
     public function getItems(array $keys)
     {
-        $result = [];
+        $result[] = array();
         foreach ($keys as $key) {
             $result[$key] = $this->getItem($key);
         }

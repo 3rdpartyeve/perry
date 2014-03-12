@@ -21,9 +21,9 @@ class FileFetcher implements CanFetch
             'http' => array(
                 'method' => "GET",
             ),
-            'socket' => [
-                'bindto' => Setup::$bindToIp
-            ]
+            'socket' => array(
+                'bindto' => Setup::$bindToIp,
+            ),
         );
 
         if (is_null($representation)) {
@@ -68,7 +68,7 @@ class FileFetcher implements CanFetch
 
         }
 
-        CacheManager::getInstance()->save($url, ["representation" => $representation, "value" => $data]);
+        CacheManager::getInstance()->save($url, array("representation" => $representation, "value" => $data));
 
         return new Response($data, $representation);
     }
