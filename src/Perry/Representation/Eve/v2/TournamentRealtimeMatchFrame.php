@@ -57,12 +57,12 @@ class TournamentRealtimeMatchFrame extends Base
     protected function handleShip($shipData)
     {
         // itemRef
-        $shipData->itemRef = new Reference($shipData->itemRef, "Dear CCP please document this representation");
+        $shipData->itemRef = new Reference($shipData->itemRef);
 
         // drones
         if (isset($shipData->drones) && !is_null($shipData->drones)) {
             foreach ($shipData->drones as $dkey => $drone) {
-                $drone->type = new Reference($drone->type, "Dear CCP please document this representation");
+                $drone->type = new Reference($drone->type);
                 $shipData->drones[$dkey] = $drone;
             }
         }

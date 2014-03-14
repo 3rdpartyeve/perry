@@ -51,7 +51,7 @@ class TournamentPilotTournamentStats extends Base
     public function setRecentShips($recentShips)
     {
         foreach ($recentShips as $recentShip) {
-            $this->recentShips[] = new Reference($recentShip, "Dear CCP please document this representation");
+            $this->recentShips[] = new Reference($recentShip);
         }
     }
 }

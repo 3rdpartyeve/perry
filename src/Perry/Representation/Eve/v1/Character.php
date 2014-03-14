@@ -35,7 +35,7 @@ class Character extends Base
      */
     public function setBloodLine($bloodLine)
     {
-        $this->bloodLine = new Reference($bloodLine, "Dear CCP please document this representation");
+        $this->bloodLine = new Reference($bloodLine);
     }
 
     /**
@@ -67,6 +67,6 @@ class Character extends Base
      */
     public function setRace($race)
     {
-        $this->race = new Reference($race, "Dear CCP please document this representation");
+        $this->race = new Reference($race);
     }
 }

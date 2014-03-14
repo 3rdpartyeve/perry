@@ -23,7 +23,7 @@ class TournamentStaticSceneData extends Base
         // iterating over call global objects to fill them with their references
         foreach ($globalObjects as $object) {
 
-            $object->type = new Reference($object->type, "Dear CCP please document this representation");
+            $object->type = new Reference($object->type);
 
             // a global object might contain further references
             if (isset($object->planetOrMoonInfo) && !is_null($object->planetOrMoonInfo)) {
@@ -56,12 +56,12 @@ class TournamentStaticSceneData extends Base
     {
         foreach ($ships as $ship) {
 
-            $ship->item = new Reference($ship->item, "Dear CCP please document this representation");
-            $ship->type = new Reference($ship->type, "Dear CCP please document this representation");
+            $ship->item = new Reference($ship->item);
+            $ship->type = new Reference($ship->type);
             $ship->character = new Reference($ship->character, "vnd.ccp.eve.Character-v1");
 
             foreach ($ship->turrets as $tkey => $turret) {
-                $ship->turrets[$tkey] = new Reference($turret, "Dear CCP please document this representation");
+                $ship->turrets[$tkey] = new Reference($turret);
             }
             $this->ships[] = $ship;
         }

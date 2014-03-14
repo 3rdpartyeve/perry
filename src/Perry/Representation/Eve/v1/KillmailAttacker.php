@@ -33,7 +33,7 @@ class KillmailAttacker extends Base
      */
     public function setShipType($shipType)
     {
-        $this->shipType = new Reference($shipType, "Dear CCP please document this representation");
+        $this->shipType = new Reference($shipType);
     }
 
     /**
@@ -41,7 +41,7 @@ class KillmailAttacker extends Base
      */
     public function setWeaponType($weaponType)
     {
-        $this->weaponType = new Reference($weaponType, "Dear CCP please document this representation");
+        $this->weaponType = new Reference($weaponType);
     }
 
     /**

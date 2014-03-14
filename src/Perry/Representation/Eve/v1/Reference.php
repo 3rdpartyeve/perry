@@ -1,6 +1,7 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
+use Perry\Perry;
 use Perry\Representation\Base;
 use Perry\Representation\Interfaces\CanRefer;
 use Perry\Tool;
@@ -15,13 +16,13 @@ class Reference extends Base implements CanRefer
     /**
      * @var string
      */
-    protected $perryReferredType;
+    protected $perryReferredType = null;
 
     /**
      * @param array|null|object|string $inputData
      * @param string $referTo
      */
-    public function __construct($inputData, $referTo)
+    public function __construct($inputData, $referTo = null)
     {
         parent::__construct($inputData);
         $this->perryReferredType = $referTo;
@@ -36,8 +37,7 @@ class Reference extends Base implements CanRefer
      */
     public function call($args = array())
     {
-        $classname = Tool::parseRepresentationToClass($this->perryReferredType);
-        return new $classname($this->doGetRequest($this->href, $this->perryReferredType));
+        return Perry::fromUrl($this->href, $this->perryReferredType);
     }
 
     /**

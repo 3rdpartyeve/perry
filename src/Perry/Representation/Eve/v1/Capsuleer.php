@@ -20,7 +20,7 @@ class Capsuleer extends Base
      */
     protected function setSkills($ref)
     {
-        $this->skills = new Reference($ref, "Dear CCP please document this representation");
+        $this->skills = new Reference($ref);
     }
 
     /**
@@ -28,6 +28,6 @@ class Capsuleer extends Base
      */
     protected function trainingQueue($ref)
     {
-        $this->skills = new Reference($ref, "Dear CCP please document this representation");
+        $this->skills = new Reference($ref);
     }
 }

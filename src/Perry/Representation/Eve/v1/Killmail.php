@@ -33,7 +33,7 @@ class Killmail extends Base
      */
     public function setSolarSystem($solarSystem)
     {
-        $this->solarSystem = new Reference($solarSystem, "Dear CCP please document this representation");
+        $this->solarSystem = new Reference($solarSystem);
     }
 
     /**
@@ -62,10 +62,10 @@ class Killmail extends Base
         }
 
         if (isset($victim->faction)) {
-            $victim->faction = new Reference($victim->faction, "Dear CCP please document this representation");
+            $victim->faction = new Reference($victim->faction);
         }
 
-        $victim->shipType = new Reference($victim->shipType, "Dear CCP please document this representation");
+        $victim->shipType = new Reference($victim->shipType);
 
         $victim->items = $this->parseItems($victim->items);
 
@@ -77,7 +77,7 @@ class Killmail extends Base
      */
     public function setMoon($moon)
     {
-        $this->moon = new Reference($moon, "Dear CCP please document this representation");
+        $this->moon = new Reference($moon);
     }
 
     /**
@@ -88,7 +88,7 @@ class Killmail extends Base
     {
         $returnItems = array();
         foreach ($items as $item) {
-            $item->itemType = new Reference($item->itemType, "Dear CCP please document this representation");
+            $item->itemType = new Reference($item->itemType);
 
             if (isset($item->items)) {
                 $item->items = $this->parseItems($item->items);

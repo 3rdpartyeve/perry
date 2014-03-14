@@ -23,7 +23,7 @@ class IncursionCollection extends Base
                 "Dear CCP please document this representation"
             );
 
-            $item->constellation = new Reference($item->constellation, "Dear CCP please document this representation");
+            $item->constellation = new Reference($item->constellation);
             $this->items[] = $item;
         }
     }

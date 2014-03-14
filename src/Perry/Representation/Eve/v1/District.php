@@ -44,7 +44,7 @@ class District extends Base
      */
     public function setInfrastructure($infrastructure)
     {
-        $this->infrastructure = new Reference($infrastructure, "Dear CCP please document this representation");
+        $this->infrastructure = new Reference($infrastructure);
     }
 
     /**
@@ -52,7 +52,7 @@ class District extends Base
      */
     public function setOwner($owner)
     {
-        $this->owner = new Reference($owner, "Dear CCP please document this representation");
+        $this->owner = new Reference($owner);
     }
 
     /**
@@ -60,7 +60,7 @@ class District extends Base
      */
     public function setPlanet($planet)
     {
-        $this->planet = new Reference($planet, "Dear CCP please document this representation");
+        $this->planet = new Reference($planet);
     }
 
     /**
@@ -68,7 +68,7 @@ class District extends Base
      */
     public function setRegion($region)
     {
-        $this->region = new Reference($region, "Dear CCP please document this representation");
+        $this->region = new Reference($region);
     }
 
     /**
@@ -76,6 +76,6 @@ class District extends Base
      */
     public function setSystem($system)
     {
-        $this->system = new Reference($system, "Dear CCP please document this representation");
+        $this->system = new Reference($system);
     }
 }

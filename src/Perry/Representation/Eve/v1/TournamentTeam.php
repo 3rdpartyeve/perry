@@ -41,7 +41,7 @@ class TournamentTeam extends Base
     public function setBanFrequency($banFrequency)
     {
         foreach ($banFrequency as $item) {
-            $item->shipType = new Reference($item->shipType, "Dear CCP please document this representation");
+            $item->shipType = new Reference($item->shipType);
             $this->banFrequency[] = $item;
         }
     }
@@ -52,7 +52,7 @@ class TournamentTeam extends Base
     public function setBanFrequencyAgainst($banFrequencyAgainst)
     {
         foreach ($banFrequencyAgainst as $item) {
-            $item->shipType = new Reference($item->shipType, "Dear CCP please document this representation");
+            $item->shipType = new Reference($item->shipType);
             $this->banFrequencyAgainst[] = $item;
         }
     }

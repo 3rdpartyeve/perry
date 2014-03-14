@@ -33,7 +33,7 @@ class Alliance extends Base
     public function setCorporations($corps)
     {
         foreach ($corps as $item) {
-            $this->corporations[] = new Reference($item, "Dear CCP please document this representation");
+            $this->corporations[] = new Reference($item);
         }
     }
 
@@ -42,7 +42,7 @@ class Alliance extends Base
      */
     public function setExecutorCorporation($corp)
     {
-        $this->executorCorporation = new Reference($corp, "Dear CCP please document this representation");
+        $this->executorCorporation = new Reference($corp);
     }
 
     /**
@@ -50,7 +50,7 @@ class Alliance extends Base
      */
     public function setCreatorCorporation($corp)
     {
-        $this->creatorCorporation = new Reference($corp, "Dear CCP please document this representation");
+        $this->creatorCorporation = new Reference($corp);
     }
 
     /**
@@ -58,7 +58,7 @@ class Alliance extends Base
      */
     public function setCreatorCharacter($char)
     {
-        $this->creatorCharacter = new Reference($char, "Dear CCP please document this representation");
+        $this->creatorCharacter = new Reference($char);
     }
 
     /**
