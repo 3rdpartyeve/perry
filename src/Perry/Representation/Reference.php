@@ -1,10 +1,8 @@
 <?php
-namespace Perry\Representation\Eve\v1;
+namespace Perry\Representation;
 
 use Perry\Perry;
-use Perry\Representation\Base;
 use Perry\Representation\Interfaces\CanRefer;
-use Perry\Tool;
 
 /**
  * Class Reference

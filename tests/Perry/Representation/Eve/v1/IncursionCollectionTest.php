@@ -17,7 +17,7 @@ class IncursionCollectionTest extends PHPUnit_Framework_TestCase {
     public function testSolarSystem()
     {
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->incursionCollection->items[0]->stagingSolarSystem
         );
 
@@ -28,7 +28,7 @@ class IncursionCollectionTest extends PHPUnit_Framework_TestCase {
     public function testConstellation()
     {
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->incursionCollection->items[0]->constellation
         );
 

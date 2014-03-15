@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use Perry\Representation\Base;
+use Perry\Representation\Reference;
 
 class ContactCollection extends Base
 {
@@ -26,7 +27,7 @@ class ContactCollection extends Base
     public function setItems($items)
     {
         foreach ($items as $item) {
-            $this->items[] = new Contact($item);
+            $this->items[] = new Reference($item, "Documentation did not give me any option on how to determine type");
         }
     }
 

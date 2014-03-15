@@ -2,7 +2,7 @@
 namespace Perry\Representation\Eve\v2;
 
 use Perry\Representation\Base;
-use Perry\Representation\Eve\v1\Reference;
+use Perry\Representation\Reference;
 
 class TournamentRealtimeMatchFrame extends Base
 {

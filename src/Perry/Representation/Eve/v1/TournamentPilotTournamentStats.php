@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use Perry\Representation\Base;
+use Perry\Representation\Reference;
 
 class TournamentPilotTournamentStats extends Base
 {

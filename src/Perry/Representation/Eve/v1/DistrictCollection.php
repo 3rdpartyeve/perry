@@ -3,6 +3,7 @@ namespace Perry\Representation\Eve\v1;
 
 use Perry\Representation\Base;
 use Perry\Setup;
+use Perry\Representation\Reference;
 
 class DistrictCollection extends Base
 {

@@ -20,7 +20,7 @@ class AllianceCollectionTest extends PHPUnit_Framework_TestCase {
     public function testAllianceLink()
     {
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->alliances->items[0]->href
         );
 

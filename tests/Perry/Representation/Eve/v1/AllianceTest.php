@@ -20,22 +20,22 @@ class AllianceTest extends PHPUnit_Framework_TestCase {
     public function testAllianceReferences()
     {
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->alliance->corporations[0]
         );
 
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->alliance->creatorCorporation
         );
 
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->alliance->creatorCharacter
         );
 
         $this->assertInstanceOf(
-            '\Perry\Representation\Eve\v1\Reference',
+            '\Perry\Representation\Reference',
             $this->alliance->executorCorporation
         );
 

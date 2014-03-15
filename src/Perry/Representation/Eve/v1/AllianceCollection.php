@@ -1,6 +1,7 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
+use Perry\Representation\Reference;
 use Perry\Representation\Base;
 use Perry\Setup;
 

@@ -50,7 +50,7 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
 
     public function testSolarSystem()
     {
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail->solarSystem);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail->solarSystem);
 
         $this->assertEquals(30005305, $this->killmail->solarSystem->id);
         $this->assertEquals('30005305', $this->killmail->solarSystem->id_str);
@@ -58,7 +58,7 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals("http://regner1-ws:26004/solarsystems/30005305/", $this->killmail->solarSystem->href);
         $this->assertEquals("Cistuvaert", $this->killmail->solarSystem->name);
 
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail_with_moon->solarSystem);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail_with_moon->solarSystem);
 
         $this->assertEquals(30003343, $this->killmail_with_moon->solarSystem->id);
         $this->assertEquals('30003343', $this->killmail_with_moon->solarSystem->id_str);
@@ -75,17 +75,17 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
             $this->assertInstanceOf('\Perry\Representation\Eve\v1\KillmailAttacker', $attacker);
 
             // in this mail we only have npc attackers, so we don't check for character
-            $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $attacker->corporation);
-            $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $attacker->shipType);
+            $this->assertInstanceOf('\Perry\Representation\Reference', $attacker->corporation);
+            $this->assertInstanceOf('\Perry\Representation\Reference', $attacker->shipType);
         }
 
         $this->assertEquals(1, count($this->killmail_with_moon->attackers));
         foreach ($this->killmail_with_moon->attackers as $attacker) {
             $this->assertInstanceOf('\Perry\Representation\Eve\v1\KillmailAttacker', $attacker);
 
-            $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $attacker->character);
-            $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $attacker->corporation);
-            $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $attacker->shipType);
+            $this->assertInstanceOf('\Perry\Representation\Reference', $attacker->character);
+            $this->assertInstanceOf('\Perry\Representation\Reference', $attacker->corporation);
+            $this->assertInstanceOf('\Perry\Representation\Reference', $attacker->shipType);
         }
     }
 
@@ -94,9 +94,9 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(79705, $this->killmail->victim->damageTaken);
         $this->assertEquals('79705', $this->killmail->victim->damageTaken_str);
 
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail->victim->corporation);
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail->victim->character);
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail->victim->shipType);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail->victim->corporation);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail->victim->character);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail->victim->shipType);
     }
 
     public function testVictimItems()
@@ -106,7 +106,7 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals(0, $item->singleton);
         $this->assertEquals('0', $item->singleton_str);
 
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $item->itemType);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $item->itemType);
 
         $this->assertEquals(3995, $item->itemType->id);
         $this->assertEquals('3995', $item->itemType->id_str);
@@ -131,7 +131,7 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
     public function testMoon()
     {
         $moon = $this->killmail_with_moon->moon;
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $moon);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $moon);
         $this->assertEquals(40211968, $moon->id);
         $this->assertEquals('40211968', $moon->id_str);
         $this->assertEquals('KFR-ZE V - Moon 4', $moon->name);
@@ -140,7 +140,6 @@ class KillmailTest extends PHPUnit_Framework_TestCase {
     public function testWeaponType()
     {
         $this->assertEquals(2185, $this->killmail_with_weapontype->attackers[0]->weaponType->id);
-        $this->assertInstanceOf('\Perry\Representation\Eve\v1\Reference', $this->killmail_with_weapontype->attackers[0]->weaponType);
+        $this->assertInstanceOf('\Perry\Representation\Reference', $this->killmail_with_weapontype->attackers[0]->weaponType);
     }
-
 }
