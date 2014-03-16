@@ -1,36 +1,61 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Reference;
-use Perry\Representation\Base;
-use Perry\Setup;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class TournamentCollection extends Base
 {
-    /**
-     * @var array
-     */
-    public $items = array();
+    public $pageCount;
 
-    /**
-     * @param array $items
-     */
+    public $items = [];
+
+    public $totalCount;
+
+    public $next;
+
+    public $previous;
+
+    // by Warringer\Types\Long
+    public function setPageCount($pageCount)
+    {
+        $this->pageCount = $pageCount;
+    }
+
+    // by Warringer\Types\ArrayType
     public function setItems($items)
     {
-        foreach ($items as $item) {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['href'] = function($value) { return new Reference($value); };
 
-            $item->href = new Reference($item->href, "vnd.ccp.eve.Tournament-v1");
-            $this->items[] = $item;
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->href = isset($value->href) ? $converters['href']($value->href) : null;
+            return $return;
+        };
+
+        foreach ($items as $key => $value) {
+            $this->items[$key] = $func($value);
         }
     }
 
-    /**
-     * @return TournamentCollection
-     */
-    public static function getInstance()
+    // by Warringer\Types\Long
+    public function setTotalCount($totalCount)
     {
-        return new TournamentCollection(
-            self::doGetRequest(Setup::$crestUrl.'/tournaments/', "vnd.ccp.eve.TournamentCollection-v1")
-        );
+        $this->totalCount = $totalCount;
     }
+
+    // by Warringer\Types\Reference
+    public function setNext($next)
+    {
+        $this->next = new Reference($next);
+    }
+
+    // by Warringer\Types\Reference
+    public function setPrevious($previous)
+    {
+        $this->previous = new Reference($previous);
+    }
+
 }

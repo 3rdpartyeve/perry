@@ -1,75 +1,110 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Reference;
-use Perry\Representation\Base;
-use Perry\Setup;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class Alliance extends Base
 {
-    /**
-     * @var array
-     */
-    public $corporations = array();
+    public $startDate;
 
-    /**
-     * @var Reference
-     */
+    public $corporationsCount;
+
+    public $description;
+
     public $executorCorporation;
 
-    /**
-     * @var Reference
-     */
+    public $deleted;
+
     public $creatorCorporation;
 
-    /**
-     * @var Reference
-     */
+    public $url;
+
     public $creatorCharacter;
 
+    public $corporations = [];
 
-    /**
-     * @param array $corps
-     */
-    public function setCorporations($corps)
+    public $shortName;
+
+    public $id;
+
+    public $name;
+
+    // by Warringer\Types\String
+    public function setStartDate($startDate)
     {
-        foreach ($corps as $item) {
-            $this->corporations[] = new Reference($item);
+        $this->startDate = $startDate;
+    }
+
+    // by Warringer\Types\Long
+    public function setCorporationsCount($corporationsCount)
+    {
+        $this->corporationsCount = $corporationsCount;
+    }
+
+    // by Warringer\Types\String
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+    // by Warringer\Types\Reference
+    public function setExecutorCorporation($executorCorporation)
+    {
+        $this->executorCorporation = new Reference($executorCorporation);
+    }
+
+    // by Warringer\Types\Base
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
+    }
+
+    // by Warringer\Types\Reference
+    public function setCreatorCorporation($creatorCorporation)
+    {
+        $this->creatorCorporation = new Reference($creatorCorporation);
+    }
+
+    // by Warringer\Types\String
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    // by Warringer\Types\Reference
+    public function setCreatorCharacter($creatorCharacter)
+    {
+        $this->creatorCharacter = new Reference($creatorCharacter);
+    }
+
+    // by Warringer\Types\ArrayType
+    public function setCorporations($corporations)
+    {
+        // by Warringer\Types\Reference
+        $func = function($value) { return new Reference($value); };
+
+        foreach ($corporations as $key => $value) {
+            $this->corporations[$key] = $func($value);
         }
     }
 
-    /**
-     * @param array|object $corp
-     */
-    public function setExecutorCorporation($corp)
+    // by Warringer\Types\String
+    public function setShortName($shortName)
     {
-        $this->executorCorporation = new Reference($corp);
+        $this->shortName = $shortName;
     }
 
-    /**
-     * @param array|object $corp
-     */
-    public function setCreatorCorporation($corp)
+    // by Warringer\Types\Long
+    public function setId($id)
     {
-        $this->creatorCorporation = new Reference($corp);
+        $this->id = $id;
     }
 
-    /**
-     * @param array|object $char
-     */
-    public function setCreatorCharacter($char)
+    // by Warringer\Types\String
+    public function setName($name)
     {
-        $this->creatorCharacter = new Reference($char);
+        $this->name = $name;
     }
 
-    /**
-     * @param int $id
-     * @return Alliance
-     */
-    public static function getInstanceByAllianceID($id)
-    {
-        return new Alliance(
-            self::doGetRequest(Setup::$crestUrl.'/alliance/'.$id .'/', "vnd.ccp.eve.Alliance-v1")
-        );
-    }
 }

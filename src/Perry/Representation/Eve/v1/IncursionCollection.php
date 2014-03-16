@@ -1,41 +1,69 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Base;
-use Perry\Setup;
-use Perry\Representation\Reference;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class IncursionCollection extends Base
 {
-    /**
-     * @var array
-     */
-    public $items = array();
+    public $pageCount;
 
-    /**
-     * @param array $items
-     */
+    public $items = [];
+
+    public $totalCount;
+
+    public $next;
+
+    public $previous;
+
+    // by Warringer\Types\Long
+    public function setPageCount($pageCount)
+    {
+        $this->pageCount = $pageCount;
+    }
+
+    // by Warringer\Types\ArrayType
     public function setItems($items)
     {
-        foreach ($items as $item) {
+        // by Warringer\Types\Base
+        $converters = [];
+        $converters['influence'] = function($value) { return $value; };
+        $converters['hasBoss'] = function($value) { return $value; };
+        $converters['state'] = function($value) { return $value; };
+        $converters['stagingSolarSystem'] = function($value) { return new Reference($value); };
+        $converters['constellation'] = function($value) { return new Reference($value); };
 
-            $item->stagingSolarSystem = new Reference(
-                $item->stagingSolarSystem,
-                "Dear CCP please document this representation"
-            );
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->influence = isset($value->influence) ? $converters['influence']($value->influence) : null;
+            $return->hasBoss = isset($value->hasBoss) ? $converters['hasBoss']($value->hasBoss) : null;
+            $return->state = isset($value->state) ? $converters['state']($value->state) : null;
+            $return->stagingSolarSystem = isset($value->stagingSolarSystem) ? $converters['stagingSolarSystem']($value->stagingSolarSystem) : null;
+            $return->constellation = isset($value->constellation) ? $converters['constellation']($value->constellation) : null;
+            return $return;
+        };
 
-            $item->constellation = new Reference($item->constellation);
-            $this->items[] = $item;
+        foreach ($items as $key => $value) {
+            $this->items[$key] = $func($value);
         }
     }
 
-    /**
-     * @return IncursionCollection
-     */
-    public static function getInstance()
+    // by Warringer\Types\Long
+    public function setTotalCount($totalCount)
     {
-        return new IncursionCollection(
-            self::doGetRequest(Setup::$crestUrl.'/incursions/', "vnd.ccp.eve.IncursionCollection-v1")
-        );
+        $this->totalCount = $totalCount;
     }
+
+    // by Warringer\Types\Reference
+    public function setNext($next)
+    {
+        $this->next = new Reference($next);
+    }
+
+    // by Warringer\Types\Reference
+    public function setPrevious($previous)
+    {
+        $this->previous = new Reference($previous);
+    }
+
 }

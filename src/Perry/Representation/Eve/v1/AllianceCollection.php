@@ -1,60 +1,61 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Reference;
-use Perry\Representation\Base;
-use Perry\Setup;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class AllianceCollection extends Base
 {
-    /**
-     * @var array
-     */
-    public $items = array();
+    public $pageCount;
 
-    /**
-     * @var Reference
-     */
+    public $items = [];
+
+    public $totalCount;
+
     public $next;
 
-    /**
-     * @var Reference
-     */
     public $previous;
 
-    /**
-     * @param array $items
-     */
+    // by Warringer\Types\Long
+    public function setPageCount($pageCount)
+    {
+        $this->pageCount = $pageCount;
+    }
+
+    // by Warringer\Types\ArrayType
     public function setItems($items)
     {
-        foreach ($items as $item) {
-            $item =  new Base($item);
-            $item->href = new Reference($item->href, "vnd.ccp.eve.Alliance-v1");
-            $this->items[] = $item;
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['href'] = function($value) { return new Reference($value); };
+
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->href = isset($value->href) ? $converters['href']($value->href) : null;
+            return $return;
+        };
+
+        foreach ($items as $key => $value) {
+            $this->items[$key] = $func($value);
         }
     }
 
-    /**
-     * @return AllianceCollection
-     */
-    public static function getInstance()
+    // by Warringer\Types\Long
+    public function setTotalCount($totalCount)
     {
-        return new AllianceCollection(
-            self::doGetRequest(Setup::$crestUrl.'/alliances/', "vnd.ccp.eve.AllianceCollection-v1")
-        );
+        $this->totalCount = $totalCount;
     }
 
-    /**
-     * @param object|array
-     */
-    public function setNext($next) {
-        $this->next = new Reference($next, "vnd.ccp.eve.AllianceCollection-v1");
+    // by Warringer\Types\Reference
+    public function setNext($next)
+    {
+        $this->next = new Reference($next);
     }
 
-    /**
-     * @param object|array
-     */
-    public function setPrevious($previous) {
-        $this->previous = new Reference($previous, "vnd.ccp.eve.AllianceCollection-v1");
+    // by Warringer\Types\Reference
+    public function setPrevious($previous)
+    {
+        $this->previous = new Reference($previous);
     }
+
 }

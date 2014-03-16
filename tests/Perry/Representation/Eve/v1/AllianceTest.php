@@ -19,6 +19,7 @@ class AllianceTest extends PHPUnit_Framework_TestCase {
 
     public function testAllianceReferences()
     {
+
         $this->assertInstanceOf(
             '\Perry\Representation\Reference',
             $this->alliance->corporations[0]

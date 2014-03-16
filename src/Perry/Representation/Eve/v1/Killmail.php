@@ -1,102 +1,164 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Base;
-use Perry\Setup;
-use Perry\Representation\Reference;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class Killmail extends Base
 {
     public $solarSystem;
-    public $attackers = array();
-    public $victim;
+
+    public $killID;
+
+    public $killTime;
+
     public $moon;
 
-    /**
-     * get an instance for a specific killmail id+hash combination
-     *
-     * @param  int $killid
-     * @param  string $hash
-     * @return Killmail
-     */
-    public static function getInstanceByKillAndHash($killid, $hash)
-    {
-        return new Killmail(
-            self::doGetRequest(
-                Setup::$crestUrl.'/killmail/'.$killid.'/'.$hash.'/',
-                "vnd.ccp.eve.TournamentCollection-v1"
-            )
-        );
-    }
+    public $attackers = [];
 
-    /**
-     * @param array|object $solarSystem
-     */
+    public $attackerCount;
+
+    public $victim;
+
+    // by Warringer\Types\Reference
     public function setSolarSystem($solarSystem)
     {
         $this->solarSystem = new Reference($solarSystem);
     }
 
-    /**
-     * @param array|object $attackers
-     */
-    public function setAttackers($attackers)
+    // by Warringer\Types\Long
+    public function setKillID($killID)
     {
-        foreach ($attackers as $attacker) {
-            $this->attackers[] = new KillmailAttacker($attacker);
-        }
+        $this->killID = $killID;
     }
 
-    /**
-     * @param array|object $victim
-     */
-    public function setVictim($victim)
+    // by Warringer\Types\String
+    public function setKillTime($killTime)
     {
-        if (isset($victim->character)) {
-            $victim->character = new Reference($victim->character, "vnd.ccp.eve.Character-v1");
-        }
-
-        $victim->corporation = new Reference($victim->corporation, "vnd.ccp.eve.Corporation-v1");
-
-        if (isset($victim->alliance)) {
-            $victim->alliance = new Reference($victim->alliance,  "vnd.ccp.eve.Alliance-v1");
-        }
-
-        if (isset($victim->faction)) {
-            $victim->faction = new Reference($victim->faction);
-        }
-
-        $victim->shipType = new Reference($victim->shipType);
-
-        $victim->items = $this->parseItems($victim->items);
-
-        $this->victim = $victim;
+        $this->killTime = $killTime;
     }
 
-    /**
-     * @param array|object $moon
-     */
+    // by Warringer\Types\Reference
     public function setMoon($moon)
     {
         $this->moon = new Reference($moon);
     }
 
-    /**
-     * @param array|object $items
-     * @return array
-     */
-    private function parseItems($items)
+    // by Warringer\Types\ArrayType
+    public function setAttackers($attackers)
     {
-        $returnItems = array();
-        foreach ($items as $item) {
-            $item->itemType = new Reference($item->itemType);
+        // by Warringer\Types\Base
+        $converters = [];
+        $converters['alliance'] = function($value) { return new Reference($value); };
+        $converters['shipType'] = function($value) { return new Reference($value); };
+        $converters['faction'] = function($value) { return new Reference($value); };
+        $converters['corporation'] = function($value) { return new Reference($value); };
+        $converters['character'] = function($value) { return new Reference($value); };
+        $converters['weaponType'] = function($value) { return new Reference($value); };
+        $converters['finalBlow'] = function($value) { return $value; };
+        $converters['securityStatus'] = function($value) { return $value; };
+        $converters['damageDone'] = function($value) { return $value; };
 
-            if (isset($item->items)) {
-                $item->items = $this->parseItems($item->items);
-            }
-            $returnItems[] = $item;
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->alliance = isset($value->alliance) ? $converters['alliance']($value->alliance) : null;
+            $return->shipType = isset($value->shipType) ? $converters['shipType']($value->shipType) : null;
+            $return->faction = isset($value->faction) ? $converters['faction']($value->faction) : null;
+            $return->corporation = isset($value->corporation) ? $converters['corporation']($value->corporation) : null;
+            $return->character = isset($value->character) ? $converters['character']($value->character) : null;
+            $return->weaponType = isset($value->weaponType) ? $converters['weaponType']($value->weaponType) : null;
+            $return->finalBlow = isset($value->finalBlow) ? $converters['finalBlow']($value->finalBlow) : null;
+            $return->securityStatus = isset($value->securityStatus) ? $converters['securityStatus']($value->securityStatus) : null;
+            $return->damageDone = isset($value->damageDone) ? $converters['damageDone']($value->damageDone) : null;
+            return $return;
+        };
+
+        foreach ($attackers as $key => $value) {
+            $this->attackers[$key] = $func($value);
         }
-
-        return $returnItems;
     }
+
+    // by Warringer\Types\Long
+    public function setAttackerCount($attackerCount)
+    {
+        $this->attackerCount = $attackerCount;
+    }
+
+    // by Warringer\Types\Dict
+    public function setVictim($victim)
+    {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['alliance'] = function($value) { return new Reference($value); };
+        $converters['faction'] = function($value) { return new Reference($value); };
+        $converters['corporation'] = function($value) { return new Reference($value); };
+        $converters['damageTaken'] = function($value) { return $value; };
+        $converters['character'] = function($value) { return new Reference($value); };
+        $converters['shipType'] = function($value) { return new Reference($value); };
+        $converters['items'] = function ($values) {
+        // by Warringer\Types\Base
+        $converters = [];
+        $converters['singleton'] = function($value) { return $value; };
+        $converters['itemType'] = function($value) { return new Reference($value); };
+        $converters['items'] = function ($values) {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['quantityDropped'] = function($value) { return $value; };
+        $converters['singleton'] = function($value) { return $value; };
+        $converters['quantityDestroyed'] = function($value) { return $value; };
+        $converters['flag'] = function($value) { return $value; };
+        $converters['itemType'] = function($value) { return new Reference($value); };
+
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->quantityDropped = isset($value->quantityDropped) ? $converters['quantityDropped']($value->quantityDropped) : null;
+            $return->singleton = isset($value->singleton) ? $converters['singleton']($value->singleton) : null;
+            $return->quantityDestroyed = isset($value->quantityDestroyed) ? $converters['quantityDestroyed']($value->quantityDestroyed) : null;
+            $return->flag = isset($value->flag) ? $converters['flag']($value->flag) : null;
+            $return->itemType = isset($value->itemType) ? $converters['itemType']($value->itemType) : null;
+            return $return;
+        };
+
+            foreach ($values as $key => $value) {
+                 $values[$key] = $func($value);
+            }
+           return $values;
+        };
+
+        $converters['flag'] = function($value) { return $value; };
+        $converters['quantityDropped'] = function($value) { return $value; };
+        $converters['quantityDestroyed'] = function($value) { return $value; };
+
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->singleton = isset($value->singleton) ? $converters['singleton']($value->singleton) : null;
+            $return->itemType = isset($value->itemType) ? $converters['itemType']($value->itemType) : null;
+            $return->items = isset($value->items) ? $converters['items']($value->items) : null;
+            $return->flag = isset($value->flag) ? $converters['flag']($value->flag) : null;
+            $return->quantityDropped = isset($value->quantityDropped) ? $converters['quantityDropped']($value->quantityDropped) : null;
+            $return->quantityDestroyed = isset($value->quantityDestroyed) ? $converters['quantityDestroyed']($value->quantityDestroyed) : null;
+            return $return;
+        };
+
+            foreach ($values as $key => $value) {
+                 $values[$key] = $func($value);
+            }
+           return $values;
+        };
+
+
+        $func = function($value) use($converters) {
+            $return = new \stdClass();
+            $return->alliance = isset($value->alliance) ? $converters['alliance']($value->alliance) : null;
+            $return->faction = isset($value->faction) ? $converters['faction']($value->faction) : null;
+            $return->corporation = isset($value->corporation) ? $converters['corporation']($value->corporation) : null;
+            $return->damageTaken = isset($value->damageTaken) ? $converters['damageTaken']($value->damageTaken) : null;
+            $return->character = isset($value->character) ? $converters['character']($value->character) : null;
+            $return->shipType = isset($value->shipType) ? $converters['shipType']($value->shipType) : null;
+            $return->items = isset($value->items) ? $converters['items']($value->items) : null;
+            return $return;
+        };
+        $this->victim = $func($victim);
+    }
+
 }
