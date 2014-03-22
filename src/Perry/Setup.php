@@ -2,7 +2,7 @@
 namespace Perry;
 
 use Perry\Cache\NoCache\NoCachePool;
-use Perry\Fetcher\FileFetcher;
+use Perry\Fetcher\GuzzleFetcher;
 
 final class Setup
 {
@@ -38,7 +38,7 @@ final class Setup
      */
     private function __construct()
     {
-        $this->fetcher = new FileFetcher();
+        $this->fetcher = new GuzzleFetcher();
         $this->cacheImplementation = new NoCachePool();
     }
 

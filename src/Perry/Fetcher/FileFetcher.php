@@ -6,6 +6,12 @@ use Perry\Response;
 use Perry\Setup;
 use Perry\Tool;
 
+/**
+ * Class FileFetcher
+ *
+ * @package Perry\Fetcher
+ * @deprecated
+ */
 class FileFetcher implements CanFetch
 {
 
