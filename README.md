@@ -9,7 +9,7 @@ a PHP Library for accessing EVE Online's CREST API
 
 ## WARNING
 this is a prototype / work in progress.
-As CCP has not released much of the CREST API yet its use is extremly limited,
+As CCP has not released much of the CREST API yet its use is extremely limited,
 also this library is not to be considered complete or stable, most likely
 backward compatibility will break during further development.
 Do not use this if you don't know what you are doing.
@@ -23,9 +23,12 @@ Implemented:
 - https://forums.eveonline.com/default.aspx?g=posts&m=3393341#post3393341 (Realtime Tournament Stuff)
 - Killmail API
 - https://forums.eveonline.com/default.aspx?g=posts&m=4303155 (Alliances, Incursions)
+- https://neweden-dev.com/CREST_Market_History (Market History)
 
 Also you might find some files to access Thora, a Proxy for the old API,
 which is mostly not working yet, so don't use it.
+
+Also have a look at the bottom of this README, it contains a list of all known issues.
 
 
 ## LICENSE
@@ -53,7 +56,7 @@ please go to http://getcomposer.org/ and read up on it. Composer is a great syst
 are serious about PHP development you should know it.
 
 add either (releases)
-- "3rdpartyeve/perry": "0.4.*"
+- "3rdpartyeve/perry": "1.0.*"
 or (dev-master, changing source)
 - "3rdpartyeve/perry": "dev-master"
 to your composer.json
@@ -108,6 +111,7 @@ use Perry\Perry;
 
 // since we have a use import on Perry\Perry, we can just use the classname here, otherwise
 // it would be $killmail = \Perry\Perry::fromUrl($url);
+/** @var \Perry\Representation\Eve\v1\Killmail */
 $killmail = Perry::fromUrl($url);
 
 // now there should be either an exception throw (in RL you want to catch those) or
@@ -156,19 +160,19 @@ echo $killstring;
 // declare namespace of your script (optional, but recommended)
 namespace MyScript;
 
+// lets set an url here for this example
+$url = "http://public-crest.eveonline.com/districts/";
+
 // require composers autoload.php
 require_once 'vendor/autoload.php';
 
-// import Perry\Representation\Eve\v1\DistrictCollection class as DistrictCollection to the current namespace
-// you don't have to do this, you can use the fully qualified name as well, but i'd recommed this.
-use Perry\Representation\Eve\v1\DistrictCollection;
+// import the Perry class, alternatively you can always use the full qualified name
+use Perry\Perry;
 
 // we get the DistrictCollection Object, which will cause Perry to make a request to CCP's CREST API, and
 // populate the DistrictCollection (and the Districts it holds)
-// please note that we do have to use the getInstance() method here, since CCP has not fully published
-// the CREST API yet. Normaly you would get the Api Representation, and from that use a Reference to the
-// DistrictCollection Representation.
-$districtCollection = DistrictCollection::getInstance();
+/** @var \Perry\Representation\Eve\v1\DistrictCollection */
+$districtCollection = Perry::fromUrl($url);
 
 
 // districtCollection has a member called "items" which contains a list of districts
@@ -192,3 +196,16 @@ foreach ($districtCollection->items as $district) {
     );
 }
 ```
+
+## Known Issues
+There is a hand full of known Problems. If you want to help with fixing them: PullRequests are welcome.
+
+- From Version 1.0.0 on the original conveniance methods like ```\Perry\Representation\Eve\v1\DistrictCollection::getInstance();``` do not work anymore, this is on purpose
+- CREST dictionaries feature keys like "32x32", PHP will do a parse error on $object->32x32. You can either access those members by $object->{'32x32'}; or by using them as an array instead $object['32x32']. The later should be the preffered variant.
+- A lot of endpoints that are referenced to within CREST are not public available. There is nothing that can be done about that except if CCP opens those.
+- The Indentation within the representation classes is fucked up. Thats due to the classes being generated, and might get fixed in a future release
+- Perry currently does not support write access to any endpoint (POST), which should not be a problem since CCP has not published a writable interface for public usage yet.
+- The cache that comes with Perry is extremely rudimentary. There will be better solutions in the future.
+- CREST is rate limited preventing you from doing a ton of requests in a row (i believe 15 per second). This ratelimit is not enforced by Perry on you, so you have to take care of that yourself
+- Yes, the unittests are not complete, and Perry does not have full coverage.
+- Perry comes with classes in the Psr namespace, this is because Perry is implementing a Psr that is not in effect yet.
