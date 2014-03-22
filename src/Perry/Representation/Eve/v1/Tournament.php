@@ -1,39 +1,54 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Base;
-use Perry\Representation\Reference;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class Tournament extends Base
 {
-    /**
-     * @var Reference
-     */
     public $series;
 
-    /**
-     * @var array
-     */
-    public $entries = array();
+    public $membershipCutoff;
 
-    /**
-     * @param array $entries
-     */
-    public function setEntries($entries)
-    {
-        foreach ($entries as $entry) {
-            $item = new Reference($entry, "vnd.ccp.eve.TournamentTeam-v1");
-            $item->teamStats = new Reference($item->teamStats, "vnd.ccp.eve.TournamentTeam-v1");
-            $this->entries[] = $item;
-        }
+    public $type;
 
-    }
+    public $name;
 
-    /**
-     * @param array $series
-     */
+    public $entries = [];
+
+    // by Warringer\Types\Reference
     public function setSeries($series)
     {
-        $this->series = new Reference($series, "vnd.ccp.eve.TournamentSeriesCollection-v1");
+        $this->series = new Reference($series);
     }
+
+    // by Warringer\Types\String
+    public function setMembershipCutoff($membershipCutoff)
+    {
+        $this->membershipCutoff = $membershipCutoff;
+    }
+
+    // by Warringer\Types\String
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    // by Warringer\Types\String
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // by Warringer\Types\ArrayType
+    public function setEntries($entries)
+    {
+        // by Warringer\Types\Reference
+        $func = function($value) { return new Reference($value); };
+
+        foreach ($entries as $key => $value) {
+            $this->entries[$key] = $func($value);
+        }
+    }
+
 }

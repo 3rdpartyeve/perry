@@ -30,8 +30,8 @@ class TournamentCollection extends Base
         $converters['href'] = function($value) { return new Reference($value); };
 
         $func = function($value) use($converters) {
-            $return = new \stdClass();
-            $return->href = isset($value->href) ? $converters['href']($value->href) : null;
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['href'] = isset($value->{'href'}) ? $converters['href']($value->{'href'}) : null;
             return $return;
         };
 

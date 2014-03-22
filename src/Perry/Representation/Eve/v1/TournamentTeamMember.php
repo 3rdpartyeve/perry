@@ -1,28 +1,57 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-use Perry\Representation\Base;
-use Perry\Representation\Reference;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class TournamentTeamMember extends Base
 {
-    public $self;
-
     public $alliance;
 
-    /**
-     * @param array|object $self
-     */
-    public function setSelf($self)
-    {
-        $this->self = new Reference($self, "vnd.ccp.eve.TournamentTeamMember-v1");
-    }
+    public $name;
 
-    /**
-     * @param array|object $alliance
-     */
+    public $corporation;
+
+    public $self;
+
+    public $character;
+
+    public $icon;
+
+    // by Warringer\Types\Reference
     public function setAlliance($alliance)
     {
-        $this->alliance = new Reference($alliance,  "vnd.ccp.eve.Alliance-v1");
+        $this->alliance = new Reference($alliance);
     }
+
+    // by Warringer\Types\String
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // by Warringer\Types\Reference
+    public function setCorporation($corporation)
+    {
+        $this->corporation = new Reference($corporation);
+    }
+
+    // by Warringer\Types\Reference
+    public function setSelf($self)
+    {
+        $this->self = new Reference($self);
+    }
+
+    // by Warringer\Types\Reference
+    public function setCharacter($character)
+    {
+        $this->character = new Reference($character);
+    }
+
+    // by Warringer\Types\Reference
+    public function setIcon($icon)
+    {
+        $this->icon = new Reference($icon);
+    }
+
 }

@@ -1,98 +1,135 @@
 <?php
 namespace Perry\Representation\Eve\v1;
 
-
-use Perry\Representation\Base;
-use Perry\Representation\Reference;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class TournamentTeam extends Base
 {
-    /**
-     * @var array
-     */
-    public $banFrequencyAgainst = array();
+    public $banFrequencyAgainst = [];
 
-    /**
-     * @var array
-     */
-    public $pilots = array();
+    public $shipsKilled;
 
-    /**
-     * @var array
-     */
-    public $matches = array();
+    public $pilots = [];
 
-    /**
-     * @var array
-     */
-    public $banFrequency = array();
+    public $matches = [];
 
-    /**
-     * @var Reference
-     */
+    public $flagshipType;
+
+    public $name;
+
+    public $seed;
+
+    public $banFrequency = [];
+
     public $members;
 
-    /**
-     * @var Reference
-     */
     public $captain;
 
-    /**
-     * @param array $banFrequency
-     */
-    public function setBanFrequency($banFrequency)
-    {
-        foreach ($banFrequency as $item) {
-            $item->shipType = new Reference($item->shipType);
-            $this->banFrequency[] = $item;
-        }
-    }
+    public $iskKilled;
 
-    /**
-     * @param array $banFrequencyAgainst
-     */
+    // by Warringer\Types\ArrayType
     public function setBanFrequencyAgainst($banFrequencyAgainst)
     {
-        foreach ($banFrequencyAgainst as $item) {
-            $item->shipType = new Reference($item->shipType);
-            $this->banFrequencyAgainst[] = $item;
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['numBans'] = function($value) { return $value; };
+        $converters['shipType'] = function($value) { return new Reference($value); };
+
+        $func = function($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['numBans'] = isset($value->{'numBans'}) ? $converters['numBans']($value->{'numBans'}) : null;
+            $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;
+            return $return;
+        };
+
+        foreach ($banFrequencyAgainst as $key => $value) {
+            $this->banFrequencyAgainst[$key] = $func($value);
         }
     }
 
-    /**
-     * @param array $captain
-     */
-    public function setCaptain($captain)
+    // by Warringer\Types\Long
+    public function setShipsKilled($shipsKilled)
     {
-        $this->captain = new Reference($captain, "vnd.ccp.eve.Character-v1");
+        $this->shipsKilled = $shipsKilled;
     }
 
-    /**
-     * @param array $matches
-     */
-    public function setMatches($matches)
-    {
-        foreach ($matches as $match) {
-            $this->matches[] = new Reference($match, "vnd.ccp.eve.TournamentMatch-v1");
-        }
-
-    }
-
-    /**
-     * @param array $members
-     */
-    public function setMembers($members)
-    {
-        $this->members = new Reference($members, "vnd.ccp.eve.TournamentTeamMemberCollection-v1");
-    }
-
-    /**
-     * @param array $pilots
-     */
+    // by Warringer\Types\ArrayType
     public function setPilots($pilots)
     {
-        foreach ($pilots as $pilot) {
-            $this->pilots[] = new Reference($pilot, "vnd.ccp.eve.Character-v1");
+        // by Warringer\Types\Reference
+        $func = function($value) { return new Reference($value); };
+
+        foreach ($pilots as $key => $value) {
+            $this->pilots[$key] = $func($value);
         }
     }
+
+    // by Warringer\Types\ArrayType
+    public function setMatches($matches)
+    {
+        // by Warringer\Types\Reference
+        $func = function($value) { return new Reference($value); };
+
+        foreach ($matches as $key => $value) {
+            $this->matches[$key] = $func($value);
+        }
+    }
+
+    // by Warringer\Types\Reference
+    public function setFlagshipType($flagshipType)
+    {
+        $this->flagshipType = new Reference($flagshipType);
+    }
+
+    // by Warringer\Types\String
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // by Warringer\Types\Long
+    public function setSeed($seed)
+    {
+        $this->seed = $seed;
+    }
+
+    // by Warringer\Types\ArrayType
+    public function setBanFrequency($banFrequency)
+    {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['numBans'] = function($value) { return $value; };
+        $converters['shipType'] = function($value) { return new Reference($value); };
+
+        $func = function($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['numBans'] = isset($value->{'numBans'}) ? $converters['numBans']($value->{'numBans'}) : null;
+            $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;
+            return $return;
+        };
+
+        foreach ($banFrequency as $key => $value) {
+            $this->banFrequency[$key] = $func($value);
+        }
+    }
+
+    // by Warringer\Types\Reference
+    public function setMembers($members)
+    {
+        $this->members = new Reference($members);
+    }
+
+    // by Warringer\Types\Reference
+    public function setCaptain($captain)
+    {
+        $this->captain = new Reference($captain);
+    }
+
+    // by Warringer\Types\Long
+    public function setIskKilled($iskKilled)
+    {
+        $this->iskKilled = $iskKilled;
+    }
+
 }

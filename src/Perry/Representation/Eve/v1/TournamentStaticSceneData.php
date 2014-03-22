@@ -1,70 +1,84 @@
 <?php
 namespace Perry\Representation\Eve\v1;
-use Perry\Representation\Reference;
 
-use Perry\Representation\Base;
+use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Base as Base;
 
 class TournamentStaticSceneData extends Base
 {
-    /**
-     * @var array
-     */
-    public $globalObjects = array();
+    public $globalObjects = [];
 
-    /**
-     * @var array
-     */
-    public $ships = array();
+    public $ships = [];
 
-    /**
-     * @param array $globalObjects
-     */
+    public $nebulaName;
+
+    // by Warringer\Types\ArrayType
     public function setGlobalObjects($globalObjects)
     {
-        // iterating over call global objects to fill them with their references
-        foreach ($globalObjects as $object) {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['name'] = function($value) { return $value; };
+        $converters['planetOrMoonInfo'] = function($value) { return $value; };
+        $converters['y'] = function($value) { return $value; };
+        $converters['x'] = function($value) { return $value; };
+        $converters['z'] = function($value) { return $value; };
+        $converters['type'] = function($value) { return new Reference($value); };
 
-            $object->type = new Reference($object->type);
+        $func = function($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
+            $return['planetOrMoonInfo'] = isset($value->{'planetOrMoonInfo'}) ? $converters['planetOrMoonInfo']($value->{'planetOrMoonInfo'}) : null;
+            $return['y'] = isset($value->{'y'}) ? $converters['y']($value->{'y'}) : null;
+            $return['x'] = isset($value->{'x'}) ? $converters['x']($value->{'x'}) : null;
+            $return['z'] = isset($value->{'z'}) ? $converters['z']($value->{'z'}) : null;
+            $return['type'] = isset($value->{'type'}) ? $converters['type']($value->{'type'}) : null;
+            return $return;
+        };
 
-            // a global object might contain further references
-            if (isset($object->planetOrMoonInfo) && !is_null($object->planetOrMoonInfo)) {
-                // reference to 1st heightMap
-                $object->planetOrMoonInfo->heightMap1 = new Reference(
-                    $object->planetOrMoonInfo->heightMap1,
-                    "Dear CCP please document this representation"
-                );
-
-                // reference to shader Preset
-                $object->planetOrMoonInfo->shaderPreset = new Reference(
-                    $object->planetOrMoonInfo->shaderPreset,
-                    "Dear CCP please document this representation"
-                );
-
-                // reference to 2nd heightMap
-                $object->planetOrMoonInfo->heightMap2 = new Reference(
-                    $object->planetOrMoonInfo->heightMap2,
-                    "Dear CCP please document this representation"
-                );
-            }
-            $this->globalObjects[] = $object;
+        foreach ($globalObjects as $key => $value) {
+            $this->globalObjects[$key] = $func($value);
         }
     }
 
-    /**
-     * @param array $ships
-     */
+    // by Warringer\Types\ArrayType
     public function setShips($ships)
     {
-        foreach ($ships as $ship) {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['item'] = function($value) { return new Reference($value); };
+        $converters['points'] = function($value) { return $value; };
+        $converters['character'] = function($value) { return new Reference($value); };
+        $converters['turrets'] = function ($values) {
+        // by Warringer\Types\Reference
+        $func = function($value) { return new Reference($value); };
 
-            $ship->item = new Reference($ship->item);
-            $ship->type = new Reference($ship->type);
-            $ship->character = new Reference($ship->character, "vnd.ccp.eve.Character-v1");
-
-            foreach ($ship->turrets as $tkey => $turret) {
-                $ship->turrets[$tkey] = new Reference($turret);
+            foreach ($values as $key => $value) {
+                 $values[$key] = $func($value);
             }
-            $this->ships[] = $ship;
+           return $values;
+        };
+
+        $converters['type'] = function($value) { return new Reference($value); };
+
+        $func = function($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['item'] = isset($value->{'item'}) ? $converters['item']($value->{'item'}) : null;
+            $return['points'] = isset($value->{'points'}) ? $converters['points']($value->{'points'}) : null;
+            $return['character'] = isset($value->{'character'}) ? $converters['character']($value->{'character'}) : null;
+            $return['turrets'] = isset($value->{'turrets'}) ? $converters['turrets']($value->{'turrets'}) : null;
+            $return['type'] = isset($value->{'type'}) ? $converters['type']($value->{'type'}) : null;
+            return $return;
+        };
+
+        foreach ($ships as $key => $value) {
+            $this->ships[$key] = $func($value);
         }
     }
+
+    // by Warringer\Types\String
+    public function setNebulaName($nebulaName)
+    {
+        $this->nebulaName = $nebulaName;
+    }
+
 }

@@ -60,16 +60,16 @@ class Killmail extends Base
         $converters['damageDone'] = function($value) { return $value; };
 
         $func = function($value) use($converters) {
-            $return = new \stdClass();
-            $return->alliance = isset($value->alliance) ? $converters['alliance']($value->alliance) : null;
-            $return->shipType = isset($value->shipType) ? $converters['shipType']($value->shipType) : null;
-            $return->faction = isset($value->faction) ? $converters['faction']($value->faction) : null;
-            $return->corporation = isset($value->corporation) ? $converters['corporation']($value->corporation) : null;
-            $return->character = isset($value->character) ? $converters['character']($value->character) : null;
-            $return->weaponType = isset($value->weaponType) ? $converters['weaponType']($value->weaponType) : null;
-            $return->finalBlow = isset($value->finalBlow) ? $converters['finalBlow']($value->finalBlow) : null;
-            $return->securityStatus = isset($value->securityStatus) ? $converters['securityStatus']($value->securityStatus) : null;
-            $return->damageDone = isset($value->damageDone) ? $converters['damageDone']($value->damageDone) : null;
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['alliance'] = isset($value->{'alliance'}) ? $converters['alliance']($value->{'alliance'}) : null;
+            $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;
+            $return['faction'] = isset($value->{'faction'}) ? $converters['faction']($value->{'faction'}) : null;
+            $return['corporation'] = isset($value->{'corporation'}) ? $converters['corporation']($value->{'corporation'}) : null;
+            $return['character'] = isset($value->{'character'}) ? $converters['character']($value->{'character'}) : null;
+            $return['weaponType'] = isset($value->{'weaponType'}) ? $converters['weaponType']($value->{'weaponType'}) : null;
+            $return['finalBlow'] = isset($value->{'finalBlow'}) ? $converters['finalBlow']($value->{'finalBlow'}) : null;
+            $return['securityStatus'] = isset($value->{'securityStatus'}) ? $converters['securityStatus']($value->{'securityStatus'}) : null;
+            $return['damageDone'] = isset($value->{'damageDone'}) ? $converters['damageDone']($value->{'damageDone'}) : null;
             return $return;
         };
 
@@ -110,12 +110,12 @@ class Killmail extends Base
         $converters['itemType'] = function($value) { return new Reference($value); };
 
         $func = function($value) use($converters) {
-            $return = new \stdClass();
-            $return->quantityDropped = isset($value->quantityDropped) ? $converters['quantityDropped']($value->quantityDropped) : null;
-            $return->singleton = isset($value->singleton) ? $converters['singleton']($value->singleton) : null;
-            $return->quantityDestroyed = isset($value->quantityDestroyed) ? $converters['quantityDestroyed']($value->quantityDestroyed) : null;
-            $return->flag = isset($value->flag) ? $converters['flag']($value->flag) : null;
-            $return->itemType = isset($value->itemType) ? $converters['itemType']($value->itemType) : null;
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['quantityDropped'] = isset($value->{'quantityDropped'}) ? $converters['quantityDropped']($value->{'quantityDropped'}) : null;
+            $return['singleton'] = isset($value->{'singleton'}) ? $converters['singleton']($value->{'singleton'}) : null;
+            $return['quantityDestroyed'] = isset($value->{'quantityDestroyed'}) ? $converters['quantityDestroyed']($value->{'quantityDestroyed'}) : null;
+            $return['flag'] = isset($value->{'flag'}) ? $converters['flag']($value->{'flag'}) : null;
+            $return['itemType'] = isset($value->{'itemType'}) ? $converters['itemType']($value->{'itemType'}) : null;
             return $return;
         };
 
@@ -130,13 +130,13 @@ class Killmail extends Base
         $converters['quantityDestroyed'] = function($value) { return $value; };
 
         $func = function($value) use($converters) {
-            $return = new \stdClass();
-            $return->singleton = isset($value->singleton) ? $converters['singleton']($value->singleton) : null;
-            $return->itemType = isset($value->itemType) ? $converters['itemType']($value->itemType) : null;
-            $return->items = isset($value->items) ? $converters['items']($value->items) : null;
-            $return->flag = isset($value->flag) ? $converters['flag']($value->flag) : null;
-            $return->quantityDropped = isset($value->quantityDropped) ? $converters['quantityDropped']($value->quantityDropped) : null;
-            $return->quantityDestroyed = isset($value->quantityDestroyed) ? $converters['quantityDestroyed']($value->quantityDestroyed) : null;
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['singleton'] = isset($value->{'singleton'}) ? $converters['singleton']($value->{'singleton'}) : null;
+            $return['itemType'] = isset($value->{'itemType'}) ? $converters['itemType']($value->{'itemType'}) : null;
+            $return['items'] = isset($value->{'items'}) ? $converters['items']($value->{'items'}) : null;
+            $return['flag'] = isset($value->{'flag'}) ? $converters['flag']($value->{'flag'}) : null;
+            $return['quantityDropped'] = isset($value->{'quantityDropped'}) ? $converters['quantityDropped']($value->{'quantityDropped'}) : null;
+            $return['quantityDestroyed'] = isset($value->{'quantityDestroyed'}) ? $converters['quantityDestroyed']($value->{'quantityDestroyed'}) : null;
             return $return;
         };
 
@@ -148,14 +148,14 @@ class Killmail extends Base
 
 
         $func = function($value) use($converters) {
-            $return = new \stdClass();
-            $return->alliance = isset($value->alliance) ? $converters['alliance']($value->alliance) : null;
-            $return->faction = isset($value->faction) ? $converters['faction']($value->faction) : null;
-            $return->corporation = isset($value->corporation) ? $converters['corporation']($value->corporation) : null;
-            $return->damageTaken = isset($value->damageTaken) ? $converters['damageTaken']($value->damageTaken) : null;
-            $return->character = isset($value->character) ? $converters['character']($value->character) : null;
-            $return->shipType = isset($value->shipType) ? $converters['shipType']($value->shipType) : null;
-            $return->items = isset($value->items) ? $converters['items']($value->items) : null;
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['alliance'] = isset($value->{'alliance'}) ? $converters['alliance']($value->{'alliance'}) : null;
+            $return['faction'] = isset($value->{'faction'}) ? $converters['faction']($value->{'faction'}) : null;
+            $return['corporation'] = isset($value->{'corporation'}) ? $converters['corporation']($value->{'corporation'}) : null;
+            $return['damageTaken'] = isset($value->{'damageTaken'}) ? $converters['damageTaken']($value->{'damageTaken'}) : null;
+            $return['character'] = isset($value->{'character'}) ? $converters['character']($value->{'character'}) : null;
+            $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;
+            $return['items'] = isset($value->{'items'}) ? $converters['items']($value->{'items'}) : null;
             return $return;
         };
         $this->victim = $func($victim);

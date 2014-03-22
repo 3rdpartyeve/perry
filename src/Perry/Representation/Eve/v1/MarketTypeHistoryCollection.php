@@ -4,7 +4,7 @@ namespace Perry\Representation\Eve\v1;
 use \Perry\Representation\Reference as Reference;
 use \Perry\Representation\Base as Base;
 
-class IncursionCollection extends Base
+class MarketTypeHistoryCollection extends Base
 {
     public $pageCount;
 
@@ -27,19 +27,21 @@ class IncursionCollection extends Base
     {
         // by Warringer\Types\Base
         $converters = [];
-        $converters['influence'] = function($value) { return $value; };
-        $converters['hasBoss'] = function($value) { return $value; };
-        $converters['state'] = function($value) { return $value; };
-        $converters['stagingSolarSystem'] = function($value) { return new Reference($value); };
-        $converters['constellation'] = function($value) { return new Reference($value); };
+        $converters['orderCount'] = function($value) { return $value; };
+        $converters['lowPrice'] = function($value) { return $value; };
+        $converters['highPrice'] = function($value) { return $value; };
+        $converters['avgPrice'] = function($value) { return $value; };
+        $converters['volume'] = function($value) { return $value; };
+        $converters['date'] = function($value) { return $value; };
 
         $func = function($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
-            $return['influence'] = isset($value->{'influence'}) ? $converters['influence']($value->{'influence'}) : null;
-            $return['hasBoss'] = isset($value->{'hasBoss'}) ? $converters['hasBoss']($value->{'hasBoss'}) : null;
-            $return['state'] = isset($value->{'state'}) ? $converters['state']($value->{'state'}) : null;
-            $return['stagingSolarSystem'] = isset($value->{'stagingSolarSystem'}) ? $converters['stagingSolarSystem']($value->{'stagingSolarSystem'}) : null;
-            $return['constellation'] = isset($value->{'constellation'}) ? $converters['constellation']($value->{'constellation'}) : null;
+            $return['orderCount'] = isset($value->{'orderCount'}) ? $converters['orderCount']($value->{'orderCount'}) : null;
+            $return['lowPrice'] = isset($value->{'lowPrice'}) ? $converters['lowPrice']($value->{'lowPrice'}) : null;
+            $return['highPrice'] = isset($value->{'highPrice'}) ? $converters['highPrice']($value->{'highPrice'}) : null;
+            $return['avgPrice'] = isset($value->{'avgPrice'}) ? $converters['avgPrice']($value->{'avgPrice'}) : null;
+            $return['volume'] = isset($value->{'volume'}) ? $converters['volume']($value->{'volume'}) : null;
+            $return['date'] = isset($value->{'date'}) ? $converters['date']($value->{'date'}) : null;
             return $return;
         };
 
