@@ -1,4 +1,10 @@
 
+VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
+==========================================================================================================================
+
+   Version 1.0 - replaced Representation classes by generated representation classes for easier updating on future new endpoints
+      22/03/2014 19:15  1.0.0  initial release
+
 VERSION 0  RELEASE 0.1.2
 ========================
 
