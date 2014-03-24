@@ -19,7 +19,8 @@ class GuzzleFetcher implements CanFetch
     private function getOpts($representation)
     {
         $headers = [
-            "Accept-language" => "en"
+            "Accept-language" => "en",
+            'User-Agent' => Setup::$userAgent
         ];
 
         if (!is_null($representation)) {

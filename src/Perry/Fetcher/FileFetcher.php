@@ -33,9 +33,9 @@ class FileFetcher implements CanFetch
         );
 
         if (is_null($representation)) {
-            $header = "Accept-language: en\r\n";
+            $header = "Accept-language: en\r\nUser-Agent: " . Setup::$userAgent ."\r\n";
         } else {
-            $header = "Accept-language: en\r\nAccept: application/$representation+json\r\n";
+            $header = "Accept-language: en\r\nUser-Agent: " . Setup::$userAgent ."\r\nAccept: application/$representation+json\r\n";
         }
 
         $opts['http']['header'] = $header;
