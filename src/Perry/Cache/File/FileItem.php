@@ -174,7 +174,16 @@ class FileItem implements ItemInterface
         $instance->key = $key;
 
         if (file_exists($filename)) {
-            $data = unserialize(file_get_contents($filename));
+
+            // fopen/fread/fclose since file_get_contents seems to not close the files properly
+            $fp = fopen($filename, "r");
+            $contents ="";
+            while (!feof($fp)) {
+              $contents .= fread($fp, 8192);
+            }
+            fclose($fp);
+
+            $data = unserialize($contents);
 
             $now = new \DateTime();
 
