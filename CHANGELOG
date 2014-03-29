@@ -3,6 +3,7 @@ VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES F
 ==========================================================================================================================
 
    Version 1.0 - replaced Representation classes by generated representation classes for easier updating on future new endpoints
+      29/03/2014 19:09  1.0.3  bugfix release
       24/03/2014 13:05  1.0.2  some love for FF
       22/03/2014 20:01  1.0.1  fetching improvements
       22/03/2014 19:15  1.0.0  initial release
