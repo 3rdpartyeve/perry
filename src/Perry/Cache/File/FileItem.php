@@ -177,6 +177,14 @@ class FileItem implements ItemInterface
 
             // fopen/fread/fclose since file_get_contents seems to not close the files properly
             $fp = fopen($filename, "r");
+
+            // if we for whatever reason can't open this file,
+            // we have a cache miss
+            if (false === $fp) {
+                $instance->hit =false;
+                return $instance;
+            }
+
             $contents ="";
             while (!feof($fp)) {
               $contents .= fread($fp, 8192);
