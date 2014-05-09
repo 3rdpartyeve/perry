@@ -2,6 +2,7 @@
 namespace Perry\Fetcher;
 
 use Perry\Cache\CacheManager;
+use Perry\Perry;
 use Perry\Response;
 use Perry\Setup;
 use Perry\Tool;
@@ -33,9 +34,9 @@ class FileFetcher implements CanFetch
         );
 
         if (is_null($representation)) {
-            $header = "Accept-language: en\r\nUser-Agent: " . Setup::$userAgent ."\r\n";
+            $header = "Accept-language: en\r\nUser-Agent: Perry/" . Perry::$version . ' ' .  Setup::$userAgent ."\r\n";
         } else {
-            $header = "Accept-language: en\r\nUser-Agent: " . Setup::$userAgent ."\r\nAccept: application/$representation+json\r\n";
+            $header = "Accept-language: en\r\nUser-Agent: Perry/" . Perry::$version . ' ' .  Setup::$userAgent ."\r\nAccept: application/$representation+json\r\n";
         }
 
         $opts['http']['header'] = $header;

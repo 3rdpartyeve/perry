@@ -3,6 +3,7 @@ namespace Perry\Fetcher;
 
 use GuzzleHttp\Client;
 use Perry\Cache\CacheManager;
+use Perry\Perry;
 use Perry\Response;
 use Perry\Setup;
 use Perry\Tool;
@@ -20,7 +21,7 @@ class GuzzleFetcher implements CanFetch
     {
         $headers = [
             "Accept-language" => "en",
-            'User-Agent' => Setup::$userAgent
+            'User-Agent' => 'Perry/' . Perry::$version . ' ' .Setup::$userAgent
         ];
 
         if (!is_null($representation)) {
