@@ -10,7 +10,7 @@ class Perry
 
     /**
      * @param string $url
-     * @param null $representation
+     * @param null|string $representation
      * @return \Perry\Representation\Base
      */
     public static function fromUrl($url, $representation = null)
