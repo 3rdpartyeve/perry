@@ -16,11 +16,11 @@ class CacheManager
      */
     public static function getInstance()
     {
-        if (is_null(CacheManager::$myInstance)) {
-            CacheManager::$myInstance = new CacheManager();
+        if (is_null(self::$myInstance)) {
+            self::$myInstance = new CacheManager();
         }
 
-        return CacheManager::$myInstance;
+        return self::$myInstance;
     }
 
     /**
