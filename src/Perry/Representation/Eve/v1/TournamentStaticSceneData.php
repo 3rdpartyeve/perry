@@ -17,14 +17,14 @@ class TournamentStaticSceneData extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['name'] = function($value) { return $value; };
-        $converters['planetOrMoonInfo'] = function($value) { return $value; };
-        $converters['y'] = function($value) { return $value; };
-        $converters['x'] = function($value) { return $value; };
-        $converters['z'] = function($value) { return $value; };
-        $converters['type'] = function($value) { return new Reference($value); };
+        $converters['name'] = function ($value) { return $value; };
+        $converters['planetOrMoonInfo'] = function ($value) { return $value; };
+        $converters['y'] = function ($value) { return $value; };
+        $converters['x'] = function ($value) { return $value; };
+        $converters['z'] = function ($value) { return $value; };
+        $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
             $return['planetOrMoonInfo'] = isset($value->{'planetOrMoonInfo'}) ? $converters['planetOrMoonInfo']($value->{'planetOrMoonInfo'}) : null;
@@ -45,12 +45,12 @@ class TournamentStaticSceneData extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['item'] = function($value) { return new Reference($value); };
-        $converters['points'] = function($value) { return $value; };
-        $converters['character'] = function($value) { return new Reference($value); };
+        $converters['item'] = function ($value) { return new Reference($value); };
+        $converters['points'] = function ($value) { return $value; };
+        $converters['character'] = function ($value) { return new Reference($value); };
         $converters['turrets'] = function ($values) {
         // by Warringer\Types\Reference
-        $func = function($value) { return new Reference($value); };
+        $func = function ($value) { return new Reference($value); };
 
             foreach ($values as $key => $value) {
                  $values[$key] = $func($value);
@@ -58,9 +58,9 @@ class TournamentStaticSceneData extends Base
            return $values;
         };
 
-        $converters['type'] = function($value) { return new Reference($value); };
+        $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['item'] = isset($value->{'item'}) ? $converters['item']($value->{'item'}) : null;
             $return['points'] = isset($value->{'points'}) ? $converters['points']($value->{'points'}) : null;

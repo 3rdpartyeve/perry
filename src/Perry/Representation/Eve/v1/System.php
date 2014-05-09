@@ -59,9 +59,9 @@ class System extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['href'] = function($value) { return $value; };
+        $converters['href'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['href'] = isset($value->{'href'}) ? $converters['href']($value->{'href'}) : null;
             return $return;
@@ -77,11 +77,11 @@ class System extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['y'] = function($value) { return $value; };
-        $converters['x'] = function($value) { return $value; };
-        $converters['z'] = function($value) { return $value; };
+        $converters['y'] = function ($value) { return $value; };
+        $converters['x'] = function ($value) { return $value; };
+        $converters['z'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['y'] = isset($value->{'y'}) ? $converters['y']($value->{'y'}) : null;
             $return['x'] = isset($value->{'x'}) ? $converters['x']($value->{'x'}) : null;

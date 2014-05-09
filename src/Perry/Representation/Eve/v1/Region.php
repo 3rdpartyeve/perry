@@ -39,9 +39,9 @@ class Region extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['href'] = function($value) { return $value; };
+        $converters['href'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['href'] = isset($value->{'href'}) ? $converters['href']($value->{'href'}) : null;
             return $return;

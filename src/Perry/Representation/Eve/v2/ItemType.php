@@ -37,15 +37,15 @@ class ItemType extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['skeletalMeshMale'] = function($value) { return $value; };
+        $converters['skeletalMeshMale'] = function ($value) { return $value; };
         $converters['modifier'] = function ($values) {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['modifierValue'] = function($value) { return $value; };
-        $converters['attributeName'] = function($value) { return $value; };
-        $converters['modifierType'] = function($value) { return $value; };
+        $converters['modifierValue'] = function ($value) { return $value; };
+        $converters['attributeName'] = function ($value) { return $value; };
+        $converters['modifierType'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['modifierValue'] = isset($value->{'modifierValue'}) ? $converters['modifierValue']($value->{'modifierValue'}) : null;
             $return['attributeName'] = isset($value->{'attributeName'}) ? $converters['attributeName']($value->{'attributeName'}) : null;
@@ -59,11 +59,11 @@ class ItemType extends Base
            return $values;
         };
 
-        $converters['slotType'] = function($value) { return $value; };
-        $converters['skeletalMeshFemale'] = function($value) { return $value; };
-        $converters['mVICProp'] = function($value) { return $value; };
+        $converters['slotType'] = function ($value) { return $value; };
+        $converters['skeletalMeshFemale'] = function ($value) { return $value; };
+        $converters['mVICProp'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['skeletalMeshMale'] = isset($value->{'skeletalMeshMale'}) ? $converters['skeletalMeshMale']($value->{'skeletalMeshMale'}) : null;
             $return['modifier'] = isset($value->{'modifier'}) ? $converters['modifier']($value->{'modifier'}) : null;
@@ -92,11 +92,11 @@ class ItemType extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['cpu'] = function($value) { return $value; };
-        $converters['power'] = function($value) { return $value; };
-        $converters['heatDamage'] = function($value) { return $value; };
+        $converters['cpu'] = function ($value) { return $value; };
+        $converters['power'] = function ($value) { return $value; };
+        $converters['heatDamage'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['cpu'] = isset($value->{'cpu'}) ? $converters['cpu']($value->{'cpu'}) : null;
             $return['power'] = isset($value->{'power'}) ? $converters['power']($value->{'power'}) : null;

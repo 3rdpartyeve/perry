@@ -30,7 +30,7 @@ class TournamentSeries extends Base
     public function setMatchesInProgress($matchesInProgress)
     {
         // by Warringer\Types\Reference
-        $func = function($value) { return new Reference($value); };
+        $func = function ($value) { return new Reference($value); };
 
         foreach ($matchesInProgress as $key => $value) {
             $this->matchesInProgress[$key] = $func($value);
@@ -42,11 +42,11 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['team'] = function($value) { return new Reference($value); };
-        $converters['isDecided'] = function($value) { return $value; };
-        $converters['isBye'] = function($value) { return $value; };
+        $converters['team'] = function ($value) { return new Reference($value); };
+        $converters['isDecided'] = function ($value) { return $value; };
+        $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -61,10 +61,10 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['redTeam'] = function($value) { return $value; };
-        $converters['blueTeam'] = function($value) { return $value; };
+        $converters['redTeam'] = function ($value) { return $value; };
+        $converters['blueTeam'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['redTeam'] = isset($value->{'redTeam'}) ? $converters['redTeam']($value->{'redTeam'}) : null;
             $return['blueTeam'] = isset($value->{'blueTeam'}) ? $converters['blueTeam']($value->{'blueTeam'}) : null;
@@ -90,11 +90,11 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['team'] = function($value) { return new Reference($value); };
-        $converters['isDecided'] = function($value) { return $value; };
-        $converters['isBye'] = function($value) { return $value; };
+        $converters['team'] = function ($value) { return new Reference($value); };
+        $converters['isDecided'] = function ($value) { return $value; };
+        $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -109,11 +109,11 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['team'] = function($value) { return new Reference($value); };
-        $converters['isDecided'] = function($value) { return $value; };
-        $converters['isBye'] = function($value) { return $value; };
+        $converters['team'] = function ($value) { return new Reference($value); };
+        $converters['isDecided'] = function ($value) { return $value; };
+        $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -134,11 +134,11 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['team'] = function($value) { return new Reference($value); };
-        $converters['isDecided'] = function($value) { return $value; };
-        $converters['isBye'] = function($value) { return $value; };
+        $converters['team'] = function ($value) { return new Reference($value); };
+        $converters['isDecided'] = function ($value) { return $value; };
+        $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -153,12 +153,12 @@ class TournamentSeries extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['outgoingLoser'] = function($value) { return new Reference($value); };
-        $converters['outgoingWinner'] = function($value) { return new Reference($value); };
-        $converters['incomingRed'] = function($value) { return new Reference($value); };
-        $converters['incomingBlue'] = function($value) { return new Reference($value); };
+        $converters['outgoingLoser'] = function ($value) { return new Reference($value); };
+        $converters['outgoingWinner'] = function ($value) { return new Reference($value); };
+        $converters['incomingRed'] = function ($value) { return new Reference($value); };
+        $converters['incomingBlue'] = function ($value) { return new Reference($value); };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['outgoingLoser'] = isset($value->{'outgoingLoser'}) ? $converters['outgoingLoser']($value->{'outgoingLoser'}) : null;
             $return['outgoingWinner'] = isset($value->{'outgoingWinner'}) ? $converters['outgoingWinner']($value->{'outgoingWinner'}) : null;

@@ -44,7 +44,7 @@ class Tournament extends Base
     public function setEntries($entries)
     {
         // by Warringer\Types\Reference
-        $func = function($value) { return new Reference($value); };
+        $func = function ($value) { return new Reference($value); };
 
         foreach ($entries as $key => $value) {
             $this->entries[$key] = $func($value);

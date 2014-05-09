@@ -82,7 +82,7 @@ class Alliance extends Base
     public function setCorporations($corporations)
     {
         // by Warringer\Types\Reference
-        $func = function($value) { return new Reference($value); };
+        $func = function ($value) { return new Reference($value); };
 
         foreach ($corporations as $key => $value) {
             $this->corporations[$key] = $func($value);

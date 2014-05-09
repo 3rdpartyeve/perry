@@ -29,7 +29,7 @@ class TournamentSeriesCollection extends Base
         $converters = [];
         $converters['matchesInProgress'] = function ($values) {
         // by Warringer\Types\Reference
-        $func = function($value) { return new Reference($value); };
+        $func = function ($value) { return new Reference($value); };
 
             foreach ($values as $key => $value) {
                  $values[$key] = $func($value);
@@ -37,17 +37,17 @@ class TournamentSeriesCollection extends Base
            return $values;
         };
 
-        $converters['redTeam'] = function($value) { return $value; };
-        $converters['matchesWon'] = function($value) { return $value; };
-        $converters['matches'] = function($value) { return new Reference($value); };
-        $converters['self'] = function($value) { return new Reference($value); };
-        $converters['winner'] = function($value) { return $value; };
-        $converters['loser'] = function($value) { return $value; };
-        $converters['length'] = function($value) { return $value; };
-        $converters['blueTeam'] = function($value) { return $value; };
-        $converters['structure'] = function($value) { return $value; };
+        $converters['redTeam'] = function ($value) { return $value; };
+        $converters['matchesWon'] = function ($value) { return $value; };
+        $converters['matches'] = function ($value) { return new Reference($value); };
+        $converters['self'] = function ($value) { return new Reference($value); };
+        $converters['winner'] = function ($value) { return $value; };
+        $converters['loser'] = function ($value) { return $value; };
+        $converters['length'] = function ($value) { return $value; };
+        $converters['blueTeam'] = function ($value) { return $value; };
+        $converters['structure'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['matchesInProgress'] = isset($value->{'matchesInProgress'}) ? $converters['matchesInProgress']($value->{'matchesInProgress'}) : null;
             $return['redTeam'] = isset($value->{'redTeam'}) ? $converters['redTeam']($value->{'redTeam'}) : null;

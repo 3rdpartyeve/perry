@@ -27,21 +27,21 @@ class TournamentMatchCollection extends Base
     {
         // by Warringer\Types\Base
         $converters = [];
-        $converters['winner'] = function($value) { return new Reference($value); };
-        $converters['stats'] = function($value) { return $value; };
-        $converters['redTeam'] = function($value) { return new Reference($value); };
-        $converters['bans'] = function($value) { return $value; };
-        $converters['finalized'] = function($value) { return $value; };
-        $converters['series'] = function($value) { return new Reference($value); };
-        $converters['tournament'] = function($value) { return new Reference($value); };
-        $converters['staticSceneData'] = function($value) { return new Reference($value); };
-        $converters['firstReplayFrame'] = function($value) { return new Reference($value); };
-        $converters['lastReplayFrame'] = function($value) { return new Reference($value); };
-        $converters['blueTeam'] = function($value) { return new Reference($value); };
-        $converters['inProgress'] = function($value) { return $value; };
-        $converters['score'] = function($value) { return $value; };
+        $converters['winner'] = function ($value) { return new Reference($value); };
+        $converters['stats'] = function ($value) { return $value; };
+        $converters['redTeam'] = function ($value) { return new Reference($value); };
+        $converters['bans'] = function ($value) { return $value; };
+        $converters['finalized'] = function ($value) { return $value; };
+        $converters['series'] = function ($value) { return new Reference($value); };
+        $converters['tournament'] = function ($value) { return new Reference($value); };
+        $converters['staticSceneData'] = function ($value) { return new Reference($value); };
+        $converters['firstReplayFrame'] = function ($value) { return new Reference($value); };
+        $converters['lastReplayFrame'] = function ($value) { return new Reference($value); };
+        $converters['blueTeam'] = function ($value) { return new Reference($value); };
+        $converters['inProgress'] = function ($value) { return $value; };
+        $converters['score'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['winner'] = isset($value->{'winner'}) ? $converters['winner']($value->{'winner'}) : null;
             $return['stats'] = isset($value->{'stats'}) ? $converters['stats']($value->{'stats'}) : null;

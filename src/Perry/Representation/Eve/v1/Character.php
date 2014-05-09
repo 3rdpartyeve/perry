@@ -143,13 +143,13 @@ class Character extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['isNPC'] = function($value) { return $value; };
-        $converters['logo'] = function($value) { return $value; };
-        $converters['href'] = function($value) { return $value; };
-        $converters['id'] = function($value) { return $value; };
-        $converters['name'] = function($value) { return $value; };
+        $converters['isNPC'] = function ($value) { return $value; };
+        $converters['logo'] = function ($value) { return $value; };
+        $converters['href'] = function ($value) { return $value; };
+        $converters['id'] = function ($value) { return $value; };
+        $converters['name'] = function ($value) { return $value; };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['isNPC'] = isset($value->{'isNPC'}) ? $converters['isNPC']($value->{'isNPC'}) : null;
             $return['logo'] = isset($value->{'logo'}) ? $converters['logo']($value->{'logo'}) : null;
@@ -166,12 +166,12 @@ class Character extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['32x32'] = function($value) { return new Reference($value); };
-        $converters['64x64'] = function($value) { return new Reference($value); };
-        $converters['128x128'] = function($value) { return new Reference($value); };
-        $converters['256x256'] = function($value) { return new Reference($value); };
+        $converters['32x32'] = function ($value) { return new Reference($value); };
+        $converters['64x64'] = function ($value) { return new Reference($value); };
+        $converters['128x128'] = function ($value) { return new Reference($value); };
+        $converters['256x256'] = function ($value) { return new Reference($value); };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['32x32'] = isset($value->{'32x32'}) ? $converters['32x32']($value->{'32x32'}) : null;
             $return['64x64'] = isset($value->{'64x64'}) ? $converters['64x64']($value->{'64x64'}) : null;

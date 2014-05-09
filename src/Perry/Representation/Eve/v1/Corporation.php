@@ -107,13 +107,13 @@ class Corporation extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['32x32'] = function($value) { return new Reference($value); };
-        $converters['logo'] = function($value) { return $value; };
-        $converters['128x128'] = function($value) { return new Reference($value); };
-        $converters['256x256'] = function($value) { return new Reference($value); };
-        $converters['64x64'] = function($value) { return new Reference($value); };
+        $converters['32x32'] = function ($value) { return new Reference($value); };
+        $converters['logo'] = function ($value) { return $value; };
+        $converters['128x128'] = function ($value) { return new Reference($value); };
+        $converters['256x256'] = function ($value) { return new Reference($value); };
+        $converters['64x64'] = function ($value) { return new Reference($value); };
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['32x32'] = isset($value->{'32x32'}) ? $converters['32x32']($value->{'32x32'}) : null;
             $return['logo'] = isset($value->{'logo'}) ? $converters['logo']($value->{'logo'}) : null;
@@ -215,7 +215,7 @@ class Corporation extends Base
         // by Warringer\Types\Dict
         $converters = [];
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             return $return;
         };
@@ -243,7 +243,7 @@ class Corporation extends Base
         // by Warringer\Types\Dict
         $converters = [];
 
-        $func = function($value) use($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             return $return;
         };
