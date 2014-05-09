@@ -46,5 +46,5 @@ final class Setup
     public static $thoraUrl = "http://thora.3rdpartyeve.net";
     public static $bindToIp = "0.0.0.0:0";
     public static $cacheTTL = 300; // 5 minutes default
-    public static $userAgent = "Unknown Application  (Using 3rdpartyeve/perry PHP lib)";
+    public static $userAgent = "( Unknown PHP Application )";
 }
