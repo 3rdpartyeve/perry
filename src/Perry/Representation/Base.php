@@ -1,6 +1,7 @@
 <?php
 namespace Perry\Representation;
 
+use Perry\Response;
 use Perry\Setup;
 
 class Base
@@ -37,7 +38,7 @@ class Base
     {
 
         switch (true) {
-            case $inputData instanceof \Perry\Response:
+            case $inputData instanceof Response:
                 $inputData = json_decode((string) $inputData);
                 break;
             case is_null($inputData):
@@ -105,7 +106,7 @@ class Base
      * @param string $url
      * @param string $representation
      * @throws \Exception
-     * @return \Perry\Response
+     * @return Response
      */
     protected static function doGetRequest($url, $representation)
     {
