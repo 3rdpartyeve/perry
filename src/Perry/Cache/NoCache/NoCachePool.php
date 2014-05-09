@@ -11,11 +11,19 @@ use Psr\Cache\PoolInterface;
  */
 class NoCachePool implements PoolInterface
 {
+    /**
+     * @param string $key
+     * @return NoCacheItem|\Psr\Cache\ItemInterface
+     */
     public function getItem($key)
     {
         return new NoCacheItem($key);
     }
 
+    /**
+     * @param array $keys
+     * @return array|\Traversable
+     */
     public function getItems(array $keys)
     {
         $result = [];
@@ -25,6 +33,9 @@ class NoCachePool implements PoolInterface
         return $result;
     }
 
+    /**
+     * @return $this|PoolInterface
+     */
     public function clear()
     {
         return $this;
