@@ -3,6 +3,8 @@ VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES F
 ==========================================================================================================================
 
    Version 1.0 - replaced Representation classes by generated representation classes for easier updating on future new endpoints
+      09/05/2014 16:58  1.0.7  release tool adjustment for versions
+         70a04d2 rmt fix to update version numbers correctly
       09/05/2014 16:55  1.0.6  enforced useragent, more tests, some code cleanup
          ec1e10d adding more unittests
          0d81a69 adjusted default value of useragent
