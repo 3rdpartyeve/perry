@@ -41,7 +41,7 @@ class TournamentMatchCollection extends Base
         $converters['inProgress'] = function ($value) { return $value; };
         $converters['score'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['winner'] = isset($value->{'winner'}) ? $converters['winner']($value->{'winner'}) : null;
             $return['stats'] = isset($value->{'stats'}) ? $converters['stats']($value->{'stats'}) : null;

@@ -36,7 +36,7 @@ class TournamentTeam extends Base
         $converters['numBans'] = function ($value) { return $value; };
         $converters['shipType'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['numBans'] = isset($value->{'numBans'}) ? $converters['numBans']($value->{'numBans'}) : null;
             $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;
@@ -102,7 +102,7 @@ class TournamentTeam extends Base
         $converters['numBans'] = function ($value) { return $value; };
         $converters['shipType'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['numBans'] = isset($value->{'numBans'}) ? $converters['numBans']($value->{'numBans'}) : null;
             $return['shipType'] = isset($value->{'shipType'}) ? $converters['shipType']($value->{'shipType'}) : null;

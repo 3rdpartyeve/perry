@@ -45,7 +45,7 @@ class ItemType extends Base
         $converters['attributeName'] = function ($value) { return $value; };
         $converters['modifierType'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['modifierValue'] = isset($value->{'modifierValue'}) ? $converters['modifierValue']($value->{'modifierValue'}) : null;
             $return['attributeName'] = isset($value->{'attributeName'}) ? $converters['attributeName']($value->{'attributeName'}) : null;
@@ -63,7 +63,7 @@ class ItemType extends Base
         $converters['skeletalMeshFemale'] = function ($value) { return $value; };
         $converters['mVICProp'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['skeletalMeshMale'] = isset($value->{'skeletalMeshMale'}) ? $converters['skeletalMeshMale']($value->{'skeletalMeshMale'}) : null;
             $return['modifier'] = isset($value->{'modifier'}) ? $converters['modifier']($value->{'modifier'}) : null;
@@ -96,7 +96,7 @@ class ItemType extends Base
         $converters['power'] = function ($value) { return $value; };
         $converters['heatDamage'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['cpu'] = isset($value->{'cpu'}) ? $converters['cpu']($value->{'cpu'}) : null;
             $return['power'] = isset($value->{'power'}) ? $converters['power']($value->{'power'}) : null;

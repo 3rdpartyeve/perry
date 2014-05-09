@@ -33,7 +33,7 @@ class IncursionCollection extends Base
         $converters['stagingSolarSystem'] = function ($value) { return new Reference($value); };
         $converters['constellation'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['influence'] = isset($value->{'influence'}) ? $converters['influence']($value->{'influence'}) : null;
             $return['hasBoss'] = isset($value->{'hasBoss'}) ? $converters['hasBoss']($value->{'hasBoss'}) : null;

@@ -37,7 +37,7 @@ class CacheManager
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @return array|false
      */
     public function load($url)

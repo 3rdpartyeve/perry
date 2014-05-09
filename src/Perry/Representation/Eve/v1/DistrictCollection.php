@@ -53,7 +53,7 @@ class DistrictCollection extends Base
         $converters['updateInfrastructure'] = function ($value) { return new Reference($value); };
         $converters['updateReinforce'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['updateClonesQuote'] = isset($value->{'updateClonesQuote'}) ? $converters['updateClonesQuote']($value->{'updateClonesQuote'}) : null;
             $return['owner'] = isset($value->{'owner'}) ? $converters['owner']($value->{'owner'}) : null;

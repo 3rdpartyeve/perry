@@ -47,7 +47,7 @@ class TournamentSeriesCollection extends Base
         $converters['blueTeam'] = function ($value) { return $value; };
         $converters['structure'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['matchesInProgress'] = isset($value->{'matchesInProgress'}) ? $converters['matchesInProgress']($value->{'matchesInProgress'}) : null;
             $return['redTeam'] = isset($value->{'redTeam'}) ? $converters['redTeam']($value->{'redTeam'}) : null;

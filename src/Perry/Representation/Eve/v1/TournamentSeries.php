@@ -46,7 +46,7 @@ class TournamentSeries extends Base
         $converters['isDecided'] = function ($value) { return $value; };
         $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -64,7 +64,7 @@ class TournamentSeries extends Base
         $converters['redTeam'] = function ($value) { return $value; };
         $converters['blueTeam'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['redTeam'] = isset($value->{'redTeam'}) ? $converters['redTeam']($value->{'redTeam'}) : null;
             $return['blueTeam'] = isset($value->{'blueTeam'}) ? $converters['blueTeam']($value->{'blueTeam'}) : null;
@@ -94,7 +94,7 @@ class TournamentSeries extends Base
         $converters['isDecided'] = function ($value) { return $value; };
         $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -113,7 +113,7 @@ class TournamentSeries extends Base
         $converters['isDecided'] = function ($value) { return $value; };
         $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -138,7 +138,7 @@ class TournamentSeries extends Base
         $converters['isDecided'] = function ($value) { return $value; };
         $converters['isBye'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['team'] = isset($value->{'team'}) ? $converters['team']($value->{'team'}) : null;
             $return['isDecided'] = isset($value->{'isDecided'}) ? $converters['isDecided']($value->{'isDecided'}) : null;
@@ -158,7 +158,7 @@ class TournamentSeries extends Base
         $converters['incomingRed'] = function ($value) { return new Reference($value); };
         $converters['incomingBlue'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['outgoingLoser'] = isset($value->{'outgoingLoser'}) ? $converters['outgoingLoser']($value->{'outgoingLoser'}) : null;
             $return['outgoingWinner'] = isset($value->{'outgoingWinner'}) ? $converters['outgoingWinner']($value->{'outgoingWinner'}) : null;

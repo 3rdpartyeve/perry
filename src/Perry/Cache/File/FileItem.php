@@ -60,7 +60,7 @@ class FileItem implements ItemInterface
      * is a legitimate cached value, so the isHit() method SHOULD be used to
      * differentiate between "null value was found" and "no value was found."
      *
-     * @return mixed
+     * @return \Serializable|null
      *   The value corresponding to this cache item's key, or null if not found.
      */
     public function get()

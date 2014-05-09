@@ -5,7 +5,7 @@ interface CanRefer
 {
     /**
      * @param array $args
-     * @return mixed
+     * @return \Perry\Representation\Base
      */
     public function call($args);
 }

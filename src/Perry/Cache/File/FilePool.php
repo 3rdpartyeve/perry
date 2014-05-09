@@ -90,7 +90,7 @@ class FilePool implements PoolInterface
     }
 
     /**
-     * @param $key
+     * @param string $key
      * @return string
      */
     public static function mapKey($key)

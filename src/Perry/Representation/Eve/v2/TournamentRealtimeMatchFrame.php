@@ -37,7 +37,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['physicsData'] = function ($value) { return $value; };
         $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['itemID'] = isset($value->{'itemID'}) ? $converters['itemID']($value->{'itemID'}) : null;
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
@@ -64,7 +64,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters = [];
         $converters['moduleID'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['moduleID'] = isset($value->{'moduleID'}) ? $converters['moduleID']($value->{'moduleID'}) : null;
             return $return;
@@ -81,7 +81,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['duration'] = function ($value) { return $value; };
         $converters['guid'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['ammoGraphicResource'] = isset($value->{'ammoGraphicResource'}) ? $converters['ammoGraphicResource']($value->{'ammoGraphicResource'}) : null;
             $return['targetID'] = isset($value->{'targetID'}) ? $converters['targetID']($value->{'targetID'}) : null;
@@ -115,7 +115,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters = [];
         $converters['moduleID'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['moduleID'] = isset($value->{'moduleID'}) ? $converters['moduleID']($value->{'moduleID'}) : null;
             return $return;
@@ -132,7 +132,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['duration'] = function ($value) { return $value; };
         $converters['guid'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['ammoGraphicResource'] = isset($value->{'ammoGraphicResource'}) ? $converters['ammoGraphicResource']($value->{'ammoGraphicResource'}) : null;
             $return['targetID'] = isset($value->{'targetID'}) ? $converters['targetID']($value->{'targetID'}) : null;
@@ -151,7 +151,7 @@ class TournamentRealtimeMatchFrame extends Base
         };
 
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['itemID'] = isset($value->{'itemID'}) ? $converters['itemID']($value->{'itemID'}) : null;
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
@@ -168,7 +168,7 @@ class TournamentRealtimeMatchFrame extends Base
 
         $converters['structure'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
             $return['missiles'] = isset($value->{'missiles'}) ? $converters['missiles']($value->{'missiles'}) : null;
@@ -199,7 +199,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['physicsData'] = function ($value) { return $value; };
         $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['itemID'] = isset($value->{'itemID'}) ? $converters['itemID']($value->{'itemID'}) : null;
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
@@ -226,7 +226,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters = [];
         $converters['moduleID'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['moduleID'] = isset($value->{'moduleID'}) ? $converters['moduleID']($value->{'moduleID'}) : null;
             return $return;
@@ -243,7 +243,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['duration'] = function ($value) { return $value; };
         $converters['guid'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['ammoGraphicResource'] = isset($value->{'ammoGraphicResource'}) ? $converters['ammoGraphicResource']($value->{'ammoGraphicResource'}) : null;
             $return['targetID'] = isset($value->{'targetID'}) ? $converters['targetID']($value->{'targetID'}) : null;
@@ -277,7 +277,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters = [];
         $converters['moduleID'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['moduleID'] = isset($value->{'moduleID'}) ? $converters['moduleID']($value->{'moduleID'}) : null;
             return $return;
@@ -294,7 +294,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['duration'] = function ($value) { return $value; };
         $converters['guid'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['ammoGraphicResource'] = isset($value->{'ammoGraphicResource'}) ? $converters['ammoGraphicResource']($value->{'ammoGraphicResource'}) : null;
             $return['targetID'] = isset($value->{'targetID'}) ? $converters['targetID']($value->{'targetID'}) : null;
@@ -313,7 +313,7 @@ class TournamentRealtimeMatchFrame extends Base
         };
 
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['itemID'] = isset($value->{'itemID'}) ? $converters['itemID']($value->{'itemID'}) : null;
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
@@ -330,7 +330,7 @@ class TournamentRealtimeMatchFrame extends Base
 
         $converters['structure'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['physicsData'] = isset($value->{'physicsData'}) ? $converters['physicsData']($value->{'physicsData'}) : null;
             $return['missiles'] = isset($value->{'missiles'}) ? $converters['missiles']($value->{'missiles'}) : null;
@@ -360,7 +360,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['appliedControl'] = function ($value) { return $value; };
         $converters['maxDPS'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['totalEHP'] = isset($value->{'totalEHP'}) ? $converters['totalEHP']($value->{'totalEHP'}) : null;
             $return['maxControl'] = isset($value->{'maxControl'}) ? $converters['maxControl']($value->{'maxControl'}) : null;
@@ -403,7 +403,7 @@ class TournamentRealtimeMatchFrame extends Base
         $converters['appliedControl'] = function ($value) { return $value; };
         $converters['maxDPS'] = function ($value) { return $value; };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['totalEHP'] = isset($value->{'totalEHP'}) ? $converters['totalEHP']($value->{'totalEHP'}) : null;
             $return['maxControl'] = isset($value->{'maxControl'}) ? $converters['maxControl']($value->{'maxControl'}) : null;

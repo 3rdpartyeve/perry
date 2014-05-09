@@ -34,7 +34,7 @@ class TournamentTeamMemberCollection extends Base
         $converters['character'] = function ($value) { return new Reference($value); };
         $converters['icon'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use($converters) {
+        $func = function ($value) use ($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['alliance'] = isset($value->{'alliance'}) ? $converters['alliance']($value->{'alliance'}) : null;
             $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
