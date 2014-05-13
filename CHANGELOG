@@ -3,6 +3,13 @@ VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES F
 ==========================================================================================================================
 
    Version 1.0 - replaced Representation classes by generated representation classes for easier updating on future new endpoints
+      13/05/2014 12:38  1.0.8  reuse guzzle instance
+         23b04c6 reuse guzzle instance
+         6aa033a some auto code fixes by scrutinizer
+         cf9683a using self over classname is better style
+         b080998 phpdoc fix
+         99ba1a8 codestyle fix
+         3ffa3d9 codestyle fix for the generated classes, not that it matters
       09/05/2014 16:58  1.0.7  release tool adjustment for versions
          70a04d2 rmt fix to update version numbers correctly
       09/05/2014 16:55  1.0.6  enforced useragent, more tests, some code cleanup
