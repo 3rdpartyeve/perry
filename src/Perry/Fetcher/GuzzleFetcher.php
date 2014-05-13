@@ -10,6 +10,12 @@ use Perry\Tool;
 
 class GuzzleFetcher implements CanFetch
 {
+    private $guzzle;
+
+    public function __construct()
+    {
+        $this->guzzle = new Client();
+    }
 
     /**
      * form the opts array
@@ -53,8 +59,7 @@ class GuzzleFetcher implements CanFetch
             return new Response($data['value'], $data['representation']);
         }
 
-        $guzzle = new Client();
-        $response = $guzzle->get($url, $this->getOpts($representation));
+        $response = $this->guzzle->get($url, $this->getOpts($representation));
 
         $data = $response->getBody();
         $data = (String) $data;
