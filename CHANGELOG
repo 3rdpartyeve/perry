@@ -1,12 +1,3 @@
-
-VERSION 2  KRONOS WAR REPRESENTATIONS
-=====================================
-
-   Version 2.0 - Kronos war representations
-      28/05/2014 18:17  2.0.0  initial release
-         e8289ba adding War Representations
-         a895dd7 Better determination of API
-
 VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
 ==========================================================================================================================
 
