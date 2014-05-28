@@ -8,7 +8,6 @@
             "email": "ppetermann80@googlemail.com"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
         "guzzlehttp/guzzle": "4.0.*"
     },
