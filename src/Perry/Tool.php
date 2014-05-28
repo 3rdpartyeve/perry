@@ -36,17 +36,15 @@ class Tool
         $version = substr($inputRepresentation, -2);
         $representation = substr($inputRepresentation, 0, -3);
 
-        $apiType = substr($representation, 0, 7) == "vnd.ccp" ? "Eve" : "OldApi";
-
-        switch ($apiType) {
-            case "Eve":
+        switch (substr($representation, 0, 7)) {
+            case "vnd.ccp": // EVE
                 $data = explode(".", $representation);
                 array_shift($data);
                 array_shift($data);
                 array_shift($data);
                 $classname = '\Perry\Representation\Eve\\'.$version.'\\'.$data[0];
                 break;
-            case "OldApi":
+            case "net.3rd": // OldApi
                 $data = explode(".", $representation);
                 array_shift($data);
                 array_shift($data);
