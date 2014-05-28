@@ -2,6 +2,14 @@ VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES F
 ==========================================================================================================================
 
    Version 1.1 - Kronos Wars
+      28/05/2014 18:19  1.1.0  initial release
+         c0d8168 release fail reverted
+         b81492f release fail reverted
+         3911ed6 Release of new version 2.0.0
+         e8289ba adding War Representations
+         a895dd7 Better determination of API
+
+   Version 1.1 - Kronos Wars
       28/05/2014 18:18  1.1.0  initial release
          b81492f release fail reverted
          3911ed6 Release of new version 2.0.0
