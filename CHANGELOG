@@ -2,6 +2,10 @@ VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES F
 ==========================================================================================================================
 
    Version 1.1 - Kronos Wars
+      03/06/2014 17:49  1.1.1  WarKillmails available, Uri still can't be followed
+         36163f6 added comment about Uri type
+         aec9411 adding WarKillmails representation, however this is not linked as the formerly known Uri type is not implemented yet
+         63c9629 all dependencies stable now
       28/05/2014 18:19  1.1.0  initial release
          c0d8168 release fail reverted
          b81492f release fail reverted
