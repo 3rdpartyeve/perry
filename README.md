@@ -202,6 +202,7 @@ foreach ($districtCollection->items as $district) {
 ## Known Issues
 There is a hand full of known Problems. If you want to help with fixing them: PullRequests are welcome.
 
+- CREST has a Uri type, which links to other parts of crest. It is not identical with a Reference, and not implemented yet - so at the moment a uri type will return a string with the uri, rather than an executeable object. This will be fixed soon.
 - From Version 1.0.0 on the original conveniance methods like ```\Perry\Representation\Eve\v1\DistrictCollection::getInstance();``` do not work anymore, this is on purpose
 - CREST dictionaries feature keys like "32x32", PHP will do a parse error on $object->32x32. You can either access those members by $object->{'32x32'}; or by using them as an array instead $object['32x32']. The later should be the preffered variant.
 - A lot of endpoints that are referenced to within CREST are not public available. There is nothing that can be done about that except if CCP opens those.
