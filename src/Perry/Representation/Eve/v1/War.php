@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class War extends Base
@@ -47,7 +48,7 @@ class War extends Base
     {
         // by Warringer\Types\Dict
         $converters = [];
-        $converters['href'] = function ($value) { return $value; };
+        $converters['href'] = function ($value) { return new Uri($value); };
         $converters['id'] = function ($value) { return $value; };
         $converters['name'] = function ($value) { return $value; };
         $converters['icon'] = function ($value) { return new Reference($value); };
@@ -91,7 +92,7 @@ class War extends Base
         $converters = [];
         $converters['shipsKilled'] = function ($value) { return $value; };
         $converters['name'] = function ($value) { return $value; };
-        $converters['href'] = function ($value) { return $value; };
+        $converters['href'] = function ($value) { return new Uri($value); };
         $converters['icon'] = function ($value) { return new Reference($value); };
         $converters['id'] = function ($value) { return $value; };
         $converters['iskKilled'] = function ($value) { return $value; };
@@ -115,10 +116,10 @@ class War extends Base
         $this->mutual = $mutual;
     }
 
-    // by Warringer\Types\Base
+    // by Warringer\Types\Uri
     public function setKillmails($killmails)
     {
-        $this->killmails = $killmails;
+        $this->killmails = new Uri($killmails);
     }
 
     // by Warringer\Types\String
@@ -134,7 +135,7 @@ class War extends Base
         $converters = [];
         $converters['shipsKilled'] = function ($value) { return $value; };
         $converters['name'] = function ($value) { return $value; };
-        $converters['href'] = function ($value) { return $value; };
+        $converters['href'] = function ($value) { return new Uri($value); };
         $converters['icon'] = function ($value) { return new Reference($value); };
         $converters['id'] = function ($value) { return $value; };
         $converters['iskKilled'] = function ($value) { return $value; };
