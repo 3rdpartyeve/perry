@@ -1,6 +1,10 @@
 VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
 ==========================================================================================================================
 
+   Version 1.2 - uri implementation
+      09/06/2014 14:54  1.2.0  initial release
+         1182b89 adding Uri class (untested yet)
+
    Version 1.1 - Kronos Wars
       03/06/2014 17:49  1.1.1  WarKillmails available, Uri still can't be followed
          36163f6 added comment about Uri type
