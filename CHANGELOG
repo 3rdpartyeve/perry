@@ -1,6 +1,10 @@
 VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
 ==========================================================================================================================
 
+   Version 1.4 - more representations
+      01/07/2014 16:11  1.4.0  initial release
+         ce341da tons of new representations from sisi
+
    Version 1.3 - Crius?
       18/06/2014 16:33  1.3.0  initial release
          5b922f3 adding industry representations
