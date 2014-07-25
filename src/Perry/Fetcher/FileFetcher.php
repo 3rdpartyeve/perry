@@ -42,6 +42,8 @@ class FileFetcher implements CanFetch
 
         $opts['http']['header'] = $header;
 
+        $opts = array_merge_recursive(Setup::$fetcherOptions, $opts);
+
         return $opts;
     }
 

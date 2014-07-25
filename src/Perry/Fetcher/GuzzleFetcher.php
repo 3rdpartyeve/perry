@@ -40,10 +40,15 @@ class GuzzleFetcher implements CanFetch
             $config['curl'] = [CURLOPT_INTERFACE => Setup::$bindToIp];
         }
 
-        return [
+        $options = [
             "headers" => $headers,
             "config" => $config
         ];
+
+        // merge in the ons from the options array
+        $options = array_merge_recursive(Setup::$fetcherOptions, $options);
+
+        return $options;
     }
 
     /**
