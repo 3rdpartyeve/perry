@@ -1,6 +1,10 @@
 VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
 ==========================================================================================================================
 
+   Version 1.5 - fetch options
+      25/07/2014 16:44  1.5.0  initial release
+         c62ffbb allow for setting fetcher options
+
    Version 1.4 - more representations
       01/07/2014 16:11  1.4.0  initial release
          ce341da tons of new representations from sisi
