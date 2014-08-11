@@ -5,7 +5,7 @@ use \Perry\Representation\Reference as Reference;
 use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
-class TournamentTeamMemberCollection extends Base
+class IndustryFacilityCollection extends Base
 {
     public $pageCount;
 
@@ -28,21 +28,23 @@ class TournamentTeamMemberCollection extends Base
     {
         // by Warringer\Types\Base
         $converters = [];
-        $converters['alliance'] = function ($value) { return new Reference($value); };
+        $converters['facilityID'] = function ($value) { return $value; };
+        $converters['solarSystem'] = function ($value) { return $value; };
         $converters['name'] = function ($value) { return $value; };
-        $converters['corporation'] = function ($value) { return new Reference($value); };
-        $converters['self'] = function ($value) { return new Reference($value); };
-        $converters['character'] = function ($value) { return new Reference($value); };
-        $converters['icon'] = function ($value) { return new Reference($value); };
+        $converters['region'] = function ($value) { return $value; };
+        $converters['tax'] = function ($value) { return $value; };
+        $converters['owner'] = function ($value) { return $value; };
+        $converters['type'] = function ($value) { return $value; };
 
         $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
-            $return['alliance'] = isset($value->{'alliance'}) ? $converters['alliance']($value->{'alliance'}) : null;
+            $return['facilityID'] = isset($value->{'facilityID'}) ? $converters['facilityID']($value->{'facilityID'}) : null;
+            $return['solarSystem'] = isset($value->{'solarSystem'}) ? $converters['solarSystem']($value->{'solarSystem'}) : null;
             $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
-            $return['corporation'] = isset($value->{'corporation'}) ? $converters['corporation']($value->{'corporation'}) : null;
-            $return['self'] = isset($value->{'self'}) ? $converters['self']($value->{'self'}) : null;
-            $return['character'] = isset($value->{'character'}) ? $converters['character']($value->{'character'}) : null;
-            $return['icon'] = isset($value->{'icon'}) ? $converters['icon']($value->{'icon'}) : null;
+            $return['region'] = isset($value->{'region'}) ? $converters['region']($value->{'region'}) : null;
+            $return['tax'] = isset($value->{'tax'}) ? $converters['tax']($value->{'tax'}) : null;
+            $return['owner'] = isset($value->{'owner'}) ? $converters['owner']($value->{'owner'}) : null;
+            $return['type'] = isset($value->{'type'}) ? $converters['type']($value->{'type'}) : null;
             return $return;
         };
 

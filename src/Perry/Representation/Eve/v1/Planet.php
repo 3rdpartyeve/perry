@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class Planet extends Base
@@ -23,7 +24,7 @@ class Planet extends Base
         $converters['x'] = function ($value) { return $value; };
         $converters['z'] = function ($value) { return $value; };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['y'] = isset($value->{'y'}) ? $converters['y']($value->{'y'}) : null;
             $return['x'] = isset($value->{'x'}) ? $converters['x']($value->{'x'}) : null;

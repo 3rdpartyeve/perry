@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class DistrictInfrastructure extends Base
@@ -36,10 +37,10 @@ class DistrictInfrastructure extends Base
         $this->name = $name;
     }
 
-    // by Warringer\Types\Base
+    // by Warringer\Types\Uri
     public function setHref($href)
     {
-        $this->href = $href;
+        $this->href = new Uri($href);
     }
 
     // by Warringer\Types\Long

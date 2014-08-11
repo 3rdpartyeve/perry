@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class AllianceCollection extends Base
@@ -29,7 +30,7 @@ class AllianceCollection extends Base
         $converters = [];
         $converters['href'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['href'] = isset($value->{'href'}) ? $converters['href']($value->{'href'}) : null;
             return $return;

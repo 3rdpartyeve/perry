@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class DistrictCollection extends Base
@@ -30,7 +31,7 @@ class DistrictCollection extends Base
         $converters['updateClonesQuote'] = function ($value) { return new Reference($value); };
         $converters['owner'] = function ($value) { return new Reference($value); };
         $converters['reinforce'] = function ($value) { return $value; };
-        $converters['href'] = function ($value) { return $value; };
+        $converters['href'] = function ($value) { return new Uri($value); };
         $converters['conquerable'] = function ($value) { return $value; };
         $converters['constellation'] = function ($value) { return new Reference($value); };
         $converters['id'] = function ($value) { return $value; };
@@ -53,7 +54,7 @@ class DistrictCollection extends Base
         $converters['updateInfrastructure'] = function ($value) { return new Reference($value); };
         $converters['updateReinforce'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['updateClonesQuote'] = isset($value->{'updateClonesQuote'}) ? $converters['updateClonesQuote']($value->{'updateClonesQuote'}) : null;
             $return['owner'] = isset($value->{'owner'}) ? $converters['owner']($value->{'owner'}) : null;

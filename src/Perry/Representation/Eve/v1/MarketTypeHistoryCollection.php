@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class MarketTypeHistoryCollection extends Base
@@ -34,7 +35,7 @@ class MarketTypeHistoryCollection extends Base
         $converters['volume'] = function ($value) { return $value; };
         $converters['date'] = function ($value) { return $value; };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['orderCount'] = isset($value->{'orderCount'}) ? $converters['orderCount']($value->{'orderCount'}) : null;
             $return['lowPrice'] = isset($value->{'lowPrice'}) ? $converters['lowPrice']($value->{'lowPrice'}) : null;

@@ -49,6 +49,8 @@ class Api extends Base
 
     public $userCounts;
 
+    public $industry;
+
     public $clients;
 
     public $time;
@@ -218,6 +220,29 @@ class Api extends Base
             return $return;
         };
         $this->userCounts = $func($userCounts);
+    }
+
+    // by Warringer\Types\Dict
+    public function setIndustry($industry)
+    {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['facilities'] = function ($value) { return new Reference($value); };
+        $converters['specialities'] = function ($value) { return new Reference($value); };
+        $converters['teamsInAuction'] = function ($value) { return new Reference($value); };
+        $converters['systems'] = function ($value) { return new Reference($value); };
+        $converters['teams'] = function ($value) { return new Reference($value); };
+
+        $func = function ($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['facilities'] = isset($value->{'facilities'}) ? $converters['facilities']($value->{'facilities'}) : null;
+            $return['specialities'] = isset($value->{'specialities'}) ? $converters['specialities']($value->{'specialities'}) : null;
+            $return['teamsInAuction'] = isset($value->{'teamsInAuction'}) ? $converters['teamsInAuction']($value->{'teamsInAuction'}) : null;
+            $return['systems'] = isset($value->{'systems'}) ? $converters['systems']($value->{'systems'}) : null;
+            $return['teams'] = isset($value->{'teams'}) ? $converters['teams']($value->{'teams'}) : null;
+            return $return;
+        };
+        $this->industry = $func($industry);
     }
 
     // by Warringer\Types\Dict
