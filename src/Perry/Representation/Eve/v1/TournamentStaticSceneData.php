@@ -2,6 +2,7 @@
 namespace Perry\Representation\Eve\v1;
 
 use \Perry\Representation\Reference as Reference;
+use \Perry\Representation\Uri as Uri;
 use \Perry\Representation\Base as Base;
 
 class TournamentStaticSceneData extends Base
@@ -24,7 +25,7 @@ class TournamentStaticSceneData extends Base
         $converters['z'] = function ($value) { return $value; };
         $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
             $return['planetOrMoonInfo'] = isset($value->{'planetOrMoonInfo'}) ? $converters['planetOrMoonInfo']($value->{'planetOrMoonInfo'}) : null;
@@ -60,7 +61,7 @@ class TournamentStaticSceneData extends Base
 
         $converters['type'] = function ($value) { return new Reference($value); };
 
-        $func = function ($value) use ($converters) {
+        $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['item'] = isset($value->{'item'}) ? $converters['item']($value->{'item'}) : null;
             $return['points'] = isset($value->{'points'}) ? $converters['points']($value->{'points'}) : null;
