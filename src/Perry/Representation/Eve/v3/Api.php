@@ -13,23 +13,31 @@ class Api extends Base
 
     public $corporationRoles;
 
+    public $itemGroups;
+
     public $channels;
 
     public $corporations;
 
     public $alliances;
 
-    public $authEndpoint;
+    public $itemTypes;
+
+    public $decode;
 
     public $battleTheatres;
 
     public $marketPrices;
 
-    public $itemTypes;
+    public $itemCategories;
 
-    public $decode;
+    public $regions;
 
     public $bloodlines;
+
+    public $marketGroups;
+
+    public $sovereignty;
 
     public $tournaments;
 
@@ -44,6 +52,8 @@ class Api extends Base
     public $incursions;
 
     public $races;
+
+    public $authEndpoint;
 
     public $serviceStatus;
 
@@ -91,6 +101,12 @@ class Api extends Base
     }
 
     // by Warringer\Types\Reference
+    public function setItemGroups($itemGroups)
+    {
+        $this->itemGroups = new Reference($itemGroups);
+    }
+
+    // by Warringer\Types\Reference
     public function setChannels($channels)
     {
         $this->channels = new Reference($channels);
@@ -109,9 +125,15 @@ class Api extends Base
     }
 
     // by Warringer\Types\Reference
-    public function setAuthEndpoint($authEndpoint)
+    public function setItemTypes($itemTypes)
     {
-        $this->authEndpoint = new Reference($authEndpoint);
+        $this->itemTypes = new Reference($itemTypes);
+    }
+
+    // by Warringer\Types\Reference
+    public function setDecode($decode)
+    {
+        $this->decode = new Reference($decode);
     }
 
     // by Warringer\Types\Reference
@@ -127,21 +149,44 @@ class Api extends Base
     }
 
     // by Warringer\Types\Reference
-    public function setItemTypes($itemTypes)
+    public function setItemCategories($itemCategories)
     {
-        $this->itemTypes = new Reference($itemTypes);
+        $this->itemCategories = new Reference($itemCategories);
     }
 
     // by Warringer\Types\Reference
-    public function setDecode($decode)
+    public function setRegions($regions)
     {
-        $this->decode = new Reference($decode);
+        $this->regions = new Reference($regions);
     }
 
     // by Warringer\Types\Reference
     public function setBloodlines($bloodlines)
     {
         $this->bloodlines = new Reference($bloodlines);
+    }
+
+    // by Warringer\Types\Reference
+    public function setMarketGroups($marketGroups)
+    {
+        $this->marketGroups = new Reference($marketGroups);
+    }
+
+    // by Warringer\Types\Dict
+    public function setSovereignty($sovereignty)
+    {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['campaigns'] = function ($value) { return new Reference($value); };
+        $converters['structures'] = function ($value) { return new Reference($value); };
+
+        $func = function ($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['campaigns'] = isset($value->{'campaigns'}) ? $converters['campaigns']($value->{'campaigns'}) : null;
+            $return['structures'] = isset($value->{'structures'}) ? $converters['structures']($value->{'structures'}) : null;
+            return $return;
+        };
+        $this->sovereignty = $func($sovereignty);
     }
 
     // by Warringer\Types\Reference
@@ -186,6 +231,12 @@ class Api extends Base
         $this->races = new Reference($races);
     }
 
+    // by Warringer\Types\Reference
+    public function setAuthEndpoint($authEndpoint)
+    {
+        $this->authEndpoint = new Reference($authEndpoint);
+    }
+
     // by Warringer\Types\Dict
     public function setServiceStatus($serviceStatus)
     {
@@ -228,18 +279,12 @@ class Api extends Base
         // by Warringer\Types\Dict
         $converters = [];
         $converters['facilities'] = function ($value) { return new Reference($value); };
-        $converters['specialities'] = function ($value) { return new Reference($value); };
-        $converters['teamsInAuction'] = function ($value) { return new Reference($value); };
         $converters['systems'] = function ($value) { return new Reference($value); };
-        $converters['teams'] = function ($value) { return new Reference($value); };
 
         $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
             $return['facilities'] = isset($value->{'facilities'}) ? $converters['facilities']($value->{'facilities'}) : null;
-            $return['specialities'] = isset($value->{'specialities'}) ? $converters['specialities']($value->{'specialities'}) : null;
-            $return['teamsInAuction'] = isset($value->{'teamsInAuction'}) ? $converters['teamsInAuction']($value->{'teamsInAuction'}) : null;
             $return['systems'] = isset($value->{'systems'}) ? $converters['systems']($value->{'systems'}) : null;
-            $return['teams'] = isset($value->{'teams'}) ? $converters['teams']($value->{'teams'}) : null;
             return $return;
         };
         $this->industry = $func($industry);

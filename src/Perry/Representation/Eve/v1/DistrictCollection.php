@@ -28,6 +28,7 @@ class DistrictCollection extends Base
     {
         // by Warringer\Types\Base
         $converters = [];
+        $converters['startDate'] = function ($value) { return $value; };
         $converters['updateClonesQuote'] = function ($value) { return new Reference($value); };
         $converters['owner'] = function ($value) { return new Reference($value); };
         $converters['reinforce'] = function ($value) { return $value; };
@@ -56,6 +57,7 @@ class DistrictCollection extends Base
 
         $func = function ($value) use($converters) {
             $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['startDate'] = isset($value->{'startDate'}) ? $converters['startDate']($value->{'startDate'}) : null;
             $return['updateClonesQuote'] = isset($value->{'updateClonesQuote'}) ? $converters['updateClonesQuote']($value->{'updateClonesQuote'}) : null;
             $return['owner'] = isset($value->{'owner'}) ? $converters['owner']($value->{'owner'}) : null;
             $return['reinforce'] = isset($value->{'reinforce'}) ? $converters['reinforce']($value->{'reinforce'}) : null;

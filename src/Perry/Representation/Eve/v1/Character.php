@@ -9,43 +9,47 @@ class Character extends Base
 {
     public $standings;
 
-    public $vivox;
-
-    public $name;
-
     public $bloodLine;
-
-    public $href;
-
-    public $gender;
-
-    public $description;
-
-    public $contacts;
-
-    public $mail;
 
     public $private;
 
     public $channels;
 
-    public $mercenary;
-
-    public $race;
+    public $href;
 
     public $accounts;
 
-    public $capsuleer;
-
-    public $corporation;
-
     public $portrait;
-
-    public $blocked;
 
     public $id;
 
+    public $blocked;
+
+    public $statistics;
+
+    public $contacts;
+
+    public $corporation;
+
+    public $vipLevel;
+
+    public $capsuleer;
+
+    public $vivox;
+
+    public $description;
+
     public $notifications;
+
+    public $mail;
+
+    public $name;
+
+    public $gender;
+
+    public $mercenary;
+
+    public $race;
 
     public $deposit;
 
@@ -56,51 +60,9 @@ class Character extends Base
     }
 
     // by Warringer\Types\Reference
-    public function setVivox($vivox)
-    {
-        $this->vivox = new Reference($vivox);
-    }
-
-    // by Warringer\Types\String
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    // by Warringer\Types\Reference
     public function setBloodLine($bloodLine)
     {
         $this->bloodLine = new Reference($bloodLine);
-    }
-
-    // by Warringer\Types\Uri
-    public function setHref($href)
-    {
-        $this->href = new Uri($href);
-    }
-
-    // by Warringer\Types\Long
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    }
-
-    // by Warringer\Types\String
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    // by Warringer\Types\Reference
-    public function setContacts($contacts)
-    {
-        $this->contacts = new Reference($contacts);
-    }
-
-    // by Warringer\Types\Reference
-    public function setMail($mail)
-    {
-        $this->mail = new Reference($mail);
     }
 
     // by Warringer\Types\Reference
@@ -115,16 +77,10 @@ class Character extends Base
         $this->channels = new Reference($channels);
     }
 
-    // by Warringer\Types\Reference
-    public function setMercenary($mercenary)
+    // by Warringer\Types\Uri
+    public function setHref($href)
     {
-        $this->mercenary = new Reference($mercenary);
-    }
-
-    // by Warringer\Types\Reference
-    public function setRace($race)
-    {
-        $this->race = new Reference($race);
+        $this->href = new Uri($href);
     }
 
     // by Warringer\Types\Reference
@@ -133,10 +89,49 @@ class Character extends Base
         $this->accounts = new Reference($accounts);
     }
 
-    // by Warringer\Types\Reference
-    public function setCapsuleer($capsuleer)
+    // by Warringer\Types\Dict
+    public function setPortrait($portrait)
     {
-        $this->capsuleer = new Reference($capsuleer);
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['32x32'] = function ($value) { return new Reference($value); };
+        $converters['64x64'] = function ($value) { return new Reference($value); };
+        $converters['128x128'] = function ($value) { return new Reference($value); };
+        $converters['256x256'] = function ($value) { return new Reference($value); };
+
+        $func = function ($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['32x32'] = isset($value->{'32x32'}) ? $converters['32x32']($value->{'32x32'}) : null;
+            $return['64x64'] = isset($value->{'64x64'}) ? $converters['64x64']($value->{'64x64'}) : null;
+            $return['128x128'] = isset($value->{'128x128'}) ? $converters['128x128']($value->{'128x128'}) : null;
+            $return['256x256'] = isset($value->{'256x256'}) ? $converters['256x256']($value->{'256x256'}) : null;
+            return $return;
+        };
+        $this->portrait = $func($portrait);
+    }
+
+    // by Warringer\Types\Long
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    // by Warringer\Types\Reference
+    public function setBlocked($blocked)
+    {
+        $this->blocked = new Reference($blocked);
+    }
+
+    // by Warringer\Types\Reference
+    public function setStatistics($statistics)
+    {
+        $this->statistics = new Reference($statistics);
+    }
+
+    // by Warringer\Types\Reference
+    public function setContacts($contacts)
+    {
+        $this->contacts = new Reference($contacts);
     }
 
     // by Warringer\Types\Dict
@@ -162,43 +157,64 @@ class Character extends Base
         $this->corporation = $func($corporation);
     }
 
-    // by Warringer\Types\Dict
-    public function setPortrait($portrait)
+    // by Warringer\Types\Long
+    public function setVipLevel($vipLevel)
     {
-        // by Warringer\Types\Dict
-        $converters = [];
-        $converters['32x32'] = function ($value) { return new Reference($value); };
-        $converters['64x64'] = function ($value) { return new Reference($value); };
-        $converters['128x128'] = function ($value) { return new Reference($value); };
-        $converters['256x256'] = function ($value) { return new Reference($value); };
-
-        $func = function ($value) use($converters) {
-            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
-            $return['32x32'] = isset($value->{'32x32'}) ? $converters['32x32']($value->{'32x32'}) : null;
-            $return['64x64'] = isset($value->{'64x64'}) ? $converters['64x64']($value->{'64x64'}) : null;
-            $return['128x128'] = isset($value->{'128x128'}) ? $converters['128x128']($value->{'128x128'}) : null;
-            $return['256x256'] = isset($value->{'256x256'}) ? $converters['256x256']($value->{'256x256'}) : null;
-            return $return;
-        };
-        $this->portrait = $func($portrait);
+        $this->vipLevel = $vipLevel;
     }
 
     // by Warringer\Types\Reference
-    public function setBlocked($blocked)
+    public function setCapsuleer($capsuleer)
     {
-        $this->blocked = new Reference($blocked);
+        $this->capsuleer = new Reference($capsuleer);
     }
 
-    // by Warringer\Types\Long
-    public function setId($id)
+    // by Warringer\Types\Reference
+    public function setVivox($vivox)
     {
-        $this->id = $id;
+        $this->vivox = new Reference($vivox);
+    }
+
+    // by Warringer\Types\String
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     // by Warringer\Types\Reference
     public function setNotifications($notifications)
     {
         $this->notifications = new Reference($notifications);
+    }
+
+    // by Warringer\Types\Reference
+    public function setMail($mail)
+    {
+        $this->mail = new Reference($mail);
+    }
+
+    // by Warringer\Types\String
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    // by Warringer\Types\Long
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
+
+    // by Warringer\Types\Reference
+    public function setMercenary($mercenary)
+    {
+        $this->mercenary = new Reference($mercenary);
+    }
+
+    // by Warringer\Types\Reference
+    public function setRace($race)
+    {
+        $this->race = new Reference($race);
     }
 
     // by Warringer\Types\Reference

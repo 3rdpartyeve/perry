@@ -25,6 +25,8 @@ class DustRoot extends Base
 
     public $fullMarketGroups;
 
+    public $districtAttackable;
+
     public $battles;
 
     public $infantryMarketGroups;
@@ -95,6 +97,12 @@ class DustRoot extends Base
     public function setFullMarketGroups($fullMarketGroups)
     {
         $this->fullMarketGroups = new Reference($fullMarketGroups);
+    }
+
+    // by Warringer\Types\Reference
+    public function setDistrictAttackable($districtAttackable)
+    {
+        $this->districtAttackable = new Reference($districtAttackable);
     }
 
     // by Warringer\Types\Reference

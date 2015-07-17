@@ -15,6 +15,8 @@ class Alliance extends Base
 
     public $executorCorporation;
 
+    public $primeHour;
+
     public $deleted;
 
     public $creatorCorporation;
@@ -22,6 +24,8 @@ class Alliance extends Base
     public $url;
 
     public $creatorCharacter;
+
+    public $capitalSystem;
 
     public $corporations = [];
 
@@ -70,6 +74,12 @@ class Alliance extends Base
             return $return;
         };
         $this->executorCorporation = $func($executorCorporation);
+    }
+
+    // by Warringer\Types\Long
+    public function setPrimeHour($primeHour)
+    {
+        $this->primeHour = $primeHour;
     }
 
     // by Warringer\Types\Base
@@ -132,6 +142,25 @@ class Alliance extends Base
             return $return;
         };
         $this->creatorCharacter = $func($creatorCharacter);
+    }
+
+    // by Warringer\Types\Dict
+    public function setCapitalSystem($capitalSystem)
+    {
+        // by Warringer\Types\Dict
+        $converters = [];
+        $converters['href'] = function ($value) { return new Uri($value); };
+        $converters['id'] = function ($value) { return $value; };
+        $converters['name'] = function ($value) { return $value; };
+
+        $func = function ($value) use($converters) {
+            $return = new \ArrayObject($value, \ArrayObject::ARRAY_AS_PROPS);
+            $return['href'] = isset($value->{'href'}) ? $converters['href']($value->{'href'}) : null;
+            $return['id'] = isset($value->{'id'}) ? $converters['id']($value->{'id'}) : null;
+            $return['name'] = isset($value->{'name'}) ? $converters['name']($value->{'name'}) : null;
+            return $return;
+        };
+        $this->capitalSystem = $func($capitalSystem);
     }
 
     // by Warringer\Types\ArrayType
