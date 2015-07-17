@@ -1,3 +1,13 @@
+
+VERSION 2  LATEST REPRESENTATIONS, CAREFULL THIS IS BREAKING SHIT
+=================================================================
+
+   Version 2.0 - latest representations, carefull this is breaking shit
+      17/07/2015 15:34  2.0.0  initial release
+         32f5ae7 newly generated classes
+         6b2bf15 adding security check to rmt config
+         12266f7 looks different
+         7874910 latest generation of known crest pages
 VERSION 1  REPLACED REPRESENTATION CLASSES BY GENERATED REPRESENTATION CLASSES FOR EASIER UPDATING ON FUTURE NEW ENDPOINTS
 ==========================================================================================================================
 
