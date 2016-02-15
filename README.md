@@ -1,3 +1,15 @@
+# DEPRECATED
+I've build this library before the 3rd Party License by CCP was put into place, hence you can only see stuff that was available to that point. As I don't feel that I as a developer of this library am properly covered, and as all tries to talk with ccp about it run into nowhere, i haven't been adding features since.
+
+Which means: some of the classes for the representations are outdated (in case they got v2 representations for example), some things provided by crest nowadays where never implemented, and furthermore, there is no implementation for the stuff that requires the single sign on (as that requires the license). 
+
+You are free to fork & use this library, extend it, rewrite it or whatever else you want to do, the code is under MIT license, and will stay so, however I might not answer bug reports, take pull requests or do any other work on this - if you want to take over maintaining it, feel free to contact me.
+ 
+until a maintainer is found, I can not recommend the usage of this project.
+
+best regards,
+Peter "Peter Powers" Petermann
+
 [![Latest Stable Version](https://poser.pugx.org/3rdpartyeve/perry/v/stable.png)](https://packagist.org/packages/3rdpartyeve/perry)
 [![Total Downloads](https://poser.pugx.org/3rdpartyeve/perry/downloads.png)](https://packagist.org/packages/3rdpartyeve/perry)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/3rdpartyeve/perry/badges/quality-score.png?s=aba3d207e2697ef3c25f3617f0741c69cfa29386)](https://scrutinizer-ci.com/g/3rdpartyeve/perry/)
